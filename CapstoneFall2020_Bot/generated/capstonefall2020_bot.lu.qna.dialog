@@ -1,0 +1,6 @@
+{
+    "$kind": "Microsoft.CrossTrainedRecognizerSet",
+    "recognizers": [
+        "capstonefall2020_bot.lu"
+    ]
+}

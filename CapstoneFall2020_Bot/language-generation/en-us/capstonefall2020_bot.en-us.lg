@@ -1,0 +1,14 @@
+[import](common.lg)
+
+# SendActivity_Welcome()
+[Activity
+    Text = Welcome, this is a bot still in development by the Microsoft Capstone Group. Nothing is done yet, we are still learning the basics of composer and understanding what is expected from us.
+    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue 
+]
+
+
+# SendActivity_6Ogmhb()
+[Activity
+    Text = Sorry, I did not understand '${turn.activity.text}'. Please try asking something else.
+    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
+]

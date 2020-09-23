@@ -1,0 +1,7 @@
+[import](common.lg)
+
+# SendActivity_yXmUN0()
+[Activity
+    Text = Message from Manager Section (Work in Progress)
+    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
+]

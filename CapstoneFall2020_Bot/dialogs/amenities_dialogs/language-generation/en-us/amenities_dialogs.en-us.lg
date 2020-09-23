@@ -1,0 +1,7 @@
+[import](common.lg)
+
+# SendActivity_dY9cIw()
+[Activity
+    Text = Amenitie Section (Work in Progress)
+    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
+]

@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "CxOSkT",
+    "name": "calendar_dialogs",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "ow1h4D"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "UVQwsk"
+          },
+          "activity": "${SendActivity_UVQwsk()}"
+        }
+      ]
+    }
+  ],
+  "generator": "calendar_dialogs.lg",
+  "recognizer": "calendar_dialogs.lu.qna",
+  "id": "calendar_dialogs"
+}

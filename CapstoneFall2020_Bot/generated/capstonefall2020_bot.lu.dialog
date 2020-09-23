@@ -1,0 +1,8 @@
+{
+    "$kind": "Microsoft.MultiLanguageRecognizer",
+    "id": "LUIS_capstonefall2020_bot",
+    "recognizers": {
+        "en-us": "capstonefall2020_bot.en-us.lu",
+        "": "capstonefall2020_bot.en-us.lu"
+    }
+}

@@ -53,11 +53,27 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.QnAMakerDialog",
+          "$designer": {
+            "id": "URX5DY"
+          },
+          "knowledgeBaseId": "=settings.qna.knowledgebaseid",
+          "endpointKey": "=settings.qna.endpointkey",
+          "hostname": "=settings.qna.hostname",
+          "noAnswer": "${QnAMakerDialog_NoAnswer_URX5DY()}",
+          "threshold": 0.3,
+          "activeLearningCardTitle": "Did you mean:",
+          "cardNoMatchText": "None of the above.",
+          "cardNoMatchResponse": "Thanks for the feedback.",
+          "top": 3,
+          "isTest": false
+        },
+        {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "6Ogmhb"
+            "id": "A28UaS"
           },
-          "activity": "${SendActivity_6Ogmhb()}"
+          "activity": "${SendActivity_A28UaS()}"
         }
       ]
     },
@@ -77,7 +93,8 @@
           "activityProcessed": true,
           "dialog": "amenities_dialogs"
         }
-      ]
+      ],
+      "condition": "#Amenities.Score > 0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -95,7 +112,8 @@
           "activityProcessed": true,
           "dialog": "direction_dialogs"
         }
-      ]
+      ],
+      "condition": "#Direction.Score > 0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -113,7 +131,8 @@
           "activityProcessed": true,
           "dialog": "calendar_dialogs"
         }
-      ]
+      ],
+      "condition": "#Calendar.Score > 0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -131,7 +150,8 @@
           "activityProcessed": true,
           "dialog": "manager_dialogs"
         }
-      ]
+      ],
+      "condition": "#Manager.Score > 0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -149,7 +169,8 @@
           "activityProcessed": true,
           "dialog": "report_dialogs"
         }
-      ]
+      ],
+      "condition": "#Report.Score > 0.6"
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",

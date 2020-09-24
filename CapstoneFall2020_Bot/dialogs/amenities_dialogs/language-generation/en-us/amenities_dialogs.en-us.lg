@@ -5,3 +5,10 @@
     Text = Amenitie Section (Work in Progress)
     SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
 ]
+
+# QnAMakerDialog_NoAnswer_DlBRGY()
+- Sorry, I did not understand '${turn.activity.text}'. Please try asking something else.
+
+
+
+

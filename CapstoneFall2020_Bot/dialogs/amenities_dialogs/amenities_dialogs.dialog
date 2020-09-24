@@ -17,6 +17,22 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.QnAMakerDialog",
+          "$designer": {
+            "id": "DlBRGY"
+          },
+          "knowledgeBaseId": "=settings.qna.knowledgebaseid",
+          "endpointKey": "=settings.qna.endpointkey",
+          "hostname": "=settings.qna.hostname",
+          "noAnswer": "${QnAMakerDialog_NoAnswer_DlBRGY()}",
+          "threshold": 0.3,
+          "activeLearningCardTitle": "Did you mean:",
+          "cardNoMatchText": "None of the above.",
+          "cardNoMatchResponse": "Thanks for the feedback.",
+          "top": 3,
+          "isTest": false
+        },
+        {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
             "id": "dY9cIw"

@@ -7,8 +7,17 @@
 ]
 
 
-# SendActivity_6Ogmhb()
+
+# QnAMakerDialog_NoAnswer_URX5DY()
 [Activity
     Text = Sorry, I did not understand '${turn.activity.text}'. Please try asking something else.
+    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
+]
+
+
+
+
+# SendActivity_A28UaS()
+[Activity
     SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
 ]

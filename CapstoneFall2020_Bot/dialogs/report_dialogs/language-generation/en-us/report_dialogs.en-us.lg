@@ -1,0 +1,84 @@
+[import](common.lg)
+
+# SendActivity_ZJHFvC()
+[Activity
+    Text = Is there anything else that I can help you with?
+    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
+]
+
+
+
+
+
+# TextInput_Prompt_WKKGHN()
+- I see that you have an issue that you would like to report. May I know your name first?
+# NumberInput_Prompt_aNvYdc()
+- Ok ${user.name}, I will need your phone number next. Please enter your phone number in the form of 0123456789.
+# TextInput_InvalidPrompt_WKKGHN()
+ - Sorry, but ${user.name} is not a valid name. Please try again.
+# NumberInput_InvalidPrompt_aNvYdc()
+- Please enter a valid phone number in the form of 0123456789.
+# NumberInput_DefaultValueResponse_aNvYdc()
+- I see that you have chosen DEATH BY SNU SNU!
+# TextInput_Prompt_QX67Mr()
+- Please describe the issue that is troubling you.
+# TextInput_UnrecognizedPrompt_QX67Mr()
+- I see that you have chosen DEATH BY SNU SNU!
+
+# TextInput_InvalidPrompt_QX67Mr()
+- Please describe the problem in one text box.
+# TextInput_DefaultValueResponse_QX67Mr()
+- I see that you have chosen DEATH BY SNU SNU!
+
+# AttachmentInput_Prompt_psEnBF()
+- Please include a picture of the issue that you are having.
+# AttachmentInput_InvalidPrompt_psEnBF()
+- Please upload a picture for the issue.
+# AttachmentInput_UnrecognizedPrompt_psEnBF()
+- I see that you have chosen DEATH BY SNU SNU!
+
+
+# AttachmentInput_DefaultValueResponse_psEnBF()
+- I see that you have chosen DEATH BY SNU SNU!
+
+
+
+
+
+# SendActivity_MEWD8D()
+- ${user.name}, ${user.phone}, ${user.issue}, ${user.picture}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# TextInput_Prompt_wfcqKX()
+- Ok ${user.name}, I will need your phone number next. Please enter your phone number in the form of 0123456789.
+# TextInput_UnrecognizedPrompt_wfcqKX()
+- Sorry, I do not regonize that. Please enter a valid phone number in the form of 0123456789.
+# TextInput_InvalidPrompt_wfcqKX()
+- Sorry, '${this.value}' is not valid. Please enter a valid phone number in the form of 0123456789.
+# TextInput_UnrecognizedPrompt_WKKGHN()
+- Sorry, but I don't regonize ${user.name}. Please enter a valid name.

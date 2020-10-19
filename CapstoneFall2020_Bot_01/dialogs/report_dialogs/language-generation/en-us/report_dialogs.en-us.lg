@@ -1,7 +1,0 @@
-[import](common.lg)
-
-# SendActivity_ZJHFvC()
-[Activity
-    Text = Report an Issue Section (Work in Progress)
-    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
-]

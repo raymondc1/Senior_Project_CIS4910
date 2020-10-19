@@ -1,0 +1,128 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "DO4G8m",
+    "name": "report_dialogs",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "mfEAfd"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "WKKGHN"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_WKKGHN()}",
+          "invalidPrompt": "${TextInput_InvalidPrompt_WKKGHN()}",
+          "property": "user.name",
+          "defaultValue": "none",
+          "value": "",
+          "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_WKKGHN()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "wfcqKX"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_wfcqKX()}",
+          "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_wfcqKX()}",
+          "invalidPrompt": "${TextInput_InvalidPrompt_wfcqKX()}",
+          "defaultValueResponse": "",
+          "property": "user.phone",
+          "outputFormat": "=trim(this.value)",
+          "validations": [
+            "length(this.value) == 10"
+          ],
+          "defaultValue": "0000000000"
+        },
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "aNvYdc"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${NumberInput_Prompt_aNvYdc()}",
+          "invalidPrompt": "${NumberInput_InvalidPrompt_aNvYdc()}",
+          "defaultValueResponse": "${NumberInput_DefaultValueResponse_aNvYdc()}",
+          "property": "user.phone",
+          "value": 0,
+          "defaultValue": 1111111111,
+          "validations": [
+            "length(user.phone) == 10"
+          ]
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "QX67Mr"
+          },
+          "disabled": false,
+          "maxTurnCount": 100,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_QX67Mr()}",
+          "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_QX67Mr()}",
+          "invalidPrompt": "${TextInput_InvalidPrompt_QX67Mr()}",
+          "defaultValueResponse": "${TextInput_DefaultValueResponse_QX67Mr()}",
+          "property": "user.issue",
+          "value": "NULL",
+          "defaultValue": "NULL"
+        },
+        {
+          "$kind": "Microsoft.AttachmentInput",
+          "$designer": {
+            "id": "psEnBF"
+          },
+          "disabled": false,
+          "maxTurnCount": 100,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${AttachmentInput_Prompt_psEnBF()}",
+          "unrecognizedPrompt": "${AttachmentInput_UnrecognizedPrompt_psEnBF()}",
+          "invalidPrompt": "${AttachmentInput_InvalidPrompt_psEnBF()}",
+          "defaultValueResponse": "${AttachmentInput_DefaultValueResponse_psEnBF()}",
+          "property": "user.picture",
+          "outputFormat": "all"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "MEWD8D"
+          },
+          "activity": "${SendActivity_MEWD8D()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "ZJHFvC"
+          },
+          "activity": "${SendActivity_ZJHFvC()}"
+        }
+      ]
+    }
+  ],
+  "generator": "report_dialogs.lg",
+  "recognizer": "report_dialogs.lu.qna",
+  "id": "report_dialogs"
+}

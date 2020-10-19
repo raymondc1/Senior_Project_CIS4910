@@ -2,9 +2,22 @@
 
 # SendActivity_Welcome()
 [Activity
-    Text = Welcome, this is a bot still in development by the Microsoft Capstone Group. Nothing is done yet, we are still learning the basics of composer and understanding what is expected from us.
+    Text = Welcome to Hotel South Tampa & Suites! My name is Boty and I will be helping you out while you are here. Please click on one of the following things that you wish to learn about or try asking a question and I will try my best to answer it!
     SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue 
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

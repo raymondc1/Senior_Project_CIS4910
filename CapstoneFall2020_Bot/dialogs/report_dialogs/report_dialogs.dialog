@@ -1,0 +1,85 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "DO4G8m",
+    "name": "report_dialogs",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "mfEAfd"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "e73Lfx"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_e73Lfx()}",
+          "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_e73Lfx()}",
+          "invalidPrompt": "${TextInput_InvalidPrompt_e73Lfx()}",
+          "defaultValueResponse": "${TextInput_DefaultValueResponse_e73Lfx()}",
+          "property": "user.name"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "1IQDrG"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_1IQDrG()}",
+          "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_1IQDrG()}",
+          "invalidPrompt": "${TextInput_InvalidPrompt_1IQDrG()}",
+          "defaultValueResponse": "${TextInput_DefaultValueResponse_1IQDrG()}",
+          "property": "user.description"
+        },
+        {
+          "$kind": "Microsoft.AttachmentInput",
+          "$designer": {
+            "id": "75MjM3"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${AttachmentInput_Prompt_75MjM3()}",
+          "unrecognizedPrompt": "${AttachmentInput_UnrecognizedPrompt_75MjM3()}",
+          "invalidPrompt": "${AttachmentInput_InvalidPrompt_75MjM3()}",
+          "defaultValueResponse": "${AttachmentInput_DefaultValueResponse_75MjM3()}",
+          "property": "user.image",
+          "outputFormat": "all"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "tkdMov"
+          },
+          "activity": "${SendActivity_tkdMov()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "ZJHFvC"
+          },
+          "activity": "${SendActivity_ZJHFvC()}"
+        }
+      ]
+    }
+  ],
+  "generator": "report_dialogs.lg",
+  "recognizer": "report_dialogs.lu.qna",
+  "id": "report_dialogs"
+}

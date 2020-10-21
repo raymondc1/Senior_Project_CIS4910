@@ -1,0 +1,8 @@
+
+# ReportCard(name, description, image)
+[Herocard
+    title = ${name}
+    text = ${description}
+    image = ${image}
+]
+

@@ -21,16 +21,16 @@
           "$designer": {
             "id": "DlBRGY"
           },
-          "knowledgeBaseId": "=settings.qna.knowledgebaseid",
-          "endpointKey": "=settings.qna.endpointkey",
-          "hostname": "=settings.qna.hostname",
           "noAnswer": "${QnAMakerDialog_NoAnswer_DlBRGY()}",
-          "threshold": 0.3,
+          "threshold": 0.6,
           "activeLearningCardTitle": "Did you mean:",
           "cardNoMatchText": "None of the above.",
           "cardNoMatchResponse": "Thanks for the feedback.",
           "top": 3,
-          "isTest": false
+          "isTest": false,
+          "knowledgeBaseId": "af90ada8-6375-415c-988a-07a3cc522aa1",
+          "endpointKey": "050b66d8-f9e2-4447-a9f4-a27a00bf509f",
+          "hostname": "https://usfqna.azurewebsites.net/qnamaker"
         },
         {
           "$kind": "Microsoft.SendActivity",

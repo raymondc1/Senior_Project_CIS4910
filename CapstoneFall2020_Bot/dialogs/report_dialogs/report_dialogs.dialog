@@ -19,98 +19,55 @@
         {
           "$kind": "Microsoft.TextInput",
           "$designer": {
-            "id": "WKKGHN"
+            "id": "e73Lfx"
           },
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": true,
           "allowInterruptions": false,
-          "prompt": "${TextInput_Prompt_WKKGHN()}",
-          "invalidPrompt": "${TextInput_InvalidPrompt_WKKGHN()}",
-          "property": "user.name",
-          "defaultValue": "none",
-          "value": "",
-          "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_WKKGHN()}"
+          "prompt": "${TextInput_Prompt_e73Lfx()}",
+          "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_e73Lfx()}",
+          "invalidPrompt": "${TextInput_InvalidPrompt_e73Lfx()}",
+          "defaultValueResponse": "${TextInput_DefaultValueResponse_e73Lfx()}",
+          "property": "user.name"
         },
         {
           "$kind": "Microsoft.TextInput",
           "$designer": {
-            "id": "wfcqKX"
+            "id": "1IQDrG"
           },
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": true,
           "allowInterruptions": false,
-          "prompt": "${TextInput_Prompt_wfcqKX()}",
-          "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_wfcqKX()}",
-          "invalidPrompt": "${TextInput_InvalidPrompt_wfcqKX()}",
-          "defaultValueResponse": "",
-          "property": "user.phone",
-          "outputFormat": "=trim(this.value)",
-          "validations": [
-            "length(this.value) == 10"
-          ],
-          "defaultValue": "0000000000"
-        },
-        {
-          "$kind": "Microsoft.NumberInput",
-          "$designer": {
-            "id": "aNvYdc"
-          },
-          "defaultLocale": "en-us",
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": true,
-          "allowInterruptions": false,
-          "prompt": "${NumberInput_Prompt_aNvYdc()}",
-          "invalidPrompt": "${NumberInput_InvalidPrompt_aNvYdc()}",
-          "defaultValueResponse": "${NumberInput_DefaultValueResponse_aNvYdc()}",
-          "property": "user.phone",
-          "value": 0,
-          "defaultValue": 1111111111,
-          "validations": [
-            "length(user.phone) == 10"
-          ]
-        },
-        {
-          "$kind": "Microsoft.TextInput",
-          "$designer": {
-            "id": "QX67Mr"
-          },
-          "disabled": false,
-          "maxTurnCount": 100,
-          "alwaysPrompt": true,
-          "allowInterruptions": false,
-          "prompt": "${TextInput_Prompt_QX67Mr()}",
-          "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_QX67Mr()}",
-          "invalidPrompt": "${TextInput_InvalidPrompt_QX67Mr()}",
-          "defaultValueResponse": "${TextInput_DefaultValueResponse_QX67Mr()}",
-          "property": "user.issue",
-          "value": "NULL",
-          "defaultValue": "NULL"
+          "prompt": "${TextInput_Prompt_1IQDrG()}",
+          "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_1IQDrG()}",
+          "invalidPrompt": "${TextInput_InvalidPrompt_1IQDrG()}",
+          "defaultValueResponse": "${TextInput_DefaultValueResponse_1IQDrG()}",
+          "property": "user.description"
         },
         {
           "$kind": "Microsoft.AttachmentInput",
           "$designer": {
-            "id": "psEnBF"
+            "id": "75MjM3"
           },
           "disabled": false,
-          "maxTurnCount": 100,
+          "maxTurnCount": 3,
           "alwaysPrompt": true,
           "allowInterruptions": false,
-          "prompt": "${AttachmentInput_Prompt_psEnBF()}",
-          "unrecognizedPrompt": "${AttachmentInput_UnrecognizedPrompt_psEnBF()}",
-          "invalidPrompt": "${AttachmentInput_InvalidPrompt_psEnBF()}",
-          "defaultValueResponse": "${AttachmentInput_DefaultValueResponse_psEnBF()}",
-          "property": "user.picture",
+          "prompt": "${AttachmentInput_Prompt_75MjM3()}",
+          "unrecognizedPrompt": "${AttachmentInput_UnrecognizedPrompt_75MjM3()}",
+          "invalidPrompt": "${AttachmentInput_InvalidPrompt_75MjM3()}",
+          "defaultValueResponse": "${AttachmentInput_DefaultValueResponse_75MjM3()}",
+          "property": "user.image",
           "outputFormat": "all"
         },
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "MEWD8D"
+            "id": "tkdMov"
           },
-          "activity": "${SendActivity_MEWD8D()}"
+          "activity": "${SendActivity_tkdMov()}"
         },
         {
           "$kind": "Microsoft.SendActivity",

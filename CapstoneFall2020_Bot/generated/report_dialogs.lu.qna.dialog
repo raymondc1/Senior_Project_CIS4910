@@ -1,6 +1,4 @@
 {
     "$kind": "Microsoft.CrossTrainedRecognizerSet",
-    "recognizers": [
-        "report_dialogs.lu"
-    ]
+    "recognizers": []
 }

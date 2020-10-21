@@ -2,83 +2,46 @@
 
 # SendActivity_ZJHFvC()
 [Activity
-    Text = Is there anything else that I can help you with?
+    Text = We have logged your issue and will respond to it immediately. Is there anything else that we can help you with?
     SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
 ]
 
+# TextInput_Prompt_e73Lfx()
+- I see that you have an issue that you would like to report. May I know your full name first?
 
+# TextInput_UnrecognizedPrompt_e73Lfx()
+- Unrecognized prompt
 
+# TextInput_InvalidPrompt_e73Lfx()
+- Invalid prompt
 
+# TextInput_DefaultValueResponse_e73Lfx()
+- Default value response
 
-# TextInput_Prompt_WKKGHN()
-- I see that you have an issue that you would like to report. May I know your name first?
-# NumberInput_Prompt_aNvYdc()
-- Ok ${user.name}, I will need your phone number next. Please enter your phone number in the form of 0123456789.
-# TextInput_InvalidPrompt_WKKGHN()
- - Sorry, but ${user.name} is not a valid name. Please try again.
-# NumberInput_InvalidPrompt_aNvYdc()
-- Please enter a valid phone number in the form of 0123456789.
-# NumberInput_DefaultValueResponse_aNvYdc()
-- I see that you have chosen DEATH BY SNU SNU!
-# TextInput_Prompt_QX67Mr()
-- Please describe the issue that is troubling you.
-# TextInput_UnrecognizedPrompt_QX67Mr()
-- I see that you have chosen DEATH BY SNU SNU!
+# TextInput_Prompt_1IQDrG()
+-  Hello ${user.name}, can you describe the issue in one textbox please?
 
-# TextInput_InvalidPrompt_QX67Mr()
-- Please describe the problem in one text box.
-# TextInput_DefaultValueResponse_QX67Mr()
-- I see that you have chosen DEATH BY SNU SNU!
+# TextInput_UnrecognizedPrompt_1IQDrG()
+- Unrecognized prompt
 
-# AttachmentInput_Prompt_psEnBF()
-- Please include a picture of the issue that you are having.
-# AttachmentInput_InvalidPrompt_psEnBF()
-- Please upload a picture for the issue.
-# AttachmentInput_UnrecognizedPrompt_psEnBF()
-- I see that you have chosen DEATH BY SNU SNU!
+# TextInput_InvalidPrompt_1IQDrG()
+- Invalid prompt
 
+# TextInput_DefaultValueResponse_1IQDrG()
+- Default value response
 
-# AttachmentInput_DefaultValueResponse_psEnBF()
-- I see that you have chosen DEATH BY SNU SNU!
+# AttachmentInput_Prompt_75MjM3()
+- Please provide us a picture concerning your issue so that we can get back to you as soon as possible.
 
+# AttachmentInput_UnrecognizedPrompt_75MjM3()
+- Unrecognized prompt
 
+# AttachmentInput_InvalidPrompt_75MjM3()
+- Invalid prompt
 
+# AttachmentInput_DefaultValueResponse_75MjM3()
+- Default value response
 
+# SendActivity_tkdMov()
+- ${ReportCard(user.name, user.description, user.image[0].contentUrl)}
 
-# SendActivity_MEWD8D()
-- ${user.name}, ${user.phone}, ${user.issue}, ${user.picture}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# TextInput_Prompt_wfcqKX()
-- Ok ${user.name}, I will need your phone number next. Please enter your phone number in the form of 0123456789.
-# TextInput_UnrecognizedPrompt_wfcqKX()
-- Sorry, I do not regonize that. Please enter a valid phone number in the form of 0123456789.
-# TextInput_InvalidPrompt_wfcqKX()
-- Sorry, '${this.value}' is not valid. Please enter a valid phone number in the form of 0123456789.
-# TextInput_UnrecognizedPrompt_WKKGHN()
-- Sorry, but I don't regonize ${user.name}. Please enter a valid name.

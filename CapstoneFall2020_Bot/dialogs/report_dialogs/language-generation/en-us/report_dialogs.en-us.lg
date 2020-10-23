@@ -1,11 +1,5 @@
 [import](common.lg)
 
-# SendActivity_ZJHFvC()
-[Activity
-    Text = We have logged your issue and will respond to it immediately. Is there anything else that we can help you with?
-    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
-]
-
 # TextInput_Prompt_e73Lfx()
 - I see that you have an issue that you would like to report. May I know your full name first?
 
@@ -44,4 +38,11 @@
 
 # SendActivity_tkdMov()
 - ${ReportCard(user.name, user.description, user.image[0].contentUrl)}
+
+# SendActivity_ZJHFvC()
+[Activity
+    Text = We have logged your issue and will respond to it immediately. Is there anything else that we can help you with?
+    SuggestedActions = Amenities | Direction | Calendar | About us | Report an Issue
+]
+
 

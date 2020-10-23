@@ -3,16 +3,18 @@
 # SendActivity_Welcome()
 [Activity
     Text = Welcome to Hotel South Tampa & Suites! My name is Boty and I will be helping you out while you are here. Please click on one of the following things that you wish to learn about or try asking a question and I will try my best to answer it!
-    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue 
+    SuggestedActions = Amenities | Direction | Calendar | About Us| Report an Issue 
 ]
 
 # QnAMakerDialog_NoAnswer_URX5DY()
-[Activity
-    Text = Sorry, I did not understand '${turn.activity.text}'. Please try asking something else.
-    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
-]
+- Sorry, I did not understand '${turn.activity.text}'. Please try asking something else.
 
 # SendActivity_A28UaS()
 [Activity
-    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
+    SuggestedActions = Amenities | Direction | Calendar | About us | Report an Issue
 ]
+
+
+
+
+

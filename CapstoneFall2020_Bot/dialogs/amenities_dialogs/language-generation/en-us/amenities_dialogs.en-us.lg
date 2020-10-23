@@ -3,7 +3,7 @@
 # SendActivity_dY9cIw()
 [Activity
     Text = Amenitie Section (Work in Progress)
-    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
+    SuggestedActions = Amenities | Direction | Calendar | About us | Report an Issue
 ]
 
 # QnAMakerDialog_NoAnswer_DlBRGY()

@@ -19,6 +19,13 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
+            "id": "jHfRCC"
+          },
+          "activity": "${SendActivity_jHfRCC()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
             "id": "yXmUN0"
           },
           "activity": "${SendActivity_yXmUN0()}"

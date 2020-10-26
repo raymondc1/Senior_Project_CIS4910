@@ -1,8 +1,8 @@
+
 [import](common.lg)
 
 # SendActivity_Welcome()
 [Activity
-    Text = Welcome to Hotel South Tampa & Suites! My name is Boty and I will be helping you out while you are here. Please click on one of the following things that you wish to learn about or try asking a question and I will try my best to answer it!
     SuggestedActions = Amenities | Direction | Calendar | About Us| Report an Issue 
 ]
 
@@ -14,7 +14,20 @@
     SuggestedActions = Amenities | Direction | Calendar | About us | Report an Issue
 ]
 
+# SendActivity_dInhZ2()
+[ThumbnailCard
+    title = Welcome to Hotel South Tampa & Suites! 
+    text = My name is Boty and I will be helping you out while you are here. Please click on one of the following things that you wish to learn about or try asking a question and I will try my best to answer it!
+    image = https://docs.microsoft.com/hu-hu/composer/media/landing-page/composer.png
+    SuggestedActions = Amenities | Direction | Calendar | About Us| Report an Issue 
+]
 
+# AdaptiveCard
+[Activity
+    Attachments = ${json(adaptivecardjson())}
+]
 
+# adaptivecardjson
+- ```
 
-
+```

@@ -35,6 +35,13 @@
                 {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
+                    "id": "dInhZ2"
+                  },
+                  "activity": "${SendActivity_dInhZ2()}"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
                     "id": "859266",
                     "name": "Send a response"
                   },

@@ -6,50 +6,6 @@
     SuggestedActions = Amenities | Direction | Calendar | About us | Report an Issue
 ]
 
-# SendActivity_n7tk8b()
-[Activity
-    Text = Do you 
-    SuggestedActions = All Events | Next Week | Within Specific Dates
-]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -68,3 +24,13 @@
 - $ShowProfile(event.Name, event.beginTime, event.endTime)
 # SendActivity_hIuIvz()
 - - $ShowProfile(event.Name, event.beginTime, event.endTime)
+# SendActivity_9Grfc7()
+- Getting you all events currently on our calendar.
+# SendActivity_pa7qiF()
+- Getting you all the events going on for the next week
+# DateTimeInput_Prompt_9gwxSt()
+- What starting date are you looking for?
+# DateTimeInput_Prompt_9nEYom()
+- What ending date are you looking for?
+# SendActivity_TyPi9x()
+- Getting you events happening between $(user.start) and $(user.end).

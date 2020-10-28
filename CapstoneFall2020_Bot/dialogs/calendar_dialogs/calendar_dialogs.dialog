@@ -24,13 +24,6 @@
           "activity": "${SendActivity_UVQwsk()}"
         },
         {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "n7tk8b"
-          },
-          "activity": "${SendActivity_n7tk8b()}"
-        },
-        {
           "$kind": "Microsoft.SwitchCondition",
           "$designer": {
             "id": "E86VAf"
@@ -40,18 +33,37 @@
               "value": "All events",
               "actions": [
                 {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "9Grfc7"
+                  },
+                  "activity": "${SendActivity_9Grfc7()}"
+                },
+                {
                   "$kind": "Microsoft.HttpRequest",
                   "$designer": {
                     "id": "DSdzo8"
                   },
                   "url": "https://graph.microsoft.com/v1.0/me/events?$select=subject,body,bodyPreview,organizer,attendees,start,end,location",
-                  "method": "GET"
+                  "method": "GET",
+                  "headers": {
+                    "Host": "https://login.microsoftonline.com",
+                    "client_ID": "AQMkADAwATMwMAItMzQ0ADktZDZiMC0wMAItMDAKAVEACAgA2H35E3nAAEYAAALncg38tOmJQ6Cu4QWuTbNCBwCtt-rpdtlkS5PP5cVjo-z1AAACAQ0AAACtt-rpdtlkS5PP5cVjo-z1AAACHbUAAAAQ"
+                  },
+                  "resultProperty": "=event.Result"
                 }
               ]
             },
             {
               "value": "Next week",
               "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "pa7qiF"
+                  },
+                  "activity": "${SendActivity_pa7qiF()}"
+                },
                 {
                   "$kind": "Microsoft.HttpRequest",
                   "$designer": {
@@ -65,6 +77,45 @@
             {
               "value": "Specific dates",
               "actions": [
+                {
+                  "$kind": "Microsoft.DateTimeInput",
+                  "$designer": {
+                    "id": "9gwxSt"
+                  },
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${DateTimeInput_Prompt_9gwxSt()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "value": "=user.start",
+                  "property": "=user.start"
+                },
+                {
+                  "$kind": "Microsoft.DateTimeInput",
+                  "$designer": {
+                    "id": "9nEYom"
+                  },
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${DateTimeInput_Prompt_9nEYom()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "value": "=user.end",
+                  "property": "=user.end"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "TyPi9x"
+                  },
+                  "activity": "${SendActivity_TyPi9x()}"
+                },
                 {
                   "$kind": "Microsoft.HttpRequest",
                   "$designer": {

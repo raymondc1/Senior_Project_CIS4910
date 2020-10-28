@@ -1,4 +1,3 @@
-
 [import](common.lg)
 
 # SendActivity_Welcome()
@@ -14,20 +13,55 @@
     SuggestedActions = Amenities | Direction | Calendar | About us | Report an Issue
 ]
 
-# SendActivity_dInhZ2()
-[ThumbnailCard
-    title = Welcome to Hotel South Tampa & Suites! 
-    text = My name is Boty and I will be helping you out while you are here. Please click on one of the following things that you wish to learn about or try asking a question and I will try my best to answer it!
-    image = https://docs.microsoft.com/hu-hu/composer/media/landing-page/composer.png
-    SuggestedActions = Amenities | Direction | Calendar | About Us| Report an Issue 
-]
+# SendActivity_bu5xh4()
+- ${WelcomeAdaptiveCard()}
 
-# AdaptiveCard
+# WelcomeAdaptiveCard
 [Activity
-    Attachments = ${json(adaptivecardjson())}
+    Attachments = ${json(WelcomeAdaptiveCardJson())}
 ]
 
-# adaptivecardjson
+# WelcomeAdaptiveCardJson
 - ```
-
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": 1,
+          "items": [
+            {
+              "type": "Image",
+              "url": "https://docs.microsoft.com/hu-hu/composer/media/landing-page/composer.png",
+              "size": "auto",
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": 3,
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Welcome to Hotel South Tampa & Suites! ",
+              "weight": "bolder",
+              "size": "medium",
+              "wrap": true
+            },
+            {
+              "type": "TextBlock",
+              "text": "How may I assist you today?",
+              "wrap": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
 ```

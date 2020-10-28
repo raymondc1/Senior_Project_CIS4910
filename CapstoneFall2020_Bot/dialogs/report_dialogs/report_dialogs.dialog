@@ -17,13 +17,6 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "2M9m2H"
-          },
-          "activity": "${SendActivity_2M9m2H()}"
-        },
-        {
           "$kind": "Microsoft.TextInput",
           "$designer": {
             "id": "e73Lfx"
@@ -31,7 +24,7 @@
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": true,
-          "allowInterruptions": false,
+          "allowInterruptions": true,
           "prompt": "${TextInput_Prompt_e73Lfx()}",
           "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_e73Lfx()}",
           "invalidPrompt": "${TextInput_InvalidPrompt_e73Lfx()}",
@@ -46,7 +39,7 @@
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": true,
-          "allowInterruptions": false,
+          "allowInterruptions": true,
           "prompt": "${TextInput_Prompt_1IQDrG()}",
           "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_1IQDrG()}",
           "invalidPrompt": "${TextInput_InvalidPrompt_1IQDrG()}",
@@ -61,7 +54,7 @@
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": true,
-          "allowInterruptions": false,
+          "allowInterruptions": true,
           "prompt": "${AttachmentInput_Prompt_75MjM3()}",
           "unrecognizedPrompt": "${AttachmentInput_UnrecognizedPrompt_75MjM3()}",
           "invalidPrompt": "${AttachmentInput_InvalidPrompt_75MjM3()}",

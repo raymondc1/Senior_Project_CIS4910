@@ -1,8 +1,8 @@
 {
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
-    "id": "C42tMz",
-    "name": "amenities_dialogs",
+    "id": "TkHdgQ",
+    "name": "help_dialogs",
     "description": ""
   },
   "autoEndDialog": true,
@@ -13,20 +13,20 @@
       "$designer": {
         "name": "BeginDialog",
         "description": "",
-        "id": "RlLhfD"
+        "id": "CXGuq6"
       },
       "actions": [
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "dY9cIw"
+            "id": "pAFJTC"
           },
-          "activity": "${SendActivity_dY9cIw()}"
+          "activity": ""
         }
       ]
     }
   ],
-  "generator": "amenities_dialogs.lg",
-  "recognizer": "amenities_dialogs.lu.qna",
-  "id": "amenities_dialogs"
+  "generator": "help_dialogs.lg",
+  "recognizer": "help_dialogs.lu.qna",
+  "id": "help_dialogs"
 }

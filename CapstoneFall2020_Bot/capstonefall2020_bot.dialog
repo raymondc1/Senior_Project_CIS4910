@@ -127,7 +127,7 @@
         {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "rLxha1"
+            "id": "Tnhnr2"
           },
           "activityProcessed": true,
           "dialog": "calendar_dialogs"

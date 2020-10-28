@@ -44,4 +44,3 @@
 
 # SendActivity_tkdMov()
 - ${ReportCard(user.name, user.description, user.image[0].contentUrl)}
-

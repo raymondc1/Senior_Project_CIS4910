@@ -24,13 +24,54 @@
           "activity": "${SendActivity_UVQwsk()}"
         },
         {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "THf9b7"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "alwaysPrompt": true,
+          "prompt": "${ChoiceInput_Prompt_THf9b7()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "user.choice",
+          "outputFormat": "value",
+          "style": "list",
+          "choices": [
+            {
+              "value": "All Events"
+            },
+            {
+              "value": "Next Week"
+            },
+            {
+              "value": "Specfic Dates"
+            }
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "noValue": false,
+            "noAction": false,
+            "recognizeNumbers": true
+          },
+          "maxTurnCount": "2147483647",
+          "allowInterruptions": "false"
+        },
+        {
           "$kind": "Microsoft.SwitchCondition",
           "$designer": {
             "id": "E86VAf"
           },
           "cases": [
             {
-              "value": "All events",
+              "value": "All Events",
               "actions": [
                 {
                   "$kind": "Microsoft.SendActivity",
@@ -55,7 +96,7 @@
               ]
             },
             {
-              "value": "Next week",
+              "value": "Next Week",
               "actions": [
                 {
                   "$kind": "Microsoft.SendActivity",
@@ -75,7 +116,7 @@
               ]
             },
             {
-              "value": "Specific dates",
+              "value": "Specific Dates",
               "actions": [
                 {
                   "$kind": "Microsoft.DateTimeInput",
@@ -90,8 +131,7 @@
                   "unrecognizedPrompt": "",
                   "invalidPrompt": "",
                   "defaultValueResponse": "",
-                  "value": "=user.start",
-                  "property": "=user.start"
+                  "property": "user.start"
                 },
                 {
                   "$kind": "Microsoft.DateTimeInput",
@@ -106,8 +146,8 @@
                   "unrecognizedPrompt": "",
                   "invalidPrompt": "",
                   "defaultValueResponse": "",
-                  "value": "=user.end",
-                  "property": "=user.end"
+                  "value": "",
+                  "property": "user.end"
                 },
                 {
                   "$kind": "Microsoft.SendActivity",
@@ -126,7 +166,7 @@
               ]
             }
           ],
-          "condition": "Whichever action card they click on"
+          "condition": "user.choice"
         },
         {
           "$kind": "Microsoft.SetProperties",
@@ -163,8 +203,7 @@
               },
               "activity": "${SendActivity_hIuIvz()}"
             }
-          ],
-          "itemsProperty": "for each instance of event found"
+          ]
         }
       ]
     }

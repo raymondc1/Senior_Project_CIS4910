@@ -26,9 +26,94 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "X4aip7"
+            "id": "n7tk8b"
           },
-          "activity": "${SendActivity_X4aip7()}"
+          "activity": "${SendActivity_n7tk8b()}"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "E86VAf"
+          },
+          "cases": [
+            {
+              "value": "All events",
+              "actions": [
+                {
+                  "$kind": "Microsoft.HttpRequest",
+                  "$designer": {
+                    "id": "DSdzo8"
+                  },
+                  "url": "https://graph.microsoft.com/v1.0/me/events?$select=subject,body,bodyPreview,organizer,attendees,start,end,location",
+                  "method": "GET"
+                }
+              ]
+            },
+            {
+              "value": "Next week",
+              "actions": [
+                {
+                  "$kind": "Microsoft.HttpRequest",
+                  "$designer": {
+                    "id": "bqk2uU"
+                  },
+                  "url": "https://graph.microsoft.com/v1.0/me/calendarview?startdatetime=2020-10-28T18:31:03.386Z&enddatetime=2020-11-04T19:31:03.386Z",
+                  "method": "GET"
+                }
+              ]
+            },
+            {
+              "value": "Specific dates",
+              "actions": [
+                {
+                  "$kind": "Microsoft.HttpRequest",
+                  "$designer": {
+                    "id": "8xtGXm"
+                  },
+                  "method": "GET"
+                }
+              ]
+            }
+          ],
+          "condition": "Whichever action card they click on"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "sz7Pam"
+          },
+          "assignments": [
+            {
+              "property": "event.Name",
+              "value": "=event.Result.value.subject"
+            },
+            {
+              "property": "event.beginTime",
+              "value": "=event.Result.value.subject.start.dateTime"
+            },
+            {
+              "property": "event.endTime",
+              "value": "=event.Result.value.subject.end.dateTime"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "jC7wXy"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "hIuIvz"
+              },
+              "activity": "${SendActivity_hIuIvz()}"
+            }
+          ],
+          "itemsProperty": "for each instance of event found"
         }
       ]
     }

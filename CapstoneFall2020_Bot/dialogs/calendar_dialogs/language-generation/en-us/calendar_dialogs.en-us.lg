@@ -3,8 +3,68 @@
 # SendActivity_UVQwsk()
 [Activity
     Text = Calendar Section (Work in Progress)
-    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
+    SuggestedActions = Amenities | Direction | Calendar | About us | Report an Issue
 ]
 
-# SendActivity_X4aip7()
-- 404 Calendar not found
+# SendActivity_n7tk8b()
+[Activity
+    Text = Do you 
+    SuggestedActions = All Events | Next Week | Within Specific Dates
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# SendActivity_grGPHN()
+- $ShowProfile(event.Name, event.beginTime, event.endTime)
+# SendActivity_hIuIvz()
+- - $ShowProfile(event.Name, event.beginTime, event.endTime)

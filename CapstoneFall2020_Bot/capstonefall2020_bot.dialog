@@ -35,6 +35,13 @@
                 {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
+                    "id": "bu5xh4"
+                  },
+                  "activity": "${SendActivity_bu5xh4()}"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
                     "id": "859266",
                     "name": "Send a response"
                   },
@@ -172,6 +179,63 @@
         }
       ],
       "condition": "#Report.Score > 0.8"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "lgSaht",
+        "name": "help"
+      },
+      "intent": "help",
+      "condition": "#help.Score > 0.8",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "ApLmud"
+          },
+          "activityProcessed": true,
+          "dialog": "help_dialogs"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "defX1a",
+        "name": "cancel"
+      },
+      "intent": "cancel",
+      "condition": "#cancel.Score > 0.8",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "5NHCuY"
+          },
+          "activityProcessed": true,
+          "dialog": "cancel_dialogs"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "lNXbku",
+        "name": "exit"
+      },
+      "intent": "exit",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "i7SHN0"
+          },
+          "activityProcessed": true,
+          "dialog": "exit_dialogs"
+        }
+      ],
+      "condition": "#exit.Score > 0.9"
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",

@@ -14,37 +14,37 @@
 
 #Room1_card()
 [HeroCard
-    image = http://www.hotelsouthtampa.com/images/rooms/1-KING-BED-ADA-SHOWER-NON-SMOKING.jpg
+    image = https://i.imgur.com/CV8gwfD.jpg
     text = ${Room1_Templete()}
 ]
 
 #Room2_card()
 [HeroCard
-    image = http://www.hotelsouthtampa.com/images/rooms/non-smoking-two-bed-accesisble.jpg
+    image = https://i.imgur.com/eKsFlxA.jpg
     text = ${Room2_Templete()}
 ]
 
 #Room3_card()
 [HeroCard
-    image = http://www.hotelsouthtampa.com/images/rooms/1-King-Bed-Non-Smoking.jpg
+    image = https://i.imgur.com/mI8p4Od.jpg
     text = ${Room3_Templete()}
 ]
 
 #Room4_card()
 [HeroCard
-    image = http://www.hotelsouthtampa.com/images/rooms/non-smoking-two-queen-bed.jpg
+    image = https://i.imgur.com/yM6MIbM.jpg
     text = ${Room4_Templete()}
 ]
 
 #Room5_card()
 [HeroCard
-    image = http://www.hotelsouthtampa.com/images/rooms/1-Queen-Bed-Kitchenette-Suite-Non-Smoking.jpg
+    image = https://i.imgur.com/FoWY3r1.jpg
     text = ${Room5_Templete()}
 ]
 
 #Room6_card()
 [HeroCard
-    image = http://www.hotelsouthtampa.com/images/rooms/two_queen_beds_efficiency.jpg
+    image = https://i.imgur.com/b85Gz8R.jpg
     text = ${Room6_Templete()}
 ]
 
@@ -166,26 +166,26 @@
 [Herocard
     title = Internet
     text = Free Wi-Fi in all rooms and in public area. Free HIgh Speed Internet Access.
-    image = https://www.ship.edu/contentassets/4c00f5c619864a41a3341ff410e204ba/wifi.png
+    image = https://i.imgur.com/ED8cInR.png
 ]
 
 # SendActivity_0rQGWG()
 [Herocard
     title = Breakfast
     text = Free expanded Hot Breafast with Fresh Waffles.
-    image = http://hotelsouthtampa.com/gallery/images/BREAKFAST02.jpg
+    image = https://i.imgur.com/iH1QbmB.jpg
 ]
 
 # SendActivity_5R2f5B()
 [Herocard
     title = Pool
     text = Outdoor heated pool (8am -9pm)
-    image = http://hotelsouthtampa.com/gallery/images/pool-area.jpg
+    image = https://i.imgur.com/Z63jUiy.jpg
 ]
 
 # SendActivity_oV4iv0()
 [Herocard
     title = Parking
     text = Free Parking for overnight guests.
-    image = http://hotelsouthtampa.com/gallery/images/hotel-front.jpg
+    image = https://i.imgur.com/Y5w7D7s.jpg
 ]

@@ -31,9 +31,12 @@
 
 # SendActivity_xY1pnq()
 -${Sub_Menu_Items()}
+
 # SendActivity_RcJsp5()
 - ${HeroCard()}
+
 # SendActivity_hlVTfP()
 - Here ya go ${dialog.Directions.sections.guidance}
+
 # SendActivity_XlbyEV()
 - Sorry, we're closed

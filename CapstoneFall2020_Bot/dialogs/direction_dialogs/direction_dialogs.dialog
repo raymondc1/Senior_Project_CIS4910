@@ -47,13 +47,6 @@
               },
               "property": "dialog.Directions",
               "value": "=dialog.api_response.content"
-            },
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "hlVTfP"
-              },
-              "activity": "${SendActivity_hlVTfP()}"
             }
           ],
           "elseActions": [

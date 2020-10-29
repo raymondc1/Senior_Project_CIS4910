@@ -24,184 +24,41 @@
           "activity": "${SendActivity_UVQwsk()}"
         },
         {
-          "$kind": "Microsoft.ChoiceInput",
+          "$kind": "Microsoft.HttpRequest",
           "$designer": {
-            "id": "THf9b7"
+            "id": "dh5DMK"
           },
-          "defaultLocale": "en-us",
-          "disabled": false,
-          "alwaysPrompt": true,
-          "prompt": "${ChoiceInput_Prompt_THf9b7()}",
-          "unrecognizedPrompt": "",
-          "invalidPrompt": "",
-          "defaultValueResponse": "",
-          "choiceOptions": {
-            "includeNumbers": true,
-            "inlineOrMore": ", or ",
-            "inlineOr": " or ",
-            "inlineSeparator": ", "
+          "method": "GET",
+          "url": "https://graph.microsoft.com/v1.0/me/events?$select=subject,body,bodyPreview,organizer,attendees,start,end,location",
+          "headers": {
+            "Authorization": "EwBwA8l6BAAU6k7+XVQzkGyMv7VHB/h4cHbJYRAAAYS6W0g/jZ+hmVuiDEWzHXt4/JBvoUl0iyRhiQM0g6LxO/GIorjpyZnXb5WcnWw2OFs9Azf6JjFwre4TyGQKp56p9cOo3kleMOa6sbj/ANJObe5vkRj/UeeNdMOzelvUgYx1KZ8j8LbO9JkKZxB2IctgGpilr9MRVyaxtg3nEuXk4GAOk6sF1geLQgYn6IuTfWWeBOejgu1XXzS09oYrysti+Yahjz/0S4aHBb4V9vfKpMah2fj6pF5xQpCCyAB/5mxaELRQ9J5WF/VZnhjYSqix2PCp2drKdQWcBUjh/CEvM2I8axe04P8kjxNmjQ12oV/AJ62Lc69Rs4gV582VRW8DZgAACJZqjupozjvNQALY7ilv1+xHjAAhU3P6Rjp2YhF0K5HOrr/lpyQusHwkqdPYYc5myj/c48ebxCgRVtPOvXb3BtkEh+WqePsl0aQzSHz5j44PTGk6Ym/LreYbt2cdk9GTdMYIp7HTNVFtyJfsU7fJanLi2pOJsIHlT1hFy2xg4V8NWtWPG5YziBtWYYh4scTofYueo1kIzTttLgO/zLgK4TL1s9Tkmqsh7z4om++0vFnp+MVI0OVlDNSpacINw9crsHpbJR3ckvhVsrN4U2d/aAl7ilJjiuj6hnwrTBG8ombwRspsvLpvVtkey0cMxra5ZkHacqAJ+cZJayFoUFU2Sdqjr2Mjp4JwP2wCALMowUBeiJrjC0qQgnGQsUJSShonaECzdaW/Nh7g5oLdhYz7/By+0r3H/Kny6xx3ERBStvksm5qnf3YDb9pEe93pJUZgSzjn/xfXRJinkPSwuuX8FHhO3GHzg71uYpIV7/m3+SX60yIuYZ3DnE+UhaBdSB9GlDVdNIQ+RgPIqNSseshS9XbI5+Oon4d9Vf1998g2+rLYWO2Y4HCOH+kpfFDO7NdujP9vgD4GIlycAdmhBC6y/4y/p77fHho+Lyb32ogtO6nNaGoxcIyUeGrxNsVi71hJe7t4v5EXMXMSNThUklk/SSai3bS5strVTH9rcn4BTjDTXv78Mq5I7YVpZvsT8TDuDr/KnO3AH84xDjeckykNbX3uPdJBopuEDTkDgTbOuJUysWXta1Jsl2QoGEgYIWcGdQ/wc2t944xqeXF8Ag==",
+            "Host": "graph.microsoft.com"
           },
-          "property": "user.choice",
-          "outputFormat": "value",
-          "style": "list",
-          "choices": [
+          "resultProperty": "dialog.api_response",
+          "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "Hg9XUn"
+          },
+          "condition": "dialog.api_response.statusCode == 200",
+          "elseActions": [
             {
-              "value": "All Events"
-            },
-            {
-              "value": "Next Week"
-            },
-            {
-              "value": "Specfic Dates"
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "sJZepJ"
+              },
+              "activity": "${SendActivity_sJZepJ()}"
             }
           ],
-          "recognizerOptions": {
-            "recognizeOrdinals": true,
-            "noValue": false,
-            "noAction": false,
-            "recognizeNumbers": true
-          },
-          "maxTurnCount": "2147483647",
-          "allowInterruptions": "false"
-        },
-        {
-          "$kind": "Microsoft.SwitchCondition",
-          "$designer": {
-            "id": "E86VAf"
-          },
-          "cases": [
-            {
-              "value": "All Events",
-              "actions": [
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "9Grfc7"
-                  },
-                  "activity": "${SendActivity_9Grfc7()}"
-                },
-                {
-                  "$kind": "Microsoft.HttpRequest",
-                  "$designer": {
-                    "id": "DSdzo8"
-                  },
-                  "url": "https://graph.microsoft.com/v1.0/me/events?$select=subject,body,bodyPreview,organizer,attendees,start,end,location",
-                  "method": "GET",
-                  "headers": {
-                    "Host": "https://login.microsoftonline.com",
-                    "client_ID": "AQMkADAwATMwMAItMzQ0ADktZDZiMC0wMAItMDAKAVEACAgA2H35E3nAAEYAAALncg38tOmJQ6Cu4QWuTbNCBwCtt-rpdtlkS5PP5cVjo-z1AAACAQ0AAACtt-rpdtlkS5PP5cVjo-z1AAACHbUAAAAQ"
-                  },
-                  "resultProperty": "=event.Result"
-                }
-              ]
-            },
-            {
-              "value": "Next Week",
-              "actions": [
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "pa7qiF"
-                  },
-                  "activity": "${SendActivity_pa7qiF()}"
-                },
-                {
-                  "$kind": "Microsoft.HttpRequest",
-                  "$designer": {
-                    "id": "bqk2uU"
-                  },
-                  "url": "https://graph.microsoft.com/v1.0/me/calendarview?startdatetime=2020-10-28T18:31:03.386Z&enddatetime=2020-11-04T19:31:03.386Z",
-                  "method": "GET"
-                }
-              ]
-            },
-            {
-              "value": "Specific Dates",
-              "actions": [
-                {
-                  "$kind": "Microsoft.DateTimeInput",
-                  "$designer": {
-                    "id": "9gwxSt"
-                  },
-                  "disabled": false,
-                  "maxTurnCount": 3,
-                  "alwaysPrompt": false,
-                  "allowInterruptions": false,
-                  "prompt": "${DateTimeInput_Prompt_9gwxSt()}",
-                  "unrecognizedPrompt": "",
-                  "invalidPrompt": "",
-                  "defaultValueResponse": "",
-                  "property": "user.start"
-                },
-                {
-                  "$kind": "Microsoft.DateTimeInput",
-                  "$designer": {
-                    "id": "9nEYom"
-                  },
-                  "disabled": false,
-                  "maxTurnCount": 3,
-                  "alwaysPrompt": false,
-                  "allowInterruptions": false,
-                  "prompt": "${DateTimeInput_Prompt_9nEYom()}",
-                  "unrecognizedPrompt": "",
-                  "invalidPrompt": "",
-                  "defaultValueResponse": "",
-                  "value": "",
-                  "property": "user.end"
-                },
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "TyPi9x"
-                  },
-                  "activity": "${SendActivity_TyPi9x()}"
-                },
-                {
-                  "$kind": "Microsoft.HttpRequest",
-                  "$designer": {
-                    "id": "8xtGXm"
-                  },
-                  "method": "GET"
-                }
-              ]
-            }
-          ],
-          "condition": "user.choice"
-        },
-        {
-          "$kind": "Microsoft.SetProperties",
-          "$designer": {
-            "id": "sz7Pam"
-          },
-          "assignments": [
-            {
-              "property": "event.Name",
-              "value": "=event.Result.value.subject"
-            },
-            {
-              "property": "event.beginTime",
-              "value": "=event.Result.value.subject.start.dateTime"
-            },
-            {
-              "property": "event.endTime",
-              "value": "=event.Result.value.subject.end.dateTime"
-            }
-          ]
-        },
-        {
-          "$kind": "Microsoft.Foreach",
-          "$designer": {
-            "id": "jC7wXy"
-          },
-          "index": "dialog.foreach.index",
-          "value": "dialog.foreach.value",
           "actions": [
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "hIuIvz"
+                "id": "2WNPGp"
               },
-              "activity": "${SendActivity_hIuIvz()}"
+              "activity": "${SendActivity_2WNPGp()}"
             }
           ]
         }

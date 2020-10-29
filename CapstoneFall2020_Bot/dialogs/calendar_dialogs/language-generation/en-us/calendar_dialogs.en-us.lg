@@ -9,23 +9,28 @@
 # SendActivity_grGPHN()
 - $ShowProfile(event.Name, event.beginTime, event.endTime)
 
-# SendActivity_hIuIvz()
-- $ShowProfile(event.Name, event.beginTime, event.endTime)
 
-# SendActivity_9Grfc7()
-- Getting you all events currently on our calendar.
+# SendActivity_2WNPGp()
+- It works! ${dialog.api_response.content.value.subject}
 
-# SendActivity_pa7qiF()
-- Getting you all the events going on for the next week
 
-# DateTimeInput_Prompt_9gwxSt()
-- What starting date are you looking for?
 
-# DateTimeInput_Prompt_9nEYom()
-- What ending date are you looking for?
 
-# SendActivity_TyPi9x()
-- Getting you events happening between $(user.start) and $(user.end).
 
-# ChoiceInput_Prompt_THf9b7()
-- What events would like to learn about?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# SendActivity_sJZepJ()
+- Error: ${dialog.api_response.content.message}

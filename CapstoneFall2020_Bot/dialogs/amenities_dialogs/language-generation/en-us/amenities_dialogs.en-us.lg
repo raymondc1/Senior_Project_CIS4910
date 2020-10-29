@@ -107,6 +107,7 @@
     - Hairdryer
     - Iron/ironing board
 ```
+
 # Room5_Templete
 - ```
     This room has the following:
@@ -160,3 +161,31 @@
 
 # SendActivity_WE9kDN()
 - ${Room6_card()}
+
+# SendActivity_e9EbIU()
+[Herocard
+    title = Internet
+    text = Free Wi-Fi in all rooms and in public area. Free HIgh Speed Internet Access.
+    image = https://www.ship.edu/contentassets/4c00f5c619864a41a3341ff410e204ba/wifi.png
+]
+
+# SendActivity_0rQGWG()
+[Herocard
+    title = Breakfast
+    text = Free expanded Hot Breafast with Fresh Waffles.
+    image = http://hotelsouthtampa.com/gallery/images/BREAKFAST02.jpg
+]
+
+# SendActivity_5R2f5B()
+[Herocard
+    title = Pool
+    text = Outdoor heated pool (8am -9pm)
+    image = http://hotelsouthtampa.com/gallery/images/pool-area.jpg
+]
+
+# SendActivity_oV4iv0()
+[Herocard
+    title = Parking
+    text = Free Parking for overnight guests.
+    image = http://hotelsouthtampa.com/gallery/images/hotel-front.jpg
+]

@@ -214,7 +214,7 @@
                   "$designer": {
                     "id": "e9EbIU"
                   },
-                  "activity": ""
+                  "activity": "${SendActivity_e9EbIU()}"
                 }
               ]
             },
@@ -226,7 +226,7 @@
                   "$designer": {
                     "id": "0rQGWG"
                   },
-                  "activity": ""
+                  "activity": "${SendActivity_0rQGWG()}"
                 }
               ]
             },
@@ -238,7 +238,7 @@
                   "$designer": {
                     "id": "5R2f5B"
                   },
-                  "activity": ""
+                  "activity": "${SendActivity_5R2f5B()}"
                 }
               ]
             },
@@ -250,7 +250,7 @@
                   "$designer": {
                     "id": "oV4iv0"
                   },
-                  "activity": ""
+                  "activity": "${SendActivity_oV4iv0()}"
                 }
               ]
             }

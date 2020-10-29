@@ -19,9 +19,59 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "pL5PRv"
+            "id": "RcJsp5"
           },
-          "activity": "${SendActivity_pL5PRv()}"
+          "activity": "${SendActivity_RcJsp5()}"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "b12Tn6"
+          },
+          "method": "GET",
+          "url": "https://atlas.microsoft.com/route/directions/json?api-version=1.0&query=28.1441654,-82.652993:27.914480,-82.505379&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&routeRepresentation=polyline&travelMode=car&instructionsType=text",
+          "resultProperty": "dialog.api_response",
+          "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "TnSDSH"
+          },
+          "condition": "dialog.api_response.statusCode == 200",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "XQcvb8"
+              },
+              "property": "dialog.Directions",
+              "value": "=dialog.api_response.content"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "hlVTfP"
+              },
+              "activity": "${SendActivity_hlVTfP()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "XlbyEV"
+              },
+              "activity": "${SendActivity_XlbyEV()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "xY1pnq"
+          },
+          "activity": "${SendActivity_xY1pnq()}"
         }
       ]
     }

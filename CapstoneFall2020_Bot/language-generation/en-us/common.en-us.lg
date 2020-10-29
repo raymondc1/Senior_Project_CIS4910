@@ -1,2 +1,14 @@
-# WelcomeUser
-- Welcome to the EmptyBot sample
+
+# ReportCard(name, description, image)
+[Herocard
+    title = ${name}
+    text = ${description}
+    image = ${image}
+]
+
+# VideoCard()
+[VideoCard
+    title = Hotel Video
+    text = A video message from the hotel
+    media = https://www.youtube.com/watch?v=KGo-mH8BukI
+]

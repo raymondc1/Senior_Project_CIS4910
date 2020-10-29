@@ -1,8 +1,8 @@
 {
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
-    "id": "5mNEWn",
-    "name": "manager_dialogs",
+    "id": "jz83DN",
+    "name": "cancel_dialogs",
     "description": ""
   },
   "autoEndDialog": true,
@@ -13,27 +13,27 @@
       "$designer": {
         "name": "BeginDialog",
         "description": "",
-        "id": "wy9YDZ"
+        "id": "wnEH3W"
       },
       "actions": [
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "jHfRCC"
+            "id": "pALMCy"
           },
-          "activity": "${SendActivity_jHfRCC()}"
+          "activity": "${SendActivity_pALMCy()}"
         },
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.CancelAllDialogs",
           "$designer": {
-            "id": "yXmUN0"
+            "id": "9EpDOd"
           },
-          "activity": "${SendActivity_yXmUN0()}"
+          "activityProcessed": true
         }
       ]
     }
   ],
-  "generator": "manager_dialogs.lg",
-  "recognizer": "manager_dialogs.lu.qna",
-  "id": "manager_dialogs"
+  "generator": "cancel_dialogs.lg",
+  "recognizer": "cancel_dialogs.lu.qna",
+  "id": "cancel_dialogs"
 }

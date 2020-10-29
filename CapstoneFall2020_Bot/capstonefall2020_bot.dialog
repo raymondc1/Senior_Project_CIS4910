@@ -35,6 +35,13 @@
                 {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
+                    "id": "bu5xh4"
+                  },
+                  "activity": "${SendActivity_bu5xh4()}"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
                     "id": "859266",
                     "name": "Send a response"
                   },
@@ -42,7 +49,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "value": "dialog.foreach.value"
         }
       ]
     },
@@ -57,16 +65,16 @@
           "$designer": {
             "id": "URX5DY"
           },
-          "knowledgeBaseId": "=settings.qna.knowledgebaseid",
-          "endpointKey": "=settings.qna.endpointkey",
-          "hostname": "=settings.qna.hostname",
           "noAnswer": "${QnAMakerDialog_NoAnswer_URX5DY()}",
-          "threshold": 0.3,
+          "threshold": 0.6,
           "activeLearningCardTitle": "Did you mean:",
           "cardNoMatchText": "None of the above.",
           "cardNoMatchResponse": "Thanks for the feedback.",
           "top": 3,
-          "isTest": false
+          "isTest": false,
+          "knowledgeBaseId": "af90ada8-6375-415c-988a-07a3cc522aa1",
+          "endpointKey": "050b66d8-f9e2-4447-a9f4-a27a00bf509f",
+          "hostname": "https://usfqna.azurewebsites.net/qnamaker"
         },
         {
           "$kind": "Microsoft.SendActivity",
@@ -94,7 +102,7 @@
           "dialog": "amenities_dialogs"
         }
       ],
-      "condition": "#Amenities.Score > 0.6"
+      "condition": "#Amenities.Score > 0.8"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -113,7 +121,7 @@
           "dialog": "direction_dialogs"
         }
       ],
-      "condition": "#Direction.Score > 0.6"
+      "condition": "#Direction.Score > 0.8"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -132,7 +140,7 @@
           "dialog": "calendar_dialogs"
         }
       ],
-      "condition": "#Calendar.Score > 0.6"
+      "condition": "#Calendar.Score > 0.8"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -151,7 +159,7 @@
           "dialog": "manager_dialogs"
         }
       ],
-      "condition": "#Manager.Score > 0.6"
+      "condition": "#Manager.Score > 0.8"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -170,7 +178,64 @@
           "dialog": "report_dialogs"
         }
       ],
-      "condition": "#Report.Score > 0.6"
+      "condition": "#Report.Score > 0.8"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "lgSaht",
+        "name": "help"
+      },
+      "intent": "help",
+      "condition": "#help.Score > 0.8",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "ApLmud"
+          },
+          "activityProcessed": true,
+          "dialog": "help_dialogs"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "defX1a",
+        "name": "cancel"
+      },
+      "intent": "cancel",
+      "condition": "#cancel.Score > 0.8",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "5NHCuY"
+          },
+          "activityProcessed": true,
+          "dialog": "cancel_dialogs"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "lNXbku",
+        "name": "exit"
+      },
+      "intent": "exit",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "i7SHN0"
+          },
+          "activityProcessed": true,
+          "dialog": "exit_dialogs"
+        }
+      ],
+      "condition": "#exit.Score > 0.9"
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",

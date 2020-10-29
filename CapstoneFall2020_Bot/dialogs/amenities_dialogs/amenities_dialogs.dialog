@@ -17,20 +17,244 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.QnAMakerDialog",
+          "$kind": "Microsoft.ChoiceInput",
           "$designer": {
-            "id": "DlBRGY"
+            "id": "Zexmff"
           },
-          "knowledgeBaseId": "=settings.qna.knowledgebaseid",
-          "endpointKey": "=settings.qna.endpointkey",
-          "hostname": "=settings.qna.hostname",
-          "noAnswer": "${QnAMakerDialog_NoAnswer_DlBRGY()}",
-          "threshold": 0.3,
-          "activeLearningCardTitle": "Did you mean:",
-          "cardNoMatchText": "None of the above.",
-          "cardNoMatchResponse": "Thanks for the feedback.",
-          "top": 3,
-          "isTest": false
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": true,
+          "prompt": "${ChoiceInput_Prompt_Zexmff()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "user.amenities_choice",
+          "outputFormat": "value",
+          "style": "list",
+          "choices": [
+            {
+              "value": "Types of Rooms"
+            },
+            {
+              "value": "Internet"
+            },
+            {
+              "value": "Breakfast"
+            },
+            {
+              "value": "Pool"
+            },
+            {
+              "value": "Parking"
+            }
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true,
+            "noValue": false,
+            "noAction": false
+          }
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "QLwlOB"
+          },
+          "condition": "user.amenities_choice",
+          "cases": [
+            {
+              "value": "Types of Rooms",
+              "actions": [
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "kWjWP7"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": true,
+                  "allowInterruptions": true,
+                  "prompt": "${ChoiceInput_Prompt_kWjWP7()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "property": "user.room_choice",
+                  "outputFormat": "value",
+                  "style": "list",
+                  "choices": [
+                    {
+                      "value": "1 KING BED ADA"
+                    },
+                    {
+                      "value": "2 QUEEN BEDS ADA"
+                    },
+                    {
+                      "value": "1 KING BED"
+                    },
+                    {
+                      "value": "2 QUEEN BEDS"
+                    },
+                    {
+                      "value": "1 QUEEN BED KITCHENETTE"
+                    },
+                    {
+                      "value": "2 QUEEN BEDS KITCHENETTE"
+                    }
+                  ],
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true,
+                    "noValue": false,
+                    "noAction": false,
+                    "recognizeNumbers": true
+                  }
+                },
+                {
+                  "$kind": "Microsoft.SwitchCondition",
+                  "$designer": {
+                    "id": "Fh3P8N"
+                  },
+                  "condition": "user.room_choice",
+                  "cases": [
+                    {
+                      "value": "1 KING BED ADA",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "DuQshE"
+                          },
+                          "activity": "${SendActivity_DuQshE()}"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "2 QUEEN BEDS ADA",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "wqZaIP"
+                          },
+                          "activity": "${SendActivity_wqZaIP()}"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "1 KING BED",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "RPjDgq"
+                          },
+                          "activity": "${SendActivity_RPjDgq()}"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "2 QUEEN BEDS",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "Q7TYyn"
+                          },
+                          "activity": "${SendActivity_Q7TYyn()}"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "1 QUEEN BED KITCHENETTE",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "E7BDnq"
+                          },
+                          "activity": "${SendActivity_E7BDnq()}"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "2 QUEEN BEDS KITCHENETTE",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "WE9kDN"
+                          },
+                          "activity": "${SendActivity_WE9kDN()}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "value": "Internet",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "e9EbIU"
+                  },
+                  "activity": ""
+                }
+              ]
+            },
+            {
+              "value": "Breakfast",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "0rQGWG"
+                  },
+                  "activity": ""
+                }
+              ]
+            },
+            {
+              "value": "Pool",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "5R2f5B"
+                  },
+                  "activity": ""
+                }
+              ]
+            },
+            {
+              "value": "Parking",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "oV4iv0"
+                  },
+                  "activity": ""
+                }
+              ]
+            }
+          ]
         },
         {
           "$kind": "Microsoft.SendActivity",

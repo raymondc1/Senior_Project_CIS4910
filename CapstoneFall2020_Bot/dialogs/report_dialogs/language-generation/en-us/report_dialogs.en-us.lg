@@ -1,7 +1,56 @@
 [import](common.lg)
 
+# TextInput_Prompt_e73Lfx()
+- I see that you have an issue that you would like to report. May I know your full name first?
+
+# TextInput_UnrecognizedPrompt_e73Lfx()
+- Unrecognized prompt
+
+# TextInput_InvalidPrompt_e73Lfx()
+- Invalid prompt
+
+# TextInput_DefaultValueResponse_e73Lfx()
+- Default value response
+
+# TextInput_Prompt_1IQDrG()
+-  Hello ${user.name}, can you describe the issue in one textbox please?
+
+# TextInput_UnrecognizedPrompt_1IQDrG()
+- Unrecognized prompt
+
+# TextInput_InvalidPrompt_1IQDrG()
+- Invalid prompt
+
+# TextInput_DefaultValueResponse_1IQDrG()
+- Default value response
+
+# AttachmentInput_Prompt_75MjM3()
+- Please provide us a picture concerning your issue so that we can get back to you as soon as possible.
+
+# AttachmentInput_UnrecognizedPrompt_75MjM3()
+- Unrecognized prompt
+
+# AttachmentInput_InvalidPrompt_75MjM3()
+- Invalid prompt
+
+# AttachmentInput_DefaultValueResponse_75MjM3()
+- Default value response
+
+# SendActivity_tkdMov()
+- ${ReportCard(user.name, user.description, user.image[0].contentUrl)}
+
 # SendActivity_ZJHFvC()
 [Activity
-    Text = Report an Issue Section (Work in Progress)
-    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
+    Text = We have logged your issue and will respond to it immediately. Is there anything else that we can help you with?
+    SuggestedActions = Amenities | Directions | Events | About Us| Report Issues
 ]
+
+# AdaptiveCard
+[Activity
+    Attachments = ${json(adaptivecardjson())}
+]
+
+# adaptivecardjson
+- ```
+
+```

@@ -6,5 +6,5 @@
 # SendActivity_yXmUN0()
 [Activity
     Text = Is there anything else that I can help you with?
-    SuggestedActions = Amenities | Direction | Calendar | About us | Report an Issue
+    SuggestedActions = Amenities | Directions | Events | About Us| Report Issues
 ]

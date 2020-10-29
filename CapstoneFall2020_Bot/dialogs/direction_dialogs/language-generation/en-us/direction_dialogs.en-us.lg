@@ -3,5 +3,5 @@
 # SendActivity_pL5PRv()
 [Activity
     Text = Map/Direction Section (Work in Progress)
-    SuggestedActions = Amenities | Direction | Calendar | About us | Report an Issue
+    SuggestedActions = Amenities | Directions | Events | About Us| Report Issues
 ]

@@ -24,14 +24,44 @@
           "activity": "${SendActivity_UVQwsk()}"
         },
         {
+          "$kind": "Microsoft.DateTimeInput",
+          "$designer": {
+            "id": "0ZwF6h"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${DateTimeInput_Prompt_0ZwF6h()}",
+          "unrecognizedPrompt": "${DateTimeInput_UnrecognizedPrompt_0ZwF6h()}",
+          "invalidPrompt": "${DateTimeInput_InvalidPrompt_0ZwF6h()}",
+          "defaultValueResponse": "",
+          "property": "user.date1"
+        },
+        {
+          "$kind": "Microsoft.DateTimeInput",
+          "$designer": {
+            "id": "Nylm1n"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${DateTimeInput_Prompt_Nylm1n()}",
+          "unrecognizedPrompt": "${DateTimeInput_UnrecognizedPrompt_Nylm1n()}",
+          "invalidPrompt": "${DateTimeInput_InvalidPrompt_Nylm1n()}",
+          "defaultValueResponse": "",
+          "property": "user.date2"
+        },
+        {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
             "id": "dh5DMK"
           },
           "method": "GET",
-          "url": "https://graph.microsoft.com/v1.0/me/events?$select=subject,body,bodyPreview,organizer,attendees,start,end,location",
+          "url": "https://graph.microsoft.com/v1.0/me/calendarview?startdatetime=${user.date1[0].value}Z&enddatetime=${user.date2[0].value}",
           "headers": {
-            "Authorization": "EwBwA8l6BAAU6k7+XVQzkGyMv7VHB/h4cHbJYRAAAYS6W0g/jZ+hmVuiDEWzHXt4/JBvoUl0iyRhiQM0g6LxO/GIorjpyZnXb5WcnWw2OFs9Azf6JjFwre4TyGQKp56p9cOo3kleMOa6sbj/ANJObe5vkRj/UeeNdMOzelvUgYx1KZ8j8LbO9JkKZxB2IctgGpilr9MRVyaxtg3nEuXk4GAOk6sF1geLQgYn6IuTfWWeBOejgu1XXzS09oYrysti+Yahjz/0S4aHBb4V9vfKpMah2fj6pF5xQpCCyAB/5mxaELRQ9J5WF/VZnhjYSqix2PCp2drKdQWcBUjh/CEvM2I8axe04P8kjxNmjQ12oV/AJ62Lc69Rs4gV582VRW8DZgAACJZqjupozjvNQALY7ilv1+xHjAAhU3P6Rjp2YhF0K5HOrr/lpyQusHwkqdPYYc5myj/c48ebxCgRVtPOvXb3BtkEh+WqePsl0aQzSHz5j44PTGk6Ym/LreYbt2cdk9GTdMYIp7HTNVFtyJfsU7fJanLi2pOJsIHlT1hFy2xg4V8NWtWPG5YziBtWYYh4scTofYueo1kIzTttLgO/zLgK4TL1s9Tkmqsh7z4om++0vFnp+MVI0OVlDNSpacINw9crsHpbJR3ckvhVsrN4U2d/aAl7ilJjiuj6hnwrTBG8ombwRspsvLpvVtkey0cMxra5ZkHacqAJ+cZJayFoUFU2Sdqjr2Mjp4JwP2wCALMowUBeiJrjC0qQgnGQsUJSShonaECzdaW/Nh7g5oLdhYz7/By+0r3H/Kny6xx3ERBStvksm5qnf3YDb9pEe93pJUZgSzjn/xfXRJinkPSwuuX8FHhO3GHzg71uYpIV7/m3+SX60yIuYZ3DnE+UhaBdSB9GlDVdNIQ+RgPIqNSseshS9XbI5+Oon4d9Vf1998g2+rLYWO2Y4HCOH+kpfFDO7NdujP9vgD4GIlycAdmhBC6y/4y/p77fHho+Lyb32ogtO6nNaGoxcIyUeGrxNsVi71hJe7t4v5EXMXMSNThUklk/SSai3bS5strVTH9rcn4BTjDTXv78Mq5I7YVpZvsT8TDuDr/KnO3AH84xDjeckykNbX3uPdJBopuEDTkDgTbOuJUysWXta1Jsl2QoGEgYIWcGdQ/wc2t944xqeXF8Ag==",
+            "Authorization": "EwBoA8l6BAAU6k7+XVQzkGyMv7VHB/h4cHbJYRAAAYWB87ooenUye3tv0vCA/30e25I9iASEFSCc3yGbGjYWwTyeZpZ29NBCufyaSs1GUzn0uHKABywdH2bu5m0t0lfZrqFZfJ/iDnE+qSp4NUGxQc+wlkEsHhj4WXJVpWsN8Vxw7GqCA+AL9p89bo/cpx/lzLX9Dl1kd+i0C9GotBkG06orF52L91/IG9okkEx7LE0kaRvPZSIOhjBqrdEauxQ1oAPrWEoa0KXf+INnjurwCqIqLSjOmEltExF4vasuhkWcrYmVzkdzgjcfgnYVxwlZgBbAFkO20dRFU5GPmVaOM+4n3dGv+ichPAO8uXMSonTG2PouHINViDCcwAMcTXwDZgAACERTykTTLqMqOAK59KjSzER2icLCVFKOQQmdlk207Pi4FyA+ESMmiNyVHdMN+1JHRVilNUHdHzfcVH+wpTP66CMHVd1BsTVj+eQQiP5tE4/VndW5QK9O6mShzi7nIuImk1QIBe55GXT1Mc5tBNPwWjl+A5nR7mBDYJ9fv7soCkhBY0TvLD/wtD1us+UXQORXy+AKcnF+0qocCTG/cTkoT1Zsp0OD1EGGDcT4T9qTjKKqhp7TLgR4s9HxQWxyyM44ULtmDETs2pjAdIopsx5vBqQCXPtbJG4wstobkjwfxts3HCwmQ2BPCDoMx/DeBNzYy7Uf69rAwHOEE0VqjrygWmVB0wuJlUymiw5+JSFBN4bNkcM1B4kTXcJndm7xMwN0WJre3dboscFndU67zZB9s8hXf1RD8SXgpofYkdpDly207avo4ROjqnDzoWTLOsutK8BTZgjt2C9gsM1mjFjkI8PMh+cLQUHpaP9P+f72coAEr2NzgEBYmrqPP2TEOvCzXAhn2QLgkcVhIx04dQa6/UielwP257k3N7fyesQPKaej3MaB94NZXlWOxcTLSoDwz/tplb5oPyGYzfhRPz/Ro9rQFqpYU6X4sdR0GzVRo1aX4xsQrqN4Afe7mr1Wo5B+6hy+P8GBW43oVE2QyomTxFstChJhRnEmbzRmTaj3Ox/az+IYp0hCKnjKglQj/tB/C431YJIv+tvqIjNskYexIl1oBqkPfq0V6blEj2sEbNrzjpdvpeaMZVC5LWs+KNSoMCeQfAI=",
             "Host": "graph.microsoft.com"
           },
           "resultProperty": "dialog.api_response",
@@ -40,25 +70,51 @@
         {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "Hg9XUn"
+            "id": "ZB7vxz"
           },
           "condition": "dialog.api_response.statusCode == 200",
           "elseActions": [
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "sJZepJ"
+                "id": "HfHkYH"
               },
-              "activity": "${SendActivity_sJZepJ()}"
+              "activity": "${SendActivity_HfHkYH()}"
             }
           ],
           "actions": [
             {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "pLosKx"
+              },
+              "property": "dialog.calendar",
+              "value": "=dialog.api_response.content"
+            },
+            {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "2WNPGp"
+                "id": "bP8SVu"
               },
-              "activity": "${SendActivity_2WNPGp()}"
+              "activity": "${SendActivity_bP8SVu()}"
+            },
+            {
+              "$kind": "Microsoft.Foreach",
+              "$designer": {
+                "id": "kkWwy7"
+              },
+              "index": "dialog.foreach.index",
+              "value": "dialog.foreach.value",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "QP4j5r"
+                  },
+                  "activity": "${SendActivity_QP4j5r()}"
+                }
+              ],
+              "itemsProperty": "dialog.calendar.value"
             }
           ]
         }

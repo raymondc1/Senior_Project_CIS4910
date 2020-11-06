@@ -1,0 +1,146 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "TkHdgQ",
+    "name": "help_dialogs",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "CXGuq6"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "zQxIcu"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": true,
+          "prompt": "${ChoiceInput_Prompt_zQxIcu()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "user.help_choice",
+          "outputFormat": "value",
+          "style": "list",
+          "choices": [
+            {
+              "value": "Amenities"
+            },
+            {
+              "value": "Directions"
+            },
+            {
+              "value": "Events"
+            },
+            {
+              "value": "About Us"
+            },
+            {
+              "value": "Report Issues"
+            }
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "noValue": false,
+            "noAction": false,
+            "recognizeNumbers": true
+          }
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "FUBU8K"
+          },
+          "condition": "user.help_choice",
+          "cases": [
+            {
+              "value": "Amenities",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "UtrWsZ"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "amenities_dialogs"
+                }
+              ]
+            },
+            {
+              "value": "Directions",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "F9Nic7"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "calendar_dialogs"
+                }
+              ]
+            },
+            {
+              "value": "Events",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "TsbtYv"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "direction_dialogs"
+                }
+              ]
+            },
+            {
+              "value": "About Us",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "neLG1E"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "manager_dialogs"
+                }
+              ]
+            },
+            {
+              "value": "Report Issues",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "aSiA6L"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "report_dialogs"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "help_dialogs.lg",
+  "recognizer": "help_dialogs.lu.qna",
+  "id": "help_dialogs"
+}

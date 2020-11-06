@@ -1,0 +1,7 @@
+[import](common.lg)
+
+# SendActivity_pALMCy()
+[Activity
+    Text = Is there anything else that I can help you with?
+    SuggestedActions = Amenities | Directions | Events | About Us| Report Issues
+]

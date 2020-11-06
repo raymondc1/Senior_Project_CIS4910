@@ -10,8 +10,20 @@
 - $ShowProfile(event.Name, event.beginTime, event.endTime)
 
 
-# SendActivity_2WNPGp()
-- It works! ${dialog.api_response.content.value.subject}
+# DateTimeInput_Prompt_0ZwF6h()
+- When are you planning to check in?
+# DateTimeInput_Prompt_Nylm1n()
+- And when are you planning on checking out?
+# DateTimeInput_InvalidPrompt_0ZwF6h()
+- Please enter a date. (mm/dd/yy)
+# DateTimeInput_InvalidPrompt_Nylm1n()
+- Please enter a date. (mm/dd/yy)
+# DateTimeInput_UnrecognizedPrompt_Nylm1n()
+- Please enter a date. (mm/dd/yy)
+# DateTimeInput_UnrecognizedPrompt_0ZwF6h()
+- Please enter a date. (mm/dd/yy)
+# SendActivity_HfHkYH()
+- Hmm, something went wrong. Error code ${dialog.api_response.statusCode}
 
 
 
@@ -32,5 +44,16 @@
 
 
 
-# SendActivity_sJZepJ()
-- Error: ${dialog.api_response.content.message}
+
+
+
+
+# SendActivity_bP8SVu()
+- Here are all the events happening between ${user.date1[0].value} and ${user.date2[0].value}:
+# SendActivity_QP4j5r()
+    - ```${dialog.foreach.value.subject}
+        ${dialog.foreach.value.start.dateTime}
+        ${dialog.foreach.value.location.displayName}
+        ${dialog.foreach.value.location.address.street}, ${dialog.foreach.value.location.address.city} ${dialog.foreach.value.location.address.state} ${dialog.foreach.value.location.address.postalCode} 
+        ${dialog.foreach.value.bodyPreview}
+        ```

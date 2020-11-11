@@ -2,7 +2,7 @@
 
 # SendActivity_Welcome()
 [Activity
-    SuggestedActions = Amenities | Directions | Events | About Us| Report Issues
+    SuggestedActions = Amenities | Directions | Events | About Us | Report Issues
 ]
 
 # SendActivity_A28UaS()

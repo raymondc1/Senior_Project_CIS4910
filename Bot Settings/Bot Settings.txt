@@ -1,0 +1,64 @@
+{
+  "feature": {
+    "UseShowTypingMiddleware": true,
+    "UseInspectionMiddleware": true,
+    "RemoveRecipientMention": true
+  },
+  "MicrosoftAppPassword": "",
+  "MicrosoftAppId": "",
+  "cosmosDb": {
+    "authKey": "",
+    "collectionId": "botstate-collection",
+    "cosmosDBEndpoint": "",
+    "databaseId": "botstate-db"
+  },
+  "applicationInsights": {
+    "InstrumentationKey": "0c73465f-c0d7-4604-9531-75b140f37fa7"
+  },
+  "blobStorage": {
+    "connectionString": "",
+    "container": "transcripts"
+  },
+  "luis": {
+    "name": "CapstoneFall2020_Bot",
+    "authoringKey": "ea06fd029bce49d385b0e03225fb35c2",
+    "endpointKey": "",
+    "authoringRegion": "westus",
+    "defaultLanguage": "en-us",
+    "environment": "composer",
+    "endpoint": "",
+    "authoringEndpoint": ""
+  },
+  "publishTargets": [
+    {
+      "name": "test00",
+      "type": "azurePublish",
+      "configuration": "{\"accessToken\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImtnMkxZczJUMENUaklmajRydDZKSXluZW4zOCIsImtpZCI6ImtnMkxZczJUMENUaklmajRydDZKSXluZW4zOCJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwiaWF0IjoxNjA1MDYyMjg4LCJuYmYiOjE2MDUwNjIyODgsImV4cCI6MTYwNTA2NjE4OCwiYWNyIjoiMSIsImFpbyI6IkFXUUFtLzhSQUFBQWYrSE9ReTl4aloyVVVnazFNZTdveE5XVXJ5MjVwZE45cXRjeDRyaUNUTnJGTlpTakhvQjN0VGxoZ1ZxbXpqaHNSZkIyamVaWTRiOU9HZVZCYTFRMnBGQk84b3ordWpDSmxWMWdTT0dtVjJFZzAxUHVTOVlHbm1aN1ZlUVFGaUpJIiwiYWx0c2VjaWQiOiI1OjoxMDAzQkZGREE0REVFMzA1IiwiYW1yIjpbInB3ZCIsIm1mYSJdLCJhcHBpZCI6IjA0YjA3Nzk1LThkZGItNDYxYS1iYmVlLTAyZjllMWJmN2I0NiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoicmF5bW9uZGMxQHVzZi5lZHUiLCJmYW1pbHlfbmFtZSI6IkNoZW5nIiwiZ2l2ZW5fbmFtZSI6IlJheW1vbmQiLCJncm91cHMiOlsiZGI1OWM2Y2QtZGIyOS00OTlkLTg2MjItMGFkODAzNmVhNDE3IiwiOWJhYzgwZTYtN2RhYy00YjJkLTkxM2ItMmY2ZGE4MDkzYzAxIiwiZDg3OWU5MzctMDI2Zi00NWMxLWI4YjAtMTA2ZDQ3NWYxOWI3Il0sImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0Lzc0MWJmN2RlLWUyZTUtNDZkZi04ZDY3LTgyNjA3ZGY5ZGVhYS8iLCJpcGFkZHIiOiI0Ny4xOTguMjM3LjEwNSIsIm5hbWUiOiJDaGVuZywgUmF5bW9uZCIsIm9pZCI6ImVjMzJjODNjLWVlZGMtNGJhMS1iYTc3LTQwNWQwZTcyMmM0YiIsInB1aWQiOiIxMDAzMjAwMERFQ0IxNTI1IiwicmgiOiIwLkFSb0F2NGo1Y3ZHR3IwR1JxeTE4MEJIYlI1VjNzQVRialJwR3UtNEMtZUdfZTBZYUFEMC4iLCJzY3AiOiJ1c2VyX2ltcGVyc29uYXRpb24iLCJzdWIiOiJBUkFHek9sU0VHUTg5Wi1qNk41RG9ibUtONEM3NFZiLVZoMmlBN05NMnRFIiwidGlkIjoiNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3IiwidW5pcXVlX25hbWUiOiJyYXltb25kYzFAdXNmLmVkdSIsInV0aSI6IlZLcjVMcnFBbkVhdklRdWJ4YVJTQWciLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbIjEzYmQxYzcyLTZmNGEtNGRjZi05ODVmLTE4ZDNiODBmMjA4YSJdLCJ4bXNfdGNkdCI6MTI4OTI0MTU0N30.OiINfBOlD1M9rP6oMmkuA6e8ybKuwfzbUJm8tu-ST1w49GjY_S0K6ads1srzj7fZ3oYtq-Aq0Iy64uBWk2oL1g7b71PQu3jCQYLkhERFoRdN9mwErv_aefsEdNtzEBqz70i9whHJL3QNq4N_AYUyMmCi5G0Fvct2Kms7swdvVqofcOkc-kYeK7_qB52O9Yx9lDOxPJ7rkKoSBcHgqzT8oW36TalY3IDLJH3giolMQiOv5Sr6-qlM1YSMNmcr6aCt2mHj8u2i70PZBLuFPjad5uAW9QagyhYzD83QKrBPHNfgGU5ZND1UWL5ojrqslZmpgcBCldxlsg0BRWaolc0jPw\",\"name\":\"<unique name in your subscription>\",\"environment\":\"dev\",\"settings\":{\"applicationInsights\":{\"InstrumentationKey\":\"0c73465f-c0d7-4604-9531-75b140f37fa7\"},\"cosmosDb\":{\"cosmosDBEndpoint\":\"<endpoint url>\",\"authKey\":\"<auth key>\",\"databaseId\":\"botstate-db\",\"collectionId\":\"botstate-collection\",\"containerId\":\"botstate-container\"},\"blobStorage\":{\"connectionString\":\"<connection string>\",\"container\":\"<container>\"},\"luis\":{\"authoringKey\":\"ea06fd029bce49d385b0e03225fb35c2\",\"authoringEndpoint\":\"\",\"endpointKey\":\"0cd3d7ee992c4bfa86f7b68a66723013\",\"endpoint\":\"\",\"region\":\"westus\"},\"MicrosoftAppId\":\"0c9253d0-b208-43ea-842f-a8b27eb49ea2\",\"MicrosoftAppPassword\":\"Dq&T[DQX^qs*&J#Zb^l8&$F!YZ9\"},\"hostname\":\"usfcapstone\",\"luisResource\":\"usf-fall2020-luis\"}",
+      "lastPublished": "2020-11-11T03:07:57.317Z"
+    }
+  ],
+  "qna": {
+    "subscriptionKey": "",
+    "knowledgebaseid": "af90ada8-6375-415c-988a-07a3cc522aa1",
+    "endpointKey": "050b66d8-f9e2-4447-a9f4-a27a00bf509f",
+    "hostname": "https://usfqna.azurewebsites.net/qnamaker",
+    "qnaRegion": "westus"
+  },
+  "telemetry": {
+    "logPersonalInformation": true,
+    "logActivities": true
+  },
+  "runtime": {
+    "customRuntime": false,
+    "path": "",
+    "command": ""
+  },
+  "downsampling": {
+    "maxImbalanceRatio": 10,
+    "maxUtteranceAllowed": 15000
+  },
+  "defaultLanguage": "en-us",
+  "languages": [
+    "en-us"
+  ]
+}

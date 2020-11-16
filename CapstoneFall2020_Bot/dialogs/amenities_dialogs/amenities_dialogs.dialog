@@ -36,7 +36,7 @@
             "inlineOr": " or ",
             "inlineSeparator": ", "
           },
-          "property": "user.amenities_choice",
+          "property": "",
           "outputFormat": "value",
           "style": "list",
           "choices": [

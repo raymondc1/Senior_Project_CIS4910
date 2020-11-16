@@ -6,12 +6,17 @@
     SuggestedActions = Amenities | Directions | Events | About Us| Report Issues
 ]
 
+# Directions()
+[Activity
+    SuggestedActions = Directions To Hotel | Points of Interest
+]
+
 # Sub_Menu_Items
 [Activity
     SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
 ]
 
-# HeroCard
+# HeroCard()
 [HeroCard
     title =  Hotel South Tampa & Suites
     subtitle = Come and enjoy the sunshine in gorgeous Tampa Bay
@@ -29,11 +34,136 @@
 - carousel
 - list
 
-# SendActivity_xY1pnq()
--${Sub_Menu_Items()}
-
 # SendActivity_RcJsp5()
 - ${HeroCard()}
 
-# SendActivity_XlbyEV()
-- Sorry, we're closed
+# SendActivity_poxstn()
+- lat: ${dialog.latitude} lon: ${dialog.longitude}
+# SendActivity_tzFaxf()
+- ${dialog.Address}
+# ChoiceInput_Prompt_YljWWN()
+- Would you like directions to the hotel or to look at the points of interest around the hotel?
+# TextInput_Prompt_q6nqrZ()
+- Please Enter Your Current Location Format: Address, City, State
+
+# SendActivity_XRhcRa()
+- This is your current location: ${user.Address}
+
+
+
+# SendActivity_RoSmAY()
+- ${dialog.foreach.index}:${dialog.foreach.value["message"]}
+# SendActivity_T0GiTK()
+- Sorry something went wrong
+
+# SendActivity_RIgXhl()
+- Sorry something went wrong
+
+# TextInput_Prompt_kcJk0t()
+- Please Enter Your Current Location Format: Address, City, State
+
+# SendActivity_5NpsYt()
+- This is your current location: ${user.Address}
+
+# SendActivity_96JpmQ()
+- Sorry something went wrong
+
+
+
+# SendActivity_XpwnFE()
+-${Sub_Menu_Items()}
+
+# TextInput_Prompt_1rALgn()
+- Where would you like to go?
+# SendActivity_8tMjdI()
+- ${dialog.foreach.index}:${dialog.foreach.value["message"]}
+# SendActivity_0mGRJq()
+- Sorry something went wrong
+
+# SendActivity_w9B1DL()
+- Sorry something went wrong
+
+# SendActivity_1xWfRL()
+- Sorry something went wrong
+
+# SendActivity_YBGMOU()
+-```Name: Tampa International Airport
+Category: airport
+Phone: (813) 870-8700
+Address: 4100 George J Bean Pkwy, Tampa, FL 33607
+```
+# SendActivity_JmwXnt()
+-```Name: Busch Gardens Tampa Bay
+Category: theme park
+Phone: (813) 884-4386
+Address: 10165 McKinley Dr, Tampa, FL 33612
+```
+# SendActivity_aluUpe()
+-```Name: The Florida Aquarium
+Category: aquarium
+Phone: (813) 273-4000
+Address: 701 Channelside Dr, Tampa, FL 33602
+```
+# SendActivity_QOpL6h()
+-```Name: David A. Straz, Jr. Center for the Performing Arts
+Category: performing arts theater
+Phone: (813) 229-7827
+Address: 1010 N Macinnes Pl, Tampa, FL 33602
+```
+# SendActivity_Gt9bc7()
+-```Name: ZooTampa at Lowry Park
+Category: zoo
+Phone: (813) 935-8552
+Address: 1101 W Sligh Ave, Tampa, FL 33604
+```
+# SendActivity_femTOc()
+-```Name: International Plaza and Bay Street
+Category: shopping mall
+Phone: (813) 342-3790
+Address: 2223 N Westshore Blvd, Tampa, FL 33607
+```
+# SendActivity_EOpzBK()
+-```Name: Sparkman Wharf
+Category: park
+Phone: (813) 618-5844
+Address: 615 Channelside Dr, Tampa, FL 33602
+```
+# SendActivity_9trwsl()
+-```Name: Amalie Arena
+Category: arena
+Phone:  (813) 301-6500
+Address: 401 Channelside Dr, Tampa, FL 33602
+```
+# SendActivity_khQuik()
+-```Name: Tropicana Field
+Category: stadium
+Phone:  (727) 825-3137
+Address: 1 Tropicana Dr., St. Petersburg, FL 33705
+```
+# SendActivity_j1hrOd()
+-```Name: Raymond James Stadium
+Category: stadium
+Phone:  (813) 350-6500
+Address: 4201 N Dale Mabry Hwy, Tampa, FL 33607
+```
+# SendActivity_dD17yT()
+-```Name: George M. Steinbrenner Field
+Category: stadium
+Phone:  (813) 875-7753
+Address: 1 Steinbrenner Dr, Tampa, FL 33614
+```
+# SendActivity_CQ3vKs()
+-```Name: Tampa General Hospital
+Category: hospital
+Phone:  (813) 844-7000
+Address: 1 Tampa General Cir, Tampa, FL 33606
+Please contact the hospital before vistiting if you may have COVID-19
+Source: CDC
+```
+# SendActivity_Ad31D4()
+-```Name: ${dialog.poi_name}
+Category: ${dialog.poi_category} 
+Phone: ${dialog.poi_phone}
+Address: ${dialog.poi_address}```
+# ChoiceInput_Prompt_L0ZBth()
+- Which category are you interested in visiting?

@@ -36,9 +36,9 @@
             "inlineOr": " or ",
             "inlineSeparator": ", "
           },
-          "property": "",
+          "property": "user.amenities_choice",
           "outputFormat": "value",
-          "style": "list",
+          "style": "heroCard",
           "choices": [
             {
               "value": "Types of Rooms"
@@ -95,7 +95,7 @@
                   },
                   "property": "user.room_choice",
                   "outputFormat": "value",
-                  "style": "list",
+                  "style": "heroCard",
                   "choices": [
                     {
                       "value": "1 KING BED ADA"

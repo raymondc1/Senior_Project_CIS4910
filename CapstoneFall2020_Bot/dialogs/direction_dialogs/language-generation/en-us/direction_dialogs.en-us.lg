@@ -24,12 +24,6 @@
     image = https://atlas.microsoft.com/map/static/png?api-version=1.0&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&style=main&center=-82.5060168%2C27.9140984&zoom=16&pins=default%257Csc1.0%257CcoFF1493%257Clc000000%257Cro30%257C%257C%2527Hotel%2520South%2520Tampa%2520%2526%2520Suites%2527-82.505379%252027.914480%250A%250A    
 ]
 
-# PassengerName
-- Vishwac
-- Tom
-- Chris
-- Yochay
-
 # AttachmentLayoutType
 - carousel
 - list
@@ -39,10 +33,13 @@
 
 # SendActivity_poxstn()
 - lat: ${dialog.latitude} lon: ${dialog.longitude}
+
 # SendActivity_tzFaxf()
 - ${dialog.Address}
+
 # ChoiceInput_Prompt_YljWWN()
 - Would you like directions to the hotel or to look at the points of interest around the hotel?
+
 # TextInput_Prompt_q6nqrZ()
 - Please Enter Your Current Location Format: Address, City, State
 
@@ -91,18 +88,21 @@ Category: airport
 Phone: (813) 870-8700
 Address: 4100 George J Bean Pkwy, Tampa, FL 33607
 ```
+
 # SendActivity_JmwXnt()
 -```Name: Busch Gardens Tampa Bay
 Category: theme park
 Phone: (813) 884-4386
 Address: 10165 McKinley Dr, Tampa, FL 33612
 ```
+
 # SendActivity_aluUpe()
 -```Name: The Florida Aquarium
 Category: aquarium
 Phone: (813) 273-4000
 Address: 701 Channelside Dr, Tampa, FL 33602
 ```
+
 # SendActivity_QOpL6h()
 -```Name: David A. Straz, Jr. Center for the Performing Arts
 Category: performing arts theater

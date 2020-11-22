@@ -220,7 +220,7 @@
           "dialog": "exit_dialogs"
         }
       ],
-      "condition": "#exit.Score > 0.9"
+      "condition": "#exit.Score > 0.8"
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",

@@ -32,7 +32,7 @@
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": true,
-          "allowInterruptions": true,
+          "allowInterruptions": false,
           "prompt": "${ChoiceInput_Prompt_YljWWN()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",

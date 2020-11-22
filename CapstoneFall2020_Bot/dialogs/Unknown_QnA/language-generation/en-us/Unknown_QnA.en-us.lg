@@ -5,6 +5,5 @@
 
 # SendActivity_SGTzvA()
 [Activity
-    Text = Is there anything else that I can assist you with? You can always type your question directly and I will try my best to answer it.
     SuggestedActions = Amenities | Directions | Events | About Us | Report Issues | Exit
 ]

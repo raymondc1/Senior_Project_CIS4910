@@ -8,6 +8,10 @@
 - Where are you located?
 - Directions
 - Direction
+- How to get to
+- What is around you?
+- What are some places I can visit around you?
+- Any good places to visit?
 
 # Calendar
 - Do you have a calendar of events?
@@ -16,12 +20,14 @@
 - Calendar
 - Events
 - Event
+- What events are there?
+- What can I do during my stay?
+- Any intereseting things happening?
 
 # Manager
-- Message from Manager
-- Message
 - Video
 - About Us
+- Message from Manager
 
 # Report
 - I would like to report an issue
@@ -39,7 +45,6 @@
 - I need help
 - do something
 
-
 # cancel
 - cancel
 - stop that
@@ -52,3 +57,13 @@
 - I'm good
 - nope
 - nah
+- end
+- end chat
+- rate
+- I wanna rate this bot
+- I would like to report an issue with this bot
+- I am having problem with this bot
+- This bot is no good
+- Exit
+- Leave
+- leave

@@ -42,15 +42,15 @@
                 {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
-                    "id": "859266",
-                    "name": "Send a response"
+                    "id": "8OB57e"
                   },
-                  "activity": "${SendActivity_Welcome()}"
+                  "activity": "${SendActivity_8OB57e()}"
                 }
               ]
             }
           ],
-          "value": "dialog.foreach.value"
+          "value": "dialog.foreach.value",
+          "index": "dialog.foreach.index"
         }
       ]
     },
@@ -61,27 +61,12 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.QnAMakerDialog",
+          "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "URX5DY"
+            "id": "NjAsHn"
           },
-          "noAnswer": "${QnAMakerDialog_NoAnswer_URX5DY()}",
-          "threshold": 0.6,
-          "activeLearningCardTitle": "Did you mean:",
-          "cardNoMatchText": "None of the above.",
-          "cardNoMatchResponse": "Thanks for the feedback.",
-          "top": 3,
-          "isTest": false,
-          "knowledgeBaseId": "af90ada8-6375-415c-988a-07a3cc522aa1",
-          "endpointKey": "050b66d8-f9e2-4447-a9f4-a27a00bf509f",
-          "hostname": "https://usfqna.azurewebsites.net/qnamaker"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "A28UaS"
-          },
-          "activity": "${SendActivity_A28UaS()}"
+          "activityProcessed": true,
+          "dialog": "Unknown_QnA"
         }
       ]
     },

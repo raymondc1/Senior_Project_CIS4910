@@ -29,8 +29,7 @@
           "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_e73Lfx()}",
           "invalidPrompt": "${TextInput_InvalidPrompt_e73Lfx()}",
           "defaultValueResponse": "${TextInput_DefaultValueResponse_e73Lfx()}",
-          "property": "user.name",
-          "outputFormat": ""
+          "property": "user.name"
         },
         {
           "$kind": "Microsoft.TextInput",

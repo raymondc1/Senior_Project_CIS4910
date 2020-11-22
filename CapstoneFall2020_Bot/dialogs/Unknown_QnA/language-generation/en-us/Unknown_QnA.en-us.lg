@@ -1,6 +1,9 @@
 [import](common.lg)
 
-# SendActivity_pALMCy()
+# QnAMakerDialog_NoAnswer_Q2QNAQ()
+- Sorry, I did not understand '${turn.activity.text}'. Please try asking something else or call +1 (813) 832-4656 to get someone to assist you. You can also try typing 'help' to found out what I can do.
+
+# SendActivity_SGTzvA()
 [Activity
     Text = Is there anything else that I can assist you with? You can always type your question directly and I will try my best to answer it.
     SuggestedActions = Amenities | Directions | Events | About Us | Report Issues | Exit

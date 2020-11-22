@@ -1,4 +1,10 @@
 [import](common.lg)
 
+# ChoiceInput_Prompt_3EFqyG()
+- Thank you for using this chatbot! Was I able to help you found what you were looking for?
+
+# TextInput_Prompt_IBBQcF()
+- What was it that I was unable to help you out?
+
 # SendActivity_cjM8on()
-- Thanks for coming! I hope I was able to assist you!
+- Thank you for you feedback and have a nice day! I am still able to answer your questions if you have any left.

@@ -1,0 +1,48 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "wOCpdw",
+    "name": "Unknown_QnA",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "Dn4qCX"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.QnAMakerDialog",
+          "$designer": {
+            "id": "Q2QNAQ"
+          },
+          "knowledgeBaseId": "af90ada8-6375-415c-988a-07a3cc522aa1",
+          "endpointKey": "050b66d8-f9e2-4447-a9f4-a27a00bf509f",
+          "hostname": "https://usfqna.azurewebsites.net/qnamaker",
+          "noAnswer": "${QnAMakerDialog_NoAnswer_Q2QNAQ()}",
+          "threshold": 0.6,
+          "activeLearningCardTitle": "Did you mean:",
+          "cardNoMatchText": "None of the above.",
+          "cardNoMatchResponse": "Thanks for the feedback.",
+          "top": 3,
+          "isTest": false
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "SGTzvA"
+          },
+          "activity": "${SendActivity_SGTzvA()}"
+        }
+      ]
+    }
+  ],
+  "generator": "Unknown_QnA.lg",
+  "recognizer": "Unknown_QnA.lu.qna",
+  "id": "Unknown_QnA"
+}

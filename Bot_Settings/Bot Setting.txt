@@ -1,8 +1,8 @@
 {
   "feature": {
-    "UseShowTypingMiddleware": false,
-    "UseInspectionMiddleware": false,
-    "RemoveRecipientMention": false
+    "UseShowTypingMiddleware": true,
+    "UseInspectionMiddleware": true,
+    "RemoveRecipientMention": true
   },
   "MicrosoftAppPassword": "",
   "MicrosoftAppId": "",
@@ -13,21 +13,21 @@
     "databaseId": "botstate-db"
   },
   "applicationInsights": {
-    "InstrumentationKey": ""
+    "InstrumentationKey": "0c73465f-c0d7-4604-9531-75b140f37fa7"
   },
   "blobStorage": {
     "connectionString": "",
     "container": "transcripts"
   },
   "luis": {
-    "name": "",
-    "authoringKey": "ea06fd029bce49d385b0e03225fb35c2",
-    "authoringEndpoint": "",
+    "name": "CapstoneFall2020_Bot",
+    "authoringKey": "2255c1f823044f0eb564f1f3dbd6d394",
     "endpointKey": "",
-    "endpoint": "",
     "authoringRegion": "westus",
     "defaultLanguage": "en-us",
-    "environment": "composer"
+    "environment": "composer",
+    "endpoint": "",
+    "authoringEndpoint": ""
   },
   "luFeatures": {
     "enablePattern": true,
@@ -41,13 +41,13 @@
   "publishTargets": [],
   "qna": {
     "subscriptionKey": "",
-    "knowledgebaseid": "",
+    "knowledgebaseid": "af90ada8-6375-415c-988a-07a3cc522aa1",
     "endpointKey": "050b66d8-f9e2-4447-a9f4-a27a00bf509f",
-    "hostname": "",
+    "hostname": "https://usfqna.azurewebsites.net/qnamaker",
     "qnaRegion": "westus"
   },
   "telemetry": {
-    "logPersonalInformation": false,
+    "logPersonalInformation": true,
     "logActivities": true
   },
   "runtime": {

@@ -13,7 +13,8 @@
 
 # Sub_Menu_Items
 [Activity
-    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
+    Text = Is there anything else that I can assist you with? You can always type your question directly and I will try my best to answer it.
+    SuggestedActions = Amenities | Directions | Events | About Us | Report Issues | Exit
 ]
 
 # HeroCard()
@@ -172,7 +173,8 @@ Source: CDC
 -```Name: ${dialog.poi_name}
 Category: ${dialog.poi_category} 
 Phone: ${dialog.poi_phone}
-Address: ${dialog.poi_address}```
+Address: ${dialog.poi_address}
+```
 
 # ChoiceInput_Prompt_L0ZBth()
 - Which category are you interested in visiting?

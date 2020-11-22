@@ -1,0 +1,80 @@
+{
+  "feature": {
+    "UseShowTypingMiddleware": true,
+    "UseInspectionMiddleware": true,
+    "RemoveRecipientMention": true
+  },
+  "MicrosoftAppPassword": "",
+  "MicrosoftAppId": "",
+  "cosmosDb": {
+    "authKey": "",
+    "collectionId": "botstate-collection",
+    "cosmosDBEndpoint": "",
+    "databaseId": "botstate-db"
+  },
+  "applicationInsights": {
+    "InstrumentationKey": "0c73465f-c0d7-4604-9531-75b140f37fa7"
+  },
+  "blobStorage": {
+    "connectionString": "",
+    "container": "transcripts"
+  },
+  "luis": {
+    "name": "CapstoneFall2020_Bot",
+    "authoringKey": "2dcd9fe2fbcf41429a79865373b20808",
+    "endpointKey": "",
+    "authoringRegion": "westus",
+    "defaultLanguage": "en-us",
+    "environment": "composer",
+    "endpoint": "",
+    "authoringEndpoint": ""
+  },
+  "luFeatures": {
+    "enablePattern": true,
+    "enableMLEntities": true,
+    "enableListEntities": true,
+    "enableCompositeEntities": true,
+    "enablePrebuiltEntities": true,
+    "enableRegexEntities": true,
+    "enablePhraseLists": true
+  },
+  "publishTargets": [
+    {
+      "name": "test01",
+      "type": "azurePublish",
+      "configuration": "{\"accessToken\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImtnMkxZczJUMENUaklmajRydDZKSXluZW4zOCIsImtpZCI6ImtnMkxZczJUMENUaklmajRydDZKSXluZW4zOCJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwiaWF0IjoxNjA2MDMyMDMzLCJuYmYiOjE2MDYwMzIwMzMsImV4cCI6MTYwNjAzNTkzMywiYWNyIjoiMSIsImFpbyI6IkFXUUFtLzhSQUFBQXlzTnFGWTZiSW8yTXYvK3pJRElHdlFMN0hzS2prSjh4NmNwU1VVbVFLSVBNNlF6UVFHMHlEV0U0WnRBdkdUY3A2VFZIUmxhL1E4S092WDB4enJ6aDd2b3RSMCtLSFF6bzU1Y21nT002ZkJ5Y2YvZ05CYVRjbmZIcmkvVlF0UzdRIiwiYWx0c2VjaWQiOiI1OjoxMDAzQkZGREE0REVFMzA1IiwiYW1yIjpbInB3ZCIsIm1mYSJdLCJhcHBpZCI6IjA0YjA3Nzk1LThkZGItNDYxYS1iYmVlLTAyZjllMWJmN2I0NiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoicmF5bW9uZGMxQHVzZi5lZHUiLCJmYW1pbHlfbmFtZSI6IkNoZW5nIiwiZ2l2ZW5fbmFtZSI6IlJheW1vbmQiLCJncm91cHMiOlsiZGI1OWM2Y2QtZGIyOS00OTlkLTg2MjItMGFkODAzNmVhNDE3IiwiOWJhYzgwZTYtN2RhYy00YjJkLTkxM2ItMmY2ZGE4MDkzYzAxIiwiYzE4ZDhjOTQtYjhlNi00OWVhLTllNzctODkxZjdhMmE1YTEyIiwiZDg3OWU5MzctMDI2Zi00NWMxLWI4YjAtMTA2ZDQ3NWYxOWI3Il0sImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0Lzc0MWJmN2RlLWUyZTUtNDZkZi04ZDY3LTgyNjA3ZGY5ZGVhYS8iLCJpcGFkZHIiOiI0Ny4xOTguMjM3LjEwNSIsIm5hbWUiOiJDaGVuZywgUmF5bW9uZCIsIm9pZCI6ImVjMzJjODNjLWVlZGMtNGJhMS1iYTc3LTQwNWQwZTcyMmM0YiIsInB1aWQiOiIxMDAzMjAwMERFQ0IxNTI1IiwicmgiOiIwLkFSb0F2NGo1Y3ZHR3IwR1JxeTE4MEJIYlI1VjNzQVRialJwR3UtNEMtZUdfZTBZYUFEMC4iLCJzY3AiOiJ1c2VyX2ltcGVyc29uYXRpb24iLCJzdWIiOiJBUkFHek9sU0VHUTg5Wi1qNk41RG9ibUtONEM3NFZiLVZoMmlBN05NMnRFIiwidGlkIjoiNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3IiwidW5pcXVlX25hbWUiOiJyYXltb25kYzFAdXNmLmVkdSIsInV0aSI6Ik9FcjkyTEZ4LWtTbXJmbzJIWmR0QUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbIjEzYmQxYzcyLTZmNGEtNGRjZi05ODVmLTE4ZDNiODBmMjA4YSJdLCJ4bXNfdGNkdCI6MTI4OTI0MTU0N30.T9DnpEBEPBoQMBfyAqYOaFLcewflTUyrMFEgmcgQq99iUMIjFoQN6aXiI-PzjyzCnB0Q0cUEIMAFjPEUl7i51FnniZDP0fUAdPL9CUvaKol0--OMeJ1UxDkWTbGs8-ZxtlkqFRVBRWbj4y6XAu7DbhwEB5naBP2npz2Zh2rJzb0t1izGrCQMZQOCyFMiGz6nq_NGVSE277VFbQFEUsSj0i57cxiDB-D7mIVzRhBMYOYFuUbi3KYa2vKLSaM55Q3yYxwKVBvsKJgFR11a2QvkuUjMKw95Zq8bp551Fqy6hrzOiz4NUmYLBpucAEh-pIREqeYn20WZvF-xPCGYFb5NSQ\",\"name\":\"<unique name in your subscription>\",\"environment\":\"dev\",\"runtimeIdentifier\":\"win-x64\",\"settings\":{\"applicationInsights\":{\"InstrumentationKey\":\"0c73465f-c0d7-4604-9531-75b140f37fa7\"},\"cosmosDb\":{\"cosmosDBEndpoint\":\"<endpoint url>\",\"authKey\":\"<auth key>\",\"databaseId\":\"botstate-db\",\"collectionId\":\"botstate-collection\",\"containerId\":\"botstate-container\"},\"blobStorage\":{\"connectionString\":\"<connection string>\",\"container\":\"<container>\"},\"luis\":{\"authoringKey\":\"2dcd9fe2fbcf41429a79865373b20808\",\"authoringEndpoint\":\"https://usffall2020-lius-authoring.cognitiveservices.azure.com/\",\"endpointKey\":\"3887db2e9c4642c8ac0977f2bdc9accf\",\"endpoint\":\"https://usffall2020-lius.cognitiveservices.azure.com/\",\"region\":\"westus\"},\"MicrosoftAppId\":\"0c9253d0-b208-43ea-842f-a8b27eb49ea2\",\"MicrosoftAppPassword\":\"Dq&T[DQX^qs*&J#Zb^l8&$F!YZ9\"},\"hostname\":\"usfcapstone\",\"luisResource\":\"USFFALL2020-LIUS\"}",
+      "lastPublished": "2020-11-22T08:47:37.547Z"
+    }
+  ],
+  "qna": {
+    "subscriptionKey": "",
+    "knowledgebaseid": "af90ada8-6375-415c-988a-07a3cc522aa1",
+    "endpointKey": "",
+    "hostname": "https://usfqna.azurewebsites.net/qnamaker",
+    "qnaRegion": "westus"
+  },
+  "telemetry": {
+    "logPersonalInformation": true,
+    "logActivities": true
+  },
+  "runtime": {
+    "customRuntime": false,
+    "path": "",
+    "command": ""
+  },
+  "downsampling": {
+    "maxImbalanceRatio": 10,
+    "maxUtteranceAllowed": 15000
+  },
+  "skillConfiguration": {
+    "isSkill": false,
+    "allowedCallers": [
+      "*"
+    ]
+  },
+  "skill": {},
+  "defaultLanguage": "en-us",
+  "languages": [
+    "en-us"
+  ]
+}

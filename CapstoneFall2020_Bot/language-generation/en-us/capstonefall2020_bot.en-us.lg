@@ -1,24 +1,16 @@
 [import](common.lg)
 
-# SendActivity_Welcome()
-[Activity
-    SuggestedActions = Amenities | Directions | Events | About Us | Report Issues
-]
-
-# SendActivity_A28UaS()
-[Activity
-    SuggestedActions = Amenities | Directions | Events | About Us| Report Issues
-]
-
-# QnAMakerDialog_NoAnswer_URX5DY()
-- Sorry, I did not understand '${turn.activity.text}'. Please try asking something else.
-
 # SendActivity_bu5xh4()
 - ${WelcomeAdaptiveCard()}
 
 # WelcomeAdaptiveCard
 [Activity
     Attachments = ${json(WelcomeAdaptiveCardJson())}
+]
+
+# SendActivity_8OB57e()
+[Activity
+    SuggestedActions = Amenities | Directions | Events | About Us | Report Issues | Exit
 ]
 
 # WelcomeAdaptiveCardJson
@@ -55,7 +47,7 @@
             },
             {
               "type": "TextBlock",
-              "text": "How may I assist you today?",
+              "text": "How may I assist you today? You can type 'help' to found out what I can do",
               "wrap": true
             }
           ]

@@ -2,6 +2,6 @@
 
 # SendActivity_UVQwsk()
 [Activity
-    Text = Calendar Section (Work in Progress)
-    SuggestedActions = Amenities | Directions | Events | About Us| Report Issues
+    Text = Event Section Work in Progress
+    SuggestedActions = Amenities | Directions | Events | About Us | Report Issues | Exit
 ]

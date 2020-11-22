@@ -41,8 +41,8 @@
 
 # SendActivity_ZJHFvC()
 [Activity
-    Text = We have logged your issue and will respond to it immediately. Is there anything else that we can help you with?
-    SuggestedActions = Amenities | Directions | Events | About Us| Report Issues
+    Text = We have logged your issue and will respond to it immediately. Is there anything else that I can assist you with? 
+    SuggestedActions = Amenities | Directions | Events | About Us | Report Issues | Exit
 ]
 
 # AdaptiveCard

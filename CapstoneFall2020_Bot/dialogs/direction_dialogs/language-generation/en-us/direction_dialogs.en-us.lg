@@ -160,10 +160,12 @@ Address: 1 Tampa General Cir, Tampa, FL 33606
 Please contact the hospital before vistiting if you may have COVID-19
 Source: CDC
 ```
-# SendActivity_Ad31D4()
+# ChoiceInput_Prompt_L0ZBth()
+- Which category are you interested in visiting?
+# SendActivity_TbkPtB()
 -```Name: ${dialog.poi_name}
 Category: ${dialog.poi_category} 
 Phone: ${dialog.poi_phone}
 Address: ${dialog.poi_address}```
-# ChoiceInput_Prompt_L0ZBth()
-- Which category are you interested in visiting?
+# SendActivity_s4aXWX()
+- Here: ${dialog.poi_category_choice}

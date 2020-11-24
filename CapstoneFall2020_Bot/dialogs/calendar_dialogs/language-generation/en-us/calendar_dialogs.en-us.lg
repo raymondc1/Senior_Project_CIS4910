@@ -10,18 +10,6 @@
 - $ShowProfile(event.Name, event.beginTime, event.endTime)
 
 
-# DateTimeInput_Prompt_0ZwF6h()
-- When are you planning to check in?
-# DateTimeInput_Prompt_Nylm1n()
-- And when are you planning on checking out?
-# DateTimeInput_InvalidPrompt_0ZwF6h()
-- Please enter a date. (mm/dd/yy)
-# DateTimeInput_InvalidPrompt_Nylm1n()
-- Please enter a date. (mm/dd/yy)
-# DateTimeInput_UnrecognizedPrompt_Nylm1n()
-- Please enter a date. (mm/dd/yy)
-# DateTimeInput_UnrecognizedPrompt_0ZwF6h()
-- Please enter a date. (mm/dd/yy)
 # SendActivity_HfHkYH()
 - Hmm, something went wrong. Error code ${dialog.api_response.statusCode}
 
@@ -57,3 +45,16 @@
         ${dialog.foreach.value.location.address.street}, ${dialog.foreach.value.location.address.city} ${dialog.foreach.value.location.address.state} ${dialog.foreach.value.location.address.postalCode} 
         ${dialog.foreach.value.bodyPreview}
         ```
+
+# DateTimeInput_Prompt_Z7pzlj()
+- When are you planning to check in?
+# DateTimeInput_Prompt_tmPpdw()
+- And when are you planning on checking out?
+# DateTimeInput_UnrecognizedPrompt_Z7pzlj()
+- Please enter a valid date. (mm/dd/yy)
+# DateTimeInput_InvalidPrompt_Z7pzlj()
+- Please enter a valid date. (mm/dd/yy)
+# DateTimeInput_UnrecognizedPrompt_tmPpdw()
+- Please enter a valid date. (mm/dd/yy)
+# DateTimeInput_InvalidPrompt_tmPpdw()
+- Please enter a valid date. (mm/dd/yy)   

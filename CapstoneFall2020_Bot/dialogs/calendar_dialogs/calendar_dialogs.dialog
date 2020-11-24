@@ -24,34 +24,43 @@
           "activity": "${SendActivity_UVQwsk()}"
         },
         {
-          "$kind": "Microsoft.DateTimeInput",
+          "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "0ZwF6h"
+            "id": "LX8NRV"
           },
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "prompt": "${DateTimeInput_Prompt_0ZwF6h()}",
-          "unrecognizedPrompt": "${DateTimeInput_UnrecognizedPrompt_0ZwF6h()}",
-          "invalidPrompt": "${DateTimeInput_InvalidPrompt_0ZwF6h()}",
-          "defaultValueResponse": "",
-          "property": "user.date1"
-        },
-        {
-          "$kind": "Microsoft.DateTimeInput",
-          "$designer": {
-            "id": "Nylm1n"
-          },
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "prompt": "${DateTimeInput_Prompt_Nylm1n()}",
-          "unrecognizedPrompt": "${DateTimeInput_UnrecognizedPrompt_Nylm1n()}",
-          "invalidPrompt": "${DateTimeInput_InvalidPrompt_Nylm1n()}",
-          "defaultValueResponse": "",
-          "property": "user.date2"
+          "condition": "user.date2 == NULL",
+          "actions": [
+            {
+              "$kind": "Microsoft.DateTimeInput",
+              "$designer": {
+                "id": "Z7pzlj"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${DateTimeInput_Prompt_Z7pzlj()}",
+              "unrecognizedPrompt": "${DateTimeInput_UnrecognizedPrompt_Z7pzlj()}",
+              "invalidPrompt": "${DateTimeInput_InvalidPrompt_Z7pzlj()}",
+              "defaultValueResponse": "",
+              "property": "user.date1"
+            },
+            {
+              "$kind": "Microsoft.DateTimeInput",
+              "$designer": {
+                "id": "tmPpdw"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${DateTimeInput_Prompt_tmPpdw()}",
+              "unrecognizedPrompt": "${DateTimeInput_UnrecognizedPrompt_tmPpdw()}",
+              "invalidPrompt": "${DateTimeInput_InvalidPrompt_tmPpdw()}",
+              "defaultValueResponse": "",
+              "property": "user.date2"
+            }
+          ]
         },
         {
           "$kind": "Microsoft.HttpRequest",

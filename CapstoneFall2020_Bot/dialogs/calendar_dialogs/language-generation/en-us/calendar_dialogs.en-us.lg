@@ -58,3 +58,5 @@
 - Please enter a valid date. (mm/dd/yy)
 # DateTimeInput_InvalidPrompt_tmPpdw()
 - Please enter a valid date. (mm/dd/yy)   
+# SendActivity_WvOp4h()
+- Getting you the events between ${user.date1[0].value} and ${user.date2[0].value}:

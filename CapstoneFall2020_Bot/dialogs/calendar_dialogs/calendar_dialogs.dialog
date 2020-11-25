@@ -31,6 +31,17 @@
           "condition": "user.date2 == NULL",
           "actions": [
             {
+              "$kind": "Microsoft.OAuthInput",
+              "$designer": {
+                "id": "tYFr7H"
+              },
+              "timeout": 900000,
+              "maxTurnCount": 3,
+              "allowInterruptions": true,
+              "connectionName": "USF Capstone 2020",
+              "property": "dialog.token"
+            },
+            {
               "$kind": "Microsoft.DateTimeInput",
               "$designer": {
                 "id": "Z7pzlj"
@@ -60,6 +71,15 @@
               "defaultValueResponse": "",
               "property": "user.date2"
             }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "WvOp4h"
+              },
+              "activity": "${SendActivity_WvOp4h()}"
+            }
           ]
         },
         {
@@ -70,7 +90,7 @@
           "method": "GET",
           "url": "https://graph.microsoft.com/v1.0/me/calendarview?startdatetime=${user.date1[0].value}Z&enddatetime=${user.date2[0].value}",
           "headers": {
-            "Authorization": "EwBoA8l6BAAU6k7+XVQzkGyMv7VHB/h4cHbJYRAAAYWB87ooenUye3tv0vCA/30e25I9iASEFSCc3yGbGjYWwTyeZpZ29NBCufyaSs1GUzn0uHKABywdH2bu5m0t0lfZrqFZfJ/iDnE+qSp4NUGxQc+wlkEsHhj4WXJVpWsN8Vxw7GqCA+AL9p89bo/cpx/lzLX9Dl1kd+i0C9GotBkG06orF52L91/IG9okkEx7LE0kaRvPZSIOhjBqrdEauxQ1oAPrWEoa0KXf+INnjurwCqIqLSjOmEltExF4vasuhkWcrYmVzkdzgjcfgnYVxwlZgBbAFkO20dRFU5GPmVaOM+4n3dGv+ichPAO8uXMSonTG2PouHINViDCcwAMcTXwDZgAACERTykTTLqMqOAK59KjSzER2icLCVFKOQQmdlk207Pi4FyA+ESMmiNyVHdMN+1JHRVilNUHdHzfcVH+wpTP66CMHVd1BsTVj+eQQiP5tE4/VndW5QK9O6mShzi7nIuImk1QIBe55GXT1Mc5tBNPwWjl+A5nR7mBDYJ9fv7soCkhBY0TvLD/wtD1us+UXQORXy+AKcnF+0qocCTG/cTkoT1Zsp0OD1EGGDcT4T9qTjKKqhp7TLgR4s9HxQWxyyM44ULtmDETs2pjAdIopsx5vBqQCXPtbJG4wstobkjwfxts3HCwmQ2BPCDoMx/DeBNzYy7Uf69rAwHOEE0VqjrygWmVB0wuJlUymiw5+JSFBN4bNkcM1B4kTXcJndm7xMwN0WJre3dboscFndU67zZB9s8hXf1RD8SXgpofYkdpDly207avo4ROjqnDzoWTLOsutK8BTZgjt2C9gsM1mjFjkI8PMh+cLQUHpaP9P+f72coAEr2NzgEBYmrqPP2TEOvCzXAhn2QLgkcVhIx04dQa6/UielwP257k3N7fyesQPKaej3MaB94NZXlWOxcTLSoDwz/tplb5oPyGYzfhRPz/Ro9rQFqpYU6X4sdR0GzVRo1aX4xsQrqN4Afe7mr1Wo5B+6hy+P8GBW43oVE2QyomTxFstChJhRnEmbzRmTaj3Ox/az+IYp0hCKnjKglQj/tB/C431YJIv+tvqIjNskYexIl1oBqkPfq0V6blEj2sEbNrzjpdvpeaMZVC5LWs+KNSoMCeQfAI=",
+            "Authorization": "='Bearer' + dialog.token",
             "Host": "graph.microsoft.com"
           },
           "resultProperty": "dialog.api_response",

@@ -21,16 +21,38 @@
 
     <div id="contentContainer">
         <div id="header" class="header">
-            <br />
-                <div id="webchat" style="position: fixed; z-index: 1000; background: rgb(255, 255, 255); bottom: 10px">
-                    <iframe src='https://webchat.botframework.com/embed/usfcapstone?s=kKRhthUE4oY.2ORpyyD4f-WtOTcArmwYZosE4yG-wjFZU3dmgB1_Cxo'  style='min-width: 370px; width: 100%; min-height: 600px;'></iframe>
-                </div>
-            <br />
             <img class="collapseButton" src="Content/collapseSmall.png" onclick="closeIframe()"/>
         </div>
         <div id="frameContainer">
             <div id="BotChatGoesHere"></div>
             <script src="Scripts/botchat.js"></script>
+
+            <div id="webchat" role="main" style="position: fixed ; z-index: 1000; background: white; bottom: 10px; width: 370px; height: 600px;">
+                <script crossorigin="anonymous" src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+                <script>
+                    (async function() {
+                        const secret = 'kKRhthUE4oY.2ORpyyD4f-WtOTcArmwYZosE4yG-wjFZU3dmgB1_Cxo';
+                        const res = await fetch('https://directline.botframework.com/v3/directline/tokens/generate', {
+                            body: JSON.stringify({ user: { id: 'dl_user_id', name: 'username' } }),
+                            headers: {
+                            Authorization: `Bearer ${secret}`,
+                            'Content-type': 'application/json'
+                            },
+                            method: 'POST'
+                        });
+                        const { token } = await res.json();
+        
+                        window.WebChat.renderWebChat(
+                            {
+                            directLine: window.WebChat.createDirectLine({ token })
+                            },
+                            document.getElementById('webchat')
+                        );
+        
+                        document.querySelector('#webchat > *').focus();
+                        })().catch(err => console.error(err));
+                </script>
+                
         </div>
     </div>
 

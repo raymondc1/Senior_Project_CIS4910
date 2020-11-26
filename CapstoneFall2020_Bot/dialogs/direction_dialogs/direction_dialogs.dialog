@@ -290,12 +290,12 @@
                   "defaultLocale": "en-us",
                   "disabled": false,
                   "maxTurnCount": 3,
-                  "alwaysPrompt": false,
-                  "allowInterruptions": false,
+                  "alwaysPrompt": true,
+                  "allowInterruptions": true,
                   "prompt": "${ChoiceInput_Prompt_L0ZBth()}",
                   "unrecognizedPrompt": "",
                   "invalidPrompt": "",
-                  "defaultValueResponse": "",
+                  "defaultValueResponse": "${ChoiceInput_DefaultValueResponse_L0ZBth()}",
                   "choiceOptions": {
                     "includeNumbers": true,
                     "inlineOrMore": ", or ",
@@ -303,7 +303,7 @@
                     "inlineSeparator": ", "
                   },
                   "property": "user.poi_category_choice",
-                  "style": "list",
+                  "style": "auto",
                   "choices": [
                     {
                       "value": "Adventure Sports Venue"
@@ -312,7 +312,7 @@
                       "value": "Airport"
                     },
                     {
-                      "value": "Amuement Park"
+                      "value": "Amusement Park"
                     },
                     {
                       "value": "Bank"
@@ -333,7 +333,7 @@
                       "value": "City Center"
                     },
                     {
-                      "value": "Club Association"
+                      "value": "Club & Associations"
                     },
                     {
                       "value": "College/University"
@@ -342,22 +342,31 @@
                       "value": "Courthouse"
                     },
                     {
-                      "value": "Cultual Center"
+                      "value": "Cultural Center"
                     },
                     {
                       "value": "Department Store"
                     },
                     {
-                      "value": "Emergency Medical Serice"
+                      "value": "Emergency Medical Service"
                     },
                     {
-                      "value": "Entertainent"
+                      "value": "Entertainment"
                     },
                     {
-                      "value": "Geogrphic Feature"
+                      "value": "Gas Station"
+                    },
+                    {
+                      "value": "Geographic Feature"
                     },
                     {
                       "value": "Golf Course"
+                    },
+                    {
+                      "value": "Healthcare Service"
+                    },
+                    {
+                      "value": "Hospital"
                     },
                     {
                       "value": "Leisure Center"
@@ -373,9 +382,6 @@
                     },
                     {
                       "value": "Nightlife"
-                    },
-                    {
-                      "value": "Gas Station"
                     },
                     {
                       "value": "Pharmacy"
@@ -403,7 +409,10 @@
                       "value": "Theater"
                     },
                     {
-                      "value": "Tourist Information Office"
+                      "value": "Tourist Attraction"
+                    },
+                    {
+                      "value": "Tourist Information Service"
                     },
                     {
                       "value": "Trail System"
@@ -411,14 +420,25 @@
                     {
                       "value": "Zoos, Arboreta, Botanical Gardens"
                     }
-                  ]
+                  ],
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true,
+                    "recognizeNumbers": true
+                  }
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "8THro7"
+                  },
+                  "activity": "${SendActivity_8THro7()}"
                 },
                 {
                   "$kind": "Microsoft.SwitchCondition",
                   "$designer": {
                     "id": "J0WKKw"
                   },
-                  "condition": "user.poi_cateory_choice",
+                  "condition": "user.poi_category_choice",
                   "cases": [
                     {
                       "value": "Adventure Sports Venue",
@@ -429,7 +449,7 @@
                             "id": "kdrRBX"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7305'"
+                          "value": "=7305"
                         }
                       ]
                     },
@@ -442,7 +462,7 @@
                             "id": "gpc235"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7383'"
+                          "value": "=7383"
                         }
                       ]
                     },
@@ -455,7 +475,7 @@
                             "id": "k5rJ7V"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='9902'"
+                          "value": "=9902"
                         }
                       ]
                     },
@@ -468,7 +488,7 @@
                             "id": "uF7kr1"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7328'"
+                          "value": "=7328"
                         }
                       ]
                     },
@@ -481,7 +501,7 @@
                             "id": "OpTnX6"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='9376'"
+                          "value": "=9376"
                         }
                       ]
                     },
@@ -494,7 +514,7 @@
                             "id": "IYCXz5"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7341'"
+                          "value": "=7341"
                         }
                       ]
                     },
@@ -507,7 +527,7 @@
                             "id": "sdkJDA"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7342'"
+                          "value": "=7342"
                         }
                       ]
                     },
@@ -520,7 +540,7 @@
                             "id": "ow8Y7F"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='9377'"
+                          "value": "=9377"
                         }
                       ]
                     },
@@ -533,7 +553,7 @@
                             "id": "Nk8DQK"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='9937'"
+                          "value": "=9937"
                         }
                       ]
                     },
@@ -546,7 +566,7 @@
                             "id": "GbiRez"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7377'"
+                          "value": "=7377"
                         }
                       ]
                     },
@@ -559,7 +579,7 @@
                             "id": "bNEWZe"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='9363'"
+                          "value": "=9363"
                         }
                       ]
                     },
@@ -572,7 +592,7 @@
                             "id": "uZnOEO"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7319'"
+                          "value": "=7319"
                         }
                       ]
                     },
@@ -585,7 +605,7 @@
                             "id": "uQrNJI"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7327'"
+                          "value": "=7327"
                         }
                       ]
                     },
@@ -598,7 +618,7 @@
                             "id": "gBGwtx"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='9956'"
+                          "value": "=9956"
                         }
                       ]
                     },
@@ -611,14 +631,7 @@
                             "id": "Cg0OW7"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='9900'"
-                        },
-                        {
-                          "$kind": "Microsoft.SendActivity",
-                          "$designer": {
-                            "id": "s4aXWX"
-                          },
-                          "activity": "${SendActivity_s4aXWX()}"
+                          "value": "=9900"
                         }
                       ]
                     },
@@ -631,7 +644,7 @@
                             "id": "cSxuBU"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7311'"
+                          "value": "=7311"
                         }
                       ]
                     },
@@ -644,7 +657,7 @@
                             "id": "MqLSgg"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='8099'"
+                          "value": "=8099"
                         }
                       ]
                     },
@@ -657,7 +670,7 @@
                             "id": "fTzFF5"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='9911'"
+                          "value": "=9911"
                         }
                       ]
                     },
@@ -670,7 +683,7 @@
                             "id": "1X9Xnd"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='9663'"
+                          "value": "=9663"
                         }
                       ]
                     },
@@ -683,7 +696,7 @@
                             "id": "nUeADf"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7321'"
+                          "value": "=7321"
                         }
                       ]
                     },
@@ -696,7 +709,7 @@
                             "id": "rfdXcG"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='9378'"
+                          "value": "=9378"
                         }
                       ]
                     },
@@ -709,7 +722,7 @@
                             "id": "wfXv6c"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7347"
+                          "value": "=7347"
                         }
                       ]
                     },
@@ -722,7 +735,7 @@
                             "id": "alPgkP"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7332'"
+                          "value": "=7332"
                         }
                       ]
                     },
@@ -735,7 +748,7 @@
                             "id": "v1tgP0"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7317'"
+                          "value": "=7317"
                         }
                       ]
                     },
@@ -748,7 +761,7 @@
                             "id": "njqzgL"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='9379'"
+                          "value": "=9379"
                         }
                       ]
                     },
@@ -761,7 +774,7 @@
                             "id": "6L1fLO"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7326'"
+                          "value": "=7326"
                         }
                       ]
                     },
@@ -774,7 +787,7 @@
                             "id": "mqIH5K"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7312'"
+                          "value": "=7312"
                         }
                       ]
                     },
@@ -787,7 +800,7 @@
                             "id": "bRjnlg"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7315'"
+                          "value": "=7315"
                         }
                       ]
                     },
@@ -800,7 +813,7 @@
                             "id": "lmF1YM"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7337'"
+                          "value": "=7337"
                         }
                       ]
                     },
@@ -813,7 +826,7 @@
                             "id": "VmiJYz"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7373'"
+                          "value": "=7373"
                         }
                       ]
                     },
@@ -826,7 +839,7 @@
                             "id": "BNIz07"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7320'"
+                          "value": "=7320"
                         }
                       ]
                     },
@@ -839,7 +852,7 @@
                             "id": "D5aRVI"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7374'"
+                          "value": "=7374"
                         }
                       ]
                     },
@@ -852,7 +865,7 @@
                             "id": "qZDHgt"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7318'"
+                          "value": "=7318"
                         }
                       ]
                     },
@@ -865,7 +878,7 @@
                             "id": "1cNKjR"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7376'"
+                          "value": "=7376"
                         }
                       ]
                     },
@@ -878,7 +891,7 @@
                             "id": "w7rhpR"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7316'"
+                          "value": "=7316"
                         }
                       ]
                     },
@@ -891,7 +904,7 @@
                             "id": "XZeDBZ"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='7302'"
+                          "value": "=7302"
                         }
                       ]
                     },
@@ -904,7 +917,7 @@
                             "id": "QYJSNd"
                           },
                           "property": "dialog.poi_category_choice",
-                          "value": "='9927'"
+                          "value": "=9927"
                         }
                       ]
                     }
@@ -916,7 +929,7 @@
                     "id": "uEahBY"
                   },
                   "method": "GET",
-                  "url": "https://atlas.microsoft.com/search/nearby/json?api-version=1.0&lat=27.914480&lon=-82.505379&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&limit=100&radius=8047&categorySet=${dialog.poi_category_choice}",
+                  "url": "https://atlas.microsoft.com/search/nearby/json?api-version=1.0&lat=27.914480&lon=-82.505379&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&limit=10&radius=8047&categorySet=${dialog.poi_category_choice}",
                   "resultProperty": "dialog.api_response",
                   "responseType": "json"
                 },
@@ -986,98 +999,14 @@
                       ]
                     },
                     {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "YBGMOU"
-                      },
-                      "activity": "${SendActivity_YBGMOU()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "JmwXnt"
-                      },
-                      "activity": "${SendActivity_JmwXnt()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "aluUpe"
-                      },
-                      "activity": "${SendActivity_aluUpe()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "QOpL6h"
-                      },
-                      "activity": "${SendActivity_QOpL6h()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "Gt9bc7"
-                      },
-                      "activity": "${SendActivity_Gt9bc7()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "femTOc"
-                      },
-                      "activity": "${SendActivity_femTOc()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "EOpzBK"
-                      },
-                      "activity": "${SendActivity_EOpzBK()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "9trwsl"
-                      },
-                      "activity": "${SendActivity_9trwsl()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "khQuik"
-                      },
-                      "activity": "${SendActivity_khQuik()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "j1hrOd"
-                      },
-                      "activity": "${SendActivity_j1hrOd()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "dD17yT"
-                      },
-                      "activity": "${SendActivity_dD17yT()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "CQ3vKs"
-                      },
-                      "activity": "${SendActivity_CQ3vKs()}"
-                    },
-                    {
                       "$kind": "Microsoft.TextInput",
                       "$designer": {
                         "id": "1rALgn"
                       },
                       "disabled": false,
                       "maxTurnCount": 3,
-                      "alwaysPrompt": false,
-                      "allowInterruptions": false,
+                      "alwaysPrompt": true,
+                      "allowInterruptions": true,
                       "prompt": "${TextInput_Prompt_1rALgn()}",
                       "unrecognizedPrompt": "",
                       "invalidPrompt": "",

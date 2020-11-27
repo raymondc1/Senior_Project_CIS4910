@@ -13,7 +13,8 @@
 
 # Sub_Menu_Items
 [Activity
-    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
+    Text = Is there anything else that I can assist you with? You can always type your question directly and I will try my best to answer it.
+    SuggestedActions = Amenities | Directions | Events | About Us | Report Issues | Exit
 ]
 
 # HeroCard()
@@ -24,12 +25,6 @@
     image = https://atlas.microsoft.com/map/static/png?api-version=1.0&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&style=main&center=-82.5060168%2C27.9140984&zoom=16&pins=default%257Csc1.0%257CcoFF1493%257Clc000000%257Cro30%257C%257C%2527Hotel%2520South%2520Tampa%2520%2526%2520Suites%2527-82.505379%252027.914480%250A%250A    
 ]
 
-# PassengerName
-- Vishwac
-- Tom
-- Chris
-- Yochay
-
 # AttachmentLayoutType
 - carousel
 - list
@@ -39,20 +34,22 @@
 
 # SendActivity_poxstn()
 - lat: ${dialog.latitude} lon: ${dialog.longitude}
+
 # SendActivity_tzFaxf()
 - ${dialog.Address}
+
 # ChoiceInput_Prompt_YljWWN()
 - Would you like directions to the hotel or to look at the points of interest around the hotel?
+
 # TextInput_Prompt_q6nqrZ()
 - Please Enter Your Current Location Format: Address, City, State
 
 # SendActivity_XRhcRa()
 - This is your current location: ${user.Address}
 
-
-
 # SendActivity_RoSmAY()
 - ${dialog.foreach.index}:${dialog.foreach.value["message"]}
+
 # SendActivity_T0GiTK()
 - Sorry something went wrong
 
@@ -68,15 +65,15 @@
 # SendActivity_96JpmQ()
 - Sorry something went wrong
 
-
-
 # SendActivity_XpwnFE()
 -${Sub_Menu_Items()}
 
 # TextInput_Prompt_1rALgn()
 - Where would you like to go? (It may take a moment)
+
 # SendActivity_8tMjdI()
 - ${dialog.foreach.index}:${dialog.foreach.value["message"]}
+
 # SendActivity_0mGRJq()
 - Sorry something went wrong
 

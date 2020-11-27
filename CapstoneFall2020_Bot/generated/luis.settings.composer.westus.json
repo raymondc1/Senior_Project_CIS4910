@@ -1,5 +1,8 @@
 {
     "luis": {
-        "capstonefall2020_bot_en_us_lu": "6714ee45-f030-4794-8c1f-563ad641bfd1"
+        "capstonefall2020_bot_en_us_lu": {
+            "appId": "6714ee45-f030-4794-8c1f-563ad641bfd1",
+            "version": "0.3"
+        }
     }
 }

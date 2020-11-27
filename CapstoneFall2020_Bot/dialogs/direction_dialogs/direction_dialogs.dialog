@@ -32,7 +32,7 @@
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": true,
-          "allowInterruptions": true,
+          "allowInterruptions": false,
           "prompt": "${ChoiceInput_Prompt_YljWWN()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
@@ -46,11 +46,14 @@
           "style": "heroCard",
           "property": "user.directions_choice",
           "recognizerOptions": {
-            "recognizeOrdinals": true
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true,
+            "noValue": false,
+            "noAction": false
           },
           "choices": [
             {
-              "value": "Directions to the hotel"
+              "value": "Directions to the Hotel"
             },
             {
               "value": "Points of Interest"
@@ -65,7 +68,7 @@
           "condition": "user.directions_choice",
           "cases": [
             {
-              "value": "Directions to the hotel",
+              "value": "Directions to the Hotel",
               "actions": [
                 {
                   "$kind": "Microsoft.TextInput",

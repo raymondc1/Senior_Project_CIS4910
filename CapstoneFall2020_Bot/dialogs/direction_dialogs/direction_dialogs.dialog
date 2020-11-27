@@ -293,12 +293,12 @@
                   "defaultLocale": "en-us",
                   "disabled": false,
                   "maxTurnCount": 3,
-                  "alwaysPrompt": false,
-                  "allowInterruptions": false,
+                  "alwaysPrompt": true,
+                  "allowInterruptions": true,
                   "prompt": "${ChoiceInput_Prompt_L0ZBth()}",
                   "unrecognizedPrompt": "",
                   "invalidPrompt": "",
-                  "defaultValueResponse": "",
+                  "defaultValueResponse": "${ChoiceInput_DefaultValueResponse_L0ZBth()}",
                   "choiceOptions": {
                     "includeNumbers": true,
                     "inlineOrMore": ", or ",
@@ -306,7 +306,7 @@
                     "inlineSeparator": ", "
                   },
                   "property": "user.poi_category_choice",
-                  "style": "list",
+                  "style": "auto",
                   "choices": [
                     {
                       "value": "Adventure Sports Venue"
@@ -315,7 +315,7 @@
                       "value": "Airport"
                     },
                     {
-                      "value": "Amuement Park"
+                      "value": "Amusement Park"
                     },
                     {
                       "value": "Bank"
@@ -336,7 +336,7 @@
                       "value": "City Center"
                     },
                     {
-                      "value": "Club Association"
+                      "value": "Club & Associations"
                     },
                     {
                       "value": "College/University"
@@ -345,22 +345,31 @@
                       "value": "Courthouse"
                     },
                     {
-                      "value": "Cultual Center"
+                      "value": "Cultural Center"
                     },
                     {
                       "value": "Department Store"
                     },
                     {
-                      "value": "Emergency Medical Serice"
+                      "value": "Emergency Medical Service"
                     },
                     {
-                      "value": "Entertainent"
+                      "value": "Entertainment"
                     },
                     {
-                      "value": "Geogrphic Feature"
+                      "value": "Gas Station"
+                    },
+                    {
+                      "value": "Geographic Feature"
                     },
                     {
                       "value": "Golf Course"
+                    },
+                    {
+                      "value": "Healthcare Service"
+                    },
+                    {
+                      "value": "Hospital"
                     },
                     {
                       "value": "Leisure Center"
@@ -376,9 +385,6 @@
                     },
                     {
                       "value": "Nightlife"
-                    },
-                    {
-                      "value": "Gas Station"
                     },
                     {
                       "value": "Pharmacy"
@@ -406,125 +412,7 @@
                       "value": "Theater"
                     },
                     {
-                      "value": "Tourist Information Office"
-                    },
-                    {
-                      "value": "Trail System"
-                    },
-                    {
-                      "value": "Zoos, Arboreta, Botanical Gardens"
-                    }
-                  ]
-                },
-                {
-                  "$kind": "Microsoft.SwitchCondition",
-                  "$designer": {
-                    "id": "J0WKKw"
-                  },
-                  "condition": "user.poi_cateory_choice",
-                  "cases": [
-                    {
-                      "value": "Adventure Sports Venue"
-                    },
-                    {
-                      "value": "Airport"
-                    },
-                    {
-                      "value": "Amusement Park"
-                    },
-                    {
-                      "value": "Bank"
-                    },
-                    {
-                      "value": "Cafe/Pub"
-                    },
-                    {
-                      "value": "Casino"
-                    },
-                    {
-                      "value": "Cinema"
-                    },
-                    {
-                      "value": "City Center"
-                    },
-                    {
-                      "value": "Club Association"
-                    },
-                    {
-                      "value": "College/University"
-                    },
-                    {
-                      "value": "Courthouse"
-                    },
-                    {
-                      "value": "Cultural Center"
-                    },
-                    {
-                      "value": "Department Store"
-                    },
-                    {
-                      "value": "Emergency Medical Service"
-                    },
-                    {
-                      "value": "Entertainment"
-                    },
-                    {
-                      "value": "Geographic Feature"
-                    },
-                    {
-                      "value": "Golf Course"
-                    },
-                    {
-                      "value": "Leisure Center"
-                    },
-                    {
-                      "value": "Marina"
-                    },
-                    {
-                      "value": "Market"
-                    },
-                    {
-                      "value": "Museum"
-                    },
-                    {
-                      "value": "Nightlife"
-                    },
-                    {
-                      "value": "Gas Station"
-                    },
-                    {
-                      "value": "Pharmacy"
-                    },
-                    {
-                      "value": "Rental Car Facility"
-                    },
-                    {
-                      "value": "Restaurant",
-                      "actions": [
-                        {
-                          "$kind": "Microsoft.SetProperty",
-                          "$designer": {
-                            "id": "bRjnlg"
-                          },
-                          "property": "dialog.poi_category_choice",
-                          "value": "7315"
-                        }
-                      ]
-                    },
-                    {
-                      "value": "Scenic Panoramic View"
-                    },
-                    {
-                      "value": "Shopping Center"
-                    },
-                    {
-                      "value": "Sports Center"
-                    },
-                    {
-                      "value": "Stadium"
-                    },
-                    {
-                      "value": "Theater"
+                      "value": "Tourist Attraction"
                     },
                     {
                       "value": "Tourist Information Service"
@@ -535,6 +423,507 @@
                     {
                       "value": "Zoos, Arboreta, Botanical Gardens"
                     }
+                  ],
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true,
+                    "recognizeNumbers": true
+                  }
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "8THro7"
+                  },
+                  "activity": "${SendActivity_8THro7()}"
+                },
+                {
+                  "$kind": "Microsoft.SwitchCondition",
+                  "$designer": {
+                    "id": "J0WKKw"
+                  },
+                  "condition": "user.poi_category_choice",
+                  "cases": [
+                    {
+                      "value": "Adventure Sports Venue",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "kdrRBX"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7305"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Airport",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "gpc235"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7383"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Amusement Park",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "k5rJ7V"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9902"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Bank",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "uF7kr1"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7328"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Cafe/Pub",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "OpTnX6"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9376"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Casino",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "IYCXz5"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7341"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Cinema",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "sdkJDA"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7342"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "City Center",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "ow8Y7F"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9377"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Clubs & Associations",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "Nk8DQK"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9937"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "College/University",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "GbiRez"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7377"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Courthouse",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "bNEWZe"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9363"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Cultural Center",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "uZnOEO"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7319"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Department Store",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "uQrNJI"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7327"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Emergency Medical Service",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "gBGwtx"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9956"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Entertainment",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "Cg0OW7"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9900"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Gas Station",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "cSxuBU"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7311"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Geographic Feature",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "MqLSgg"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=8099"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Golf Course",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "fTzFF5"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9911"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Healthcare Service",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "1X9Xnd"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9663"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Hospital",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "nUeADf"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7321"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Leisure Center",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "rfdXcG"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9378"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Marina",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "wfXv6c"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7347"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Market",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "alPgkP"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7332"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Museum",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "v1tgP0"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7317"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Nightlife",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "njqzgL"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9379"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Pharmacy",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "6L1fLO"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7326"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Rental Car Facility",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "mqIH5K"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7312"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Restaurant",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "bRjnlg"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7315"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Scenic Panoramic View",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "lmF1YM"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7337"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Shopping Center",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "VmiJYz"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7373"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Sports Center",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "BNIz07"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7320"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Stadium",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "D5aRVI"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7374"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Theater",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "qZDHgt"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7318"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Tourist Attraction",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "1cNKjR"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7376"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Tourist Information Service",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "w7rhpR"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7316"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Trail System",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "XZeDBZ"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7302"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Zoos, Arboreta, Botanical Gardens",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "QYJSNd"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9927"
+                        }
+                      ]
+                    }
                   ]
                 },
                 {
@@ -543,7 +932,7 @@
                     "id": "uEahBY"
                   },
                   "method": "GET",
-                  "url": "https://atlas.microsoft.com/search/nearby/json?api-version=1.0&lat=27.914480&lon=-82.505379&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&limit=100&radius=8047&categorySet=${dialog.poi_category_choice}",
+                  "url": "https://atlas.microsoft.com/search/nearby/json?api-version=1.0&lat=27.914480&lon=-82.505379&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&limit=10&radius=8047&categorySet=${dialog.poi_category_choice}",
                   "resultProperty": "dialog.api_response",
                   "responseType": "json"
                 },
@@ -604,115 +993,13 @@
                           "value": "=dialog.foreach.value[\"poi\"][\"categories\"][0]"
                         },
                         {
-                          "$kind": "Microsoft.IfCondition",
+                          "$kind": "Microsoft.SendActivity",
                           "$designer": {
-                            "id": "2B7U3i"
+                            "id": "TbkPtB"
                           },
-                          "condition": "dialog.poi_category != \"hotel\"",
-                          "actions": [
-                            {
-                              "$kind": "Microsoft.IfCondition",
-                              "$designer": {
-                                "id": "Uxi7ah"
-                              },
-                              "condition": "dialog.poi_category != \"real estate agents\" && dialog.poi_category != \"construction material equipment\"&&dialog.poi_category !=\"pre school\"&&dialog.poi_category != \"school\"&&dialog.poi_category !=\"art school\"&&dialog.poi_category !=\"jewelry, clocks watches\"&&dialog.poi_category !=\"furniture/home furnishings\"&&dialog.poi_category !=\"house garden: curtains/textiles\"&&dialog.poi_category !=\"company\"&&dialog.poi_category !=\"dentist\"",
-                              "actions": [
-                                {
-                                  "$kind": "Microsoft.SendActivity",
-                                  "$designer": {
-                                    "id": "Ad31D4"
-                                  },
-                                  "activity": "${SendActivity_Ad31D4()}"
-                                }
-                              ]
-                            }
-                          ]
+                          "activity": "${SendActivity_TbkPtB()}"
                         }
                       ]
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "YBGMOU"
-                      },
-                      "activity": "${SendActivity_YBGMOU()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "JmwXnt"
-                      },
-                      "activity": "${SendActivity_JmwXnt()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "aluUpe"
-                      },
-                      "activity": "${SendActivity_aluUpe()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "QOpL6h"
-                      },
-                      "activity": "${SendActivity_QOpL6h()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "Gt9bc7"
-                      },
-                      "activity": "${SendActivity_Gt9bc7()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "femTOc"
-                      },
-                      "activity": "${SendActivity_femTOc()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "EOpzBK"
-                      },
-                      "activity": "${SendActivity_EOpzBK()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "9trwsl"
-                      },
-                      "activity": "${SendActivity_9trwsl()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "khQuik"
-                      },
-                      "activity": "${SendActivity_khQuik()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "j1hrOd"
-                      },
-                      "activity": "${SendActivity_j1hrOd()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "dD17yT"
-                      },
-                      "activity": "${SendActivity_dD17yT()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "CQ3vKs"
-                      },
-                      "activity": "${SendActivity_CQ3vKs()}"
                     },
                     {
                       "$kind": "Microsoft.TextInput",
@@ -721,8 +1008,8 @@
                       },
                       "disabled": false,
                       "maxTurnCount": 3,
-                      "alwaysPrompt": false,
-                      "allowInterruptions": false,
+                      "alwaysPrompt": true,
+                      "allowInterruptions": true,
                       "prompt": "${TextInput_Prompt_1rALgn()}",
                       "unrecognizedPrompt": "",
                       "invalidPrompt": "",

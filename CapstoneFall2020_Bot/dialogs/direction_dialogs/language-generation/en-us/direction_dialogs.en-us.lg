@@ -85,12 +85,15 @@
 
 # ChoiceInput_Prompt_L0ZBth()
 - Which category are you interested in visiting?
+
 # SendActivity_TbkPtB()
 -```Name: ${dialog.poi_name}
 Category: ${dialog.poi_category} 
 Phone: ${dialog.poi_phone}
 Address: ${dialog.poi_address}```
+
 # ChoiceInput_DefaultValueResponse_L0ZBth()
 -  Didn't work
+
 # SendActivity_8THro7()
 - ${user.poi_category_choice}

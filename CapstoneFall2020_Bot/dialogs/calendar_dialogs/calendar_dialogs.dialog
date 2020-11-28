@@ -17,13 +17,6 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "UVQwsk"
-          },
-          "activity": "${SendActivity_UVQwsk()}"
-        },
-        {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
             "id": "LX8NRV"
@@ -41,7 +34,8 @@
               "connectionName": "CalendarRead",
               "text": "Please sign in",
               "title": "Login",
-              "property": "dialog.oauth"
+              "property": "dialog.oauth",
+              "alwaysPrompt": true
             },
             {
               "$kind": "Microsoft.SendActivity",
@@ -57,8 +51,8 @@
               },
               "disabled": false,
               "maxTurnCount": 3,
-              "alwaysPrompt": false,
-              "allowInterruptions": false,
+              "alwaysPrompt": true,
+              "allowInterruptions": true,
               "prompt": "${DateTimeInput_Prompt_Z7pzlj()}",
               "unrecognizedPrompt": "${DateTimeInput_UnrecognizedPrompt_Z7pzlj()}",
               "invalidPrompt": "${DateTimeInput_InvalidPrompt_Z7pzlj()}",
@@ -72,8 +66,8 @@
               },
               "disabled": false,
               "maxTurnCount": 3,
-              "alwaysPrompt": false,
-              "allowInterruptions": false,
+              "alwaysPrompt": true,
+              "allowInterruptions": true,
               "prompt": "${DateTimeInput_Prompt_tmPpdw()}",
               "unrecognizedPrompt": "${DateTimeInput_UnrecognizedPrompt_tmPpdw()}",
               "invalidPrompt": "${DateTimeInput_InvalidPrompt_tmPpdw()}",
@@ -155,6 +149,13 @@
               "itemsProperty": "dialog.calendar.value"
             }
           ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "wdzta0"
+          },
+          "activity": "${SendActivity_wdzta0()}"
         }
       ]
     }

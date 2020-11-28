@@ -1,11 +1,5 @@
 [import](common.lg)
 
-# SendActivity_UVQwsk()
-[Activity
-    Text = Event Section Work in Progress
-    SuggestedActions = Amenities | Directions | Events | About Us | Report Issues | Exit
-]
-
 # SendActivity_grGPHN()
 - $ShowProfile(event.Name, event.beginTime, event.endTime)
 
@@ -13,31 +7,9 @@
 # SendActivity_HfHkYH()
 - Hmm, something went wrong. Error code ${dialog.api_response.statusCode}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # SendActivity_bP8SVu()
 - Here are all the events happening between ${user.date1[0].value} and ${user.date2[0].value}:
+
 # SendActivity_QP4j5r()
     - ```${dialog.foreach.value.subject}
         ${dialog.foreach.value.start.dateTime}
@@ -62,3 +34,8 @@
 - Getting you the events between ${user.date1[0].value} and ${user.date2[0].value}:
 # SendActivity_SSXGbp()
 - Token is ${dialog.oauth}
+# SendActivity_wdzta0()
+[Activity
+    Text = Is there anything else that I can assist you with? You can always type your question directly and I will try my best to answer it.
+    SuggestedActions = Amenities | Directions | Events | About Us | Report Issues | Exit
+]

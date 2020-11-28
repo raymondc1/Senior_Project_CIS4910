@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html style="height: 100%; overflow:hidden">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsfot Hotel Chatbot</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Content/botchat.css" rel="stylesheet" />
+    <link href="Content/IFrameStyle.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/modernizr-2.6.2.js"></script>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+</head>
+<body style="overflow:hidden">
+    <div id="usf" style="height:100vh; width:100%; z-index:10">
+            <iframe src="http://hotelsouthtampa.com/" style="height:100vh; width:100%"></iframe>
+        </div>
+        
+    <div id="botavatar" class="image-cropper" onclick="triggerIframe()">
+        <div class="rounded"></div>
+    </div>
+
+    <div id="contentContainer">
+        <div id="header" class="header">
+            <img class="collapseButton" src="Content/collapseSmall.png" onclick="closeIframe()"/>
+        </div>
+        <div id="frameContainer">
+            <div id="BotChatGoesHere"></div>
+            <script src="Scripts/botchat.js"></script>
+
+            <div id="webchat" role="main" style="position: fixed ; z-index: 1000; background: white; bottom: 10px; width: 370px; height: 600px;">
+                <script crossorigin="anonymous" src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+                <script>
+                    (async function() {
+                        const secret = 'kKRhthUE4oY.2ORpyyD4f-WtOTcArmwYZosE4yG-wjFZU3dmgB1_Cxo';
+                        const res = await fetch('https://directline.botframework.com/v3/directline/tokens/generate', {
+                            body: JSON.stringify({ user: { id: 'dl_user_id', name: 'username' } }),
+                            headers: {
+                            Authorization: `Bearer ${secret}`,
+                            'Content-type': 'application/json'
+                            },
+                            method: 'POST'
+                        });
+                        const { token } = await res.json();
+        
+                        window.WebChat.renderWebChat(
+                            {
+                            directLine: window.WebChat.createDirectLine({ token })
+                            },
+                            document.getElementById('webchat')
+                        );
+        
+                        document.querySelector('#webchat > *').focus();
+                        })().catch(err => console.error(err));
+                </script>
+                
+        </div>
+    </div>
+
+    <script>
+
+        // trigger bot display in 3 seconds
+        setTimeout(showAvatar, 3000);
+
+        function showAvatar() {
+            $('#botavatar').show(400, "swing");
+        }
+
+        function triggerIframe() {
+            $('#botavatar').hide();
+            $('#contentContainer').show(400, "swing", startChat);
+        }
+
+        function closeIframe() {
+            $('#contentContainer').hide(400, "swing", function () {
+                $('#botavatar').show(400, "swing");
+            });
+        }
+
+        function startChat() {
+            const params = BotChat.queryParams(location.search);
+            const user = {
+                id: 'userid' + Math.floor((Math.random() * 10000000) + 1),
+                name: (params['firstName'] + '-' + params['country']) || 'UnknownUser' /*,
+        package: params['package'] || 'none' */
+            };
+            const bot = {
+                id: params['botid'] || 'MicrosoftHotelChatbot',
+                name: params['botname'] || 'MicrosoftHotelChatbot'
+            };
+            window['botchatDebug'] = params['debug'] && params['debug'] === 'true';
+
+            var currentDL = "wBVVHNt3ecs.cwA.YGw.tb8WZg6C17KU1oanUIi9yrl0sq0ex15u5ys9aiSm1oA";
+
+            var botConnection = new BotChat.DirectLine({
+                secret: currentDL,
+                conversationId: params["c"],
+                domain: params["domain"],
+                webSocket: params["webSocket"] && params["webSocket"] === "true"
+            });
+
+            BotChat.App({
+                bot: bot,
+                botConnection: botConnection,
+                user: user
+            }, document.getElementById('BotChatGoesHere'));
+
+            // add this event handler to any expandable item when they are dynamically created
+            // in the DOM
+            $(document).on('click', '.expandable', function () {
+                // get the closest parent message holder and then the next sibling to see if it
+                // got pushed off the screen.
+                var p = $(this).closest(".wc-message-wrapper").next();
+                var height = document.getElementsByClassName("wc-message-groups")[0].clientHeight;
+
+                var rect = p[0].getBoundingClientRect();
+                if (rect.bottom > height) {
+                    p[0].scrollIntoView(false);
+                    setTimeout(function () {
+                        document.getElementsByClassName("wc-message-groups")[0].scrollTop =
+                            document.getElementsByClassName("wc-message-groups")[0].scrollTop + 18;
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

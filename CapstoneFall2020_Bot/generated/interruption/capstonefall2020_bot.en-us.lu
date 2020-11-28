@@ -8,9 +8,6 @@
 > # Intent definitions
 
 # Amenities
-- What are your hotel amenities?
-- Tell me more about your hotel
-- Tell me something about your hotel
 - Amenities
 
 
@@ -18,7 +15,12 @@
 - How can I get to you?
 - Give me directions
 - Where are you located?
+- Directions
 - Direction
+- How to get to
+- What is around you?
+- What are some places I can visit around you?
+- Any good places to visit?
 
 
 # Calendar
@@ -26,12 +28,17 @@
 - Show me your calendar
 - Show me what you have planning
 - Calendar
+- Events
+- Event
+- What events are there?
+- What can I do during my stay?
+- Any intereseting things happening?
 
 
 # Manager
-- Message from Manager
-- Manager
 - Video
+- About Us
+- Message from Manager
 
 
 # Report
@@ -39,9 +46,40 @@
 - Something is wrong
 - Report
 - I have another issue to report
-- I need help
 - Issue
-- Help
+- Report Issues
+- Report a Issue
+- Repost a issue
+
+
+# help
+- help
+- What can you do?
+- I need help
+- do something
+
+
+# cancel
+- cancel
+- stop that
+- please cancel
+
+
+# exit
+- Exit
+- exit
+- none
+- no
+- I'm good
+- nope
+- nah
+- end
+- end chat
+- rate
+- I wanna rate this bot
+- I am having problem with this bot
+- Leave
+- leave
 
 
 > # Entity definitions

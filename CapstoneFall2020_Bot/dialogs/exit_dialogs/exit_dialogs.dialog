@@ -17,6 +17,72 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "3EFqyG"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_3EFqyG()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "user.rating",
+          "outputFormat": "value",
+          "style": "suggestedAction",
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true,
+            "noValue": false,
+            "noAction": false
+          },
+          "choices": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "YQa8ZP"
+          },
+          "condition": "user.rating",
+          "cases": [
+            {
+              "value": "Yes"
+            },
+            {
+              "value": "No",
+              "actions": [
+                {
+                  "$kind": "Microsoft.TextInput",
+                  "$designer": {
+                    "id": "IBBQcF"
+                  },
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": true,
+                  "allowInterruptions": true,
+                  "prompt": "${TextInput_Prompt_IBBQcF()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "property": "user.feedback"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
             "id": "cjM8on"

@@ -1,18 +1,59 @@
 [import](common.lg)
 
-# SendActivity_Welcome()
+# SendActivity_bu5xh4()
+- ${WelcomeAdaptiveCard()}
+
+# WelcomeAdaptiveCard
 [Activity
-    Text = Welcome to Hotel South Tampa & Suites! My name is Boty and I will be helping you out while you are here. Please click on one of the following things that you wish to learn about or try asking a question and I will try my best to answer it!
-    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue 
+    Attachments = ${json(WelcomeAdaptiveCardJson())}
 ]
 
-# QnAMakerDialog_NoAnswer_URX5DY()
+# SendActivity_8OB57e()
 [Activity
-    Text = Sorry, I did not understand '${turn.activity.text}'. Please try asking something else.
-    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
+    SuggestedActions = Amenities | Directions | Events | About Us | Report Issues | Exit
 ]
 
-# SendActivity_A28UaS()
-[Activity
-    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
-]
+# WelcomeAdaptiveCardJson
+- ```
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": 1,
+          "items": [
+            {
+              "type": "Image",
+              "url": "https://docs.microsoft.com/hu-hu/composer/media/landing-page/composer.png",
+              "size": "auto",
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": 3,
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Welcome to Hotel South Tampa & Suites! ",
+              "weight": "bolder",
+              "size": "medium",
+              "wrap": true
+            },
+            {
+              "type": "TextBlock",
+              "text": "How may I assist you today? You can type 'help' to found out what I can do",
+              "wrap": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

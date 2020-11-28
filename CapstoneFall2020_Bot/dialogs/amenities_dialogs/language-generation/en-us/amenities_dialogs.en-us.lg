@@ -2,9 +2,190 @@
 
 # SendActivity_dY9cIw()
 [Activity
-    Text = Amenitie Section (Work in Progress)
-    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
+    Text = Is there anything else that I can assist you with? You can always type your question directly and I will try my best to answer it.
+    SuggestedActions = Amenities | Directions | Events | About Us | Report Issues | Exit
 ]
 
-# QnAMakerDialog_NoAnswer_DlBRGY()
-- Sorry, I did not understand '${turn.activity.text}'. Please try asking something else.
+# ChoiceInput_Prompt_Zexmff()
+- What would you like to learn more about?
+
+# ChoiceInput_Prompt_kWjWP7()
+- Below is a list of the types of rooms that we provide, which one would you like to learn more about?
+
+#Room1_card()
+[HeroCard
+    image = https://i.imgur.com/CV8gwfD.jpg
+    text = ${Room1_Templete()}
+]
+
+#Room2_card()
+[HeroCard
+    image = https://i.imgur.com/eKsFlxA.jpg
+    text = ${Room2_Templete()}
+]
+
+#Room3_card()
+[HeroCard
+    image = https://i.imgur.com/mI8p4Od.jpg
+    text = ${Room3_Templete()}
+]
+
+#Room4_card()
+[HeroCard
+    image = https://i.imgur.com/yM6MIbM.jpg
+    text = ${Room4_Templete()}
+]
+
+#Room5_card()
+[HeroCard
+    image = https://i.imgur.com/FoWY3r1.jpg
+    text = ${Room5_Templete()}
+]
+
+#Room6_card()
+[HeroCard
+    image = https://i.imgur.com/b85Gz8R.jpg
+    text = ${Room6_Templete()}
+]
+
+# Room1_Templete
+- ```
+    This room has the following:
+    - Is $100 per night
+    - 1 king sized bed
+    - ADA compliant features
+    - Roll-in shower, Raised Toilet, Grab Bars, Built-In Shower Seat
+    - Flat-screen TV with HD cable package and Closed Captioning
+    - Closet with Accessible Height Hanger and Shelf
+    - Mini-fridge & Microwave at Accessible Height
+    - Work Desk
+    - Hairdryer
+    - Iron/ironing board
+```
+
+# Room2_Templete
+- ```
+    This room has the following:
+    - Is $110 per night
+    - 2 queen sized beds
+    - ADA compliant features
+    - Roll-in shower, Raised Toilet, Grab Bars, Built-In Shower Seat
+    - Flat-screen TV with HD cable package and Closed Captioning
+    - Closet with Accessible Height Hanger and Shelf
+    - Mini-fridge & Microwave at Accessible Height
+    - Work Desk
+    - Hairdryer
+    - Iron/ironing board
+```
+
+# Room3_Templete
+- ```
+    This room has the following:
+    - Is $100 per night
+    - 1 king bed
+    - Modern shower with sliding glass doors
+    - Vanity with lighted mirror
+    - Flat-screen TV with HD cable package
+    - Microwave
+    - Mini-fridge
+    - Work desk
+    - Hairdryer
+    - Iron/ironing board
+```
+
+# Room4_Templete
+- ```
+    This room has the following:
+    - Is $110 per night
+    - 2 queen sized beds
+    - Modern shower with sliding glass doors
+    - Vanity with lighted mirror
+    - Flat-screen TV with HD cable package
+    - Microwave
+    - Mini-fridge
+    - Work desk
+    - Hairdryer
+    - Iron/ironing board
+```
+
+# Room5_Templete
+- ```
+    This room has the following:
+    - Is $125 per night
+    - 1 queen sized bed
+    - Full-size refrigerator
+    - Glass Stovetop
+    - Dishwasher
+    - Large microwave
+    - Cookware, silverware, dishes, glasses
+    - Flat-screen TV with HD cable package
+    - Mini-fridge
+    - Work desk
+    - Hairdryer
+    - Jacuzzi
+    - Iron/ironing board
+```
+
+# Room6_Templete
+- ```
+    This room has the following:
+    - Is $130 per night
+    - 2 queen sized beds
+    - Full-size refrigerator
+    - Glass Stovetop
+    - Dishwasher
+    - Large microwave
+    - Cookware, silverware, dishes, glasses
+    - Flat-screen TV with HD cable package
+    - Mini-fridge
+    - Jacuzzi
+    - Work desk
+    - Hairdryer
+    - Iron/ironing board
+```
+
+# SendActivity_DuQshE()
+- ${Room1_card()}
+
+# SendActivity_wqZaIP()
+- ${Room2_card()}
+
+# SendActivity_RPjDgq()
+- ${Room3_card()}
+
+# SendActivity_Q7TYyn()
+- ${Room4_card()}
+
+# SendActivity_E7BDnq()
+- ${Room5_card()}
+
+# SendActivity_WE9kDN()
+- ${Room6_card()}
+
+# SendActivity_e9EbIU()
+[Herocard
+    title = Internet
+    text = Free Wi-Fi in all rooms and in public area. Free HIgh Speed Internet Access.
+    image = https://i.imgur.com/ED8cInR.png
+]
+
+# SendActivity_0rQGWG()
+[Herocard
+    title = Breakfast
+    text = Free expanded Hot Breafast with Fresh Waffles.
+    image = https://i.imgur.com/iH1QbmB.jpg
+]
+
+# SendActivity_5R2f5B()
+[Herocard
+    title = Pool
+    text = Outdoor heated pool (8am -9pm)
+    image = https://i.imgur.com/Z63jUiy.jpg
+]
+
+# SendActivity_oV4iv0()
+[Herocard
+    title = Parking
+    text = Free Parking for overnight guests.
+    image = https://i.imgur.com/Y5w7D7s.jpg
+]

@@ -3,6 +3,94 @@
 # SendActivity_pL5PRv()
 [Activity
     Text = Map/Direction Section (Work in Progress)
-    SuggestedActions = Amenities | Direction | Calendar | Message from Manager | Report an Issue
+    SuggestedActions = Amenities | Directions | Events | About Us| Report Issues
 ]
 
+# Directions()
+[Activity
+    SuggestedActions = Directions To Hotel | Points of Interest
+]
+
+# Sub_Menu_Items
+[Activity
+    Text = Is there anything else that I can assist you with? You can always type your question directly and I will try my best to answer it.
+    SuggestedActions = Amenities | Directions | Events | About Us | Report Issues | Exit
+]
+
+# HeroCard()
+[HeroCard
+    title =  Hotel South Tampa & Suites
+    subtitle = Come and enjoy the sunshine in gorgeous Tampa Bay
+    text = Come and see our wonderful beaches, see a game out one of our many sports teams, enjoy a meal at one of the numerous fine dining establishments in the city. Then come back here and rest your heads on one of our many comfortable beds. 
+    image = https://atlas.microsoft.com/map/static/png?api-version=1.0&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&style=main&center=-82.5060168%2C27.9140984&zoom=16&pins=default%257Csc1.0%257CcoFF1493%257Clc000000%257Cro30%257C%257C%2527Hotel%2520South%2520Tampa%2520%2526%2520Suites%2527-82.505379%252027.914480%250A%250A    
+]
+
+# AttachmentLayoutType
+- carousel
+- list
+
+# SendActivity_RcJsp5()
+- ${HeroCard()}
+
+# SendActivity_poxstn()
+- lat: ${dialog.latitude} lon: ${dialog.longitude}
+
+# SendActivity_tzFaxf()
+- ${dialog.Address}
+
+# ChoiceInput_Prompt_YljWWN()
+- Would you like directions to the hotel or to look at the points of interest around the hotel?
+
+# TextInput_Prompt_q6nqrZ()
+- Please Enter Your Current Location Format: Address, City, State
+
+# SendActivity_XRhcRa()
+- This is your current location: ${user.Address}
+
+# SendActivity_RoSmAY()
+- ${dialog.foreach.index}:${dialog.foreach.value["message"]}
+
+# SendActivity_T0GiTK()
+- Sorry something went wrong
+
+# SendActivity_RIgXhl()
+- Sorry something went wrong
+
+# TextInput_Prompt_kcJk0t()
+- Please Enter Your Current Location Format: Address, City, State
+
+# SendActivity_5NpsYt()
+- This is your current location: ${user.Address}
+
+# SendActivity_96JpmQ()
+- Sorry something went wrong
+
+# SendActivity_XpwnFE()
+-${Sub_Menu_Items()}
+
+# TextInput_Prompt_1rALgn()
+- Where would you like to go? (It may take a moment)
+
+# SendActivity_8tMjdI()
+- ${dialog.foreach.index}:${dialog.foreach.value["message"]}
+
+# SendActivity_0mGRJq()
+- Sorry something went wrong
+
+# SendActivity_w9B1DL()
+- Sorry something went wrong
+
+# SendActivity_1xWfRL()
+- Sorry something went wrong
+
+# ChoiceInput_Prompt_L0ZBth()
+- Which category are you interested in visiting?
+# SendActivity_TbkPtB()
+-```Name: ${dialog.poi_name}
+Category: ${dialog.poi_category} 
+Phone: ${dialog.poi_phone}
+Address: ${dialog.poi_address}```
+# ChoiceInput_DefaultValueResponse_L0ZBth()
+-  Didn't work
+# SendActivity_8THro7()
+- ${user.poi_category_choice}

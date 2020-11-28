@@ -2,6 +2,9 @@
   "capstonefall2020_bot.en-us": {
     "rootDialog": true,
     "triggers": {
+      "": [
+        "Unknown_QnA.en-us"
+      ],
       "Amenities": [
         "amenities_dialogs.en-us"
       ],
@@ -16,6 +19,15 @@
       ],
       "Report": [
         "report_dialogs.en-us"
+      ],
+      "help": [
+        "help_dialogs.en-us"
+      ],
+      "cancel": [
+        "cancel_dialogs.en-us"
+      ],
+      "exit": [
+        "exit_dialogs.en-us"
       ]
     }
   }

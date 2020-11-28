@@ -23,7 +23,7 @@
           },
           "defaultLocale": "en-us",
           "disabled": false,
-          "maxTurnCount": 3,
+          "maxTurnCount": 1,
           "alwaysPrompt": true,
           "allowInterruptions": true,
           "prompt": "${ChoiceInput_Prompt_zQxIcu()}",
@@ -38,30 +38,22 @@
           },
           "property": "user.help_choice",
           "outputFormat": "value",
-          "style": "list",
-          "choices": [
-            {
-              "value": "Amenities"
-            },
-            {
-              "value": "Directions"
-            },
-            {
-              "value": "Events"
-            },
-            {
-              "value": "About Us"
-            },
-            {
-              "value": "Report Issues"
-            }
-          ],
           "recognizerOptions": {
             "recognizeOrdinals": true,
             "noValue": false,
             "noAction": false,
             "recognizeNumbers": true
-          }
+          },
+          "style": "heroCard",
+          "choices": [
+            "Amenities",
+            "Directions",
+            "Events",
+            "About Us",
+            "Report Issues",
+            "Cancel",
+            "Exit"
+          ]
         },
         {
           "$kind": "Microsoft.SwitchCondition",
@@ -92,7 +84,7 @@
                     "id": "F9Nic7"
                   },
                   "activityProcessed": true,
-                  "dialog": "calendar_dialogs"
+                  "dialog": "direction_dialogs"
                 }
               ]
             },
@@ -105,7 +97,7 @@
                     "id": "TsbtYv"
                   },
                   "activityProcessed": true,
-                  "dialog": "direction_dialogs"
+                  "dialog": "calendar_dialogs"
                 }
               ]
             },
@@ -134,8 +126,35 @@
                   "dialog": "report_dialogs"
                 }
               ]
+            },
+            {
+              "value": "Cancel",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "Rjw4IW"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "cancel_dialogs"
+                }
+              ]
+            },
+            {
+              "value": "Exit",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "xRy2sZ"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "exit_dialogs"
+                }
+              ]
             }
-          ]
+          ],
+          "default": []
         }
       ]
     }

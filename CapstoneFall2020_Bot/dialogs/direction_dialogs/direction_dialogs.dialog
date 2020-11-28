@@ -19,9 +19,1130 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "pL5PRv"
+            "id": "RcJsp5"
           },
-          "activity": "${SendActivity_pL5PRv()}"
+          "activity": "${SendActivity_RcJsp5()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "YljWWN"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_YljWWN()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "style": "heroCard",
+          "property": "user.directions_choice",
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true,
+            "noValue": false,
+            "noAction": false
+          },
+          "choices": [
+            {
+              "value": "Directions to the Hotel"
+            },
+            {
+              "value": "Points of Interest"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "EzECea"
+          },
+          "condition": "user.directions_choice",
+          "cases": [
+            {
+              "value": "Directions to the Hotel",
+              "actions": [
+                {
+                  "$kind": "Microsoft.TextInput",
+                  "$designer": {
+                    "id": "q6nqrZ"
+                  },
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": true,
+                  "allowInterruptions": true,
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "prompt": "${TextInput_Prompt_q6nqrZ()}",
+                  "property": "user.Address"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "XRhcRa"
+                  },
+                  "activity": "${SendActivity_XRhcRa()}"
+                },
+                {
+                  "$kind": "Microsoft.HttpRequest",
+                  "$designer": {
+                    "id": "OP3Air"
+                  },
+                  "url": "https://atlas.microsoft.com/search/address/json?&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&api-version=1.0&language=en-US&query=${user.Address}",
+                  "method": "GET",
+                  "resultProperty": "dialog.api_response",
+                  "responseType": "json"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "FGlzJC"
+                  },
+                  "condition": "dialog.api_response.statusCode == 200",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "Kzkdrc"
+                      },
+                      "property": "dialog.Address",
+                      "value": "=dialog.api_response.content[\"results\"][0][\"position\"]"
+                    },
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "3KKxaX"
+                      },
+                      "property": "dialog.longitude",
+                      "value": "=dialog.Address[\"lon\"]"
+                    },
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "h22oa0"
+                      },
+                      "value": "=dialog.Address[\"lat\"]",
+                      "property": "dialog.latitude"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "T0GiTK"
+                      },
+                      "activity": "${SendActivity_T0GiTK()}"
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.HttpRequest",
+                  "$designer": {
+                    "id": "Z5pDDf"
+                  },
+                  "method": "GET",
+                  "url": "https://atlas.microsoft.com/route/directions/json?api-version=1.0&query=${dialog.latitude},${dialog.longitude}:27.906485,-82.506166&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&routeRepresentation=polyline&travelMode=car&instructionsType=text",
+                  "resultProperty": "dialog.api_response",
+                  "responseType": "json"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "VDhJB1"
+                  },
+                  "condition": "dialog.api_response.statusCode == 200",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "Yf6ED4"
+                      },
+                      "property": "dialog.Directions",
+                      "value": "=dialog.api_response.content"
+                    },
+                    {
+                      "$kind": "Microsoft.Foreach",
+                      "$designer": {
+                        "id": "o4j3BN"
+                      },
+                      "index": "dialog.foreach.index",
+                      "value": "dialog.foreach.value",
+                      "itemsProperty": "dialog.Directions.routes[0][\"guidance\"][\"instructions\"]",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "RoSmAY"
+                          },
+                          "activity": "${SendActivity_RoSmAY()}"
+                        }
+                      ]
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "RIgXhl"
+                      },
+                      "activity": "${SendActivity_RIgXhl()}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "value": "Points of Interest",
+              "actions": [
+                {
+                  "$kind": "Microsoft.TextInput",
+                  "$designer": {
+                    "id": "kcJk0t"
+                  },
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": true,
+                  "allowInterruptions": true,
+                  "prompt": "${TextInput_Prompt_kcJk0t()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "property": "user.Address"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "5NpsYt"
+                  },
+                  "activity": "${SendActivity_5NpsYt()}"
+                },
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "aiIXbd"
+                  },
+                  "property": "dialog.hotel_address",
+                  "value": "=\"3314 S Dale Mabry Hwy, Tampa, FL 33629\""
+                },
+                {
+                  "$kind": "Microsoft.HttpRequest",
+                  "$designer": {
+                    "id": "LarYxk"
+                  },
+                  "url": "https://atlas.microsoft.com/search/address/json?&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&api-version=1.0&language=en-US&query=${user.Address}",
+                  "method": "GET",
+                  "resultProperty": "dialog.api_response",
+                  "responseType": "json"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "WeYv81"
+                  },
+                  "condition": "dialog.api_response.statusCode == 200",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "TqgfaU"
+                      },
+                      "property": "dialog.Address",
+                      "value": "=dialog.api_response.content[\"results\"][0][\"position\"]"
+                    },
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "ERPK40"
+                      },
+                      "property": "dialog.longitude",
+                      "value": "=dialog.Address[\"lon\"]"
+                    },
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "qUYsn4"
+                      },
+                      "property": "dialog.latitude",
+                      "value": "=dialog.Address[\"lat\"]"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "96JpmQ"
+                      },
+                      "activity": "${SendActivity_96JpmQ()}"
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "L0ZBth"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": true,
+                  "allowInterruptions": true,
+                  "prompt": "${ChoiceInput_Prompt_L0ZBth()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "${ChoiceInput_DefaultValueResponse_L0ZBth()}",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "property": "user.poi_category_choice",
+                  "style": "auto",
+                  "choices": [
+                    {
+                      "value": "Adventure Sports Venue"
+                    },
+                    {
+                      "value": "Airport"
+                    },
+                    {
+                      "value": "Amusement Park"
+                    },
+                    {
+                      "value": "Bank"
+                    },
+                    {
+                      "value": "Beach"
+                    },
+                    {
+                      "value": "Cafe/Pub"
+                    },
+                    {
+                      "value": "Casino"
+                    },
+                    {
+                      "value": "Cinema"
+                    },
+                    {
+                      "value": "City Center"
+                    },
+                    {
+                      "value": "Club & Associations"
+                    },
+                    {
+                      "value": "College/University"
+                    },
+                    {
+                      "value": "Courthouse"
+                    },
+                    {
+                      "value": "Cultural Center"
+                    },
+                    {
+                      "value": "Department Store"
+                    },
+                    {
+                      "value": "Emergency Medical Service"
+                    },
+                    {
+                      "value": "Entertainment"
+                    },
+                    {
+                      "value": "Gas Station"
+                    },
+                    {
+                      "value": "Geographic Feature"
+                    },
+                    {
+                      "value": "Golf Course"
+                    },
+                    {
+                      "value": "Healthcare Service"
+                    },
+                    {
+                      "value": "Hospital"
+                    },
+                    {
+                      "value": "Leisure Center"
+                    },
+                    {
+                      "value": "Marina"
+                    },
+                    {
+                      "value": "Market"
+                    },
+                    {
+                      "value": "Museum"
+                    },
+                    {
+                      "value": "Nightlife"
+                    },
+                    {
+                      "value": "Pharmacy"
+                    },
+                    {
+                      "value": "Rental Car Facility"
+                    },
+                    {
+                      "value": "Restaurant",
+                      "action": {}
+                    },
+                    {
+                      "value": "Scenic Panoramic View"
+                    },
+                    {
+                      "value": "Shopping Center"
+                    },
+                    {
+                      "value": "Sports Center"
+                    },
+                    {
+                      "value": "Stadium"
+                    },
+                    {
+                      "value": "Theater"
+                    },
+                    {
+                      "value": "Tourist Attraction"
+                    },
+                    {
+                      "value": "Tourist Information Service"
+                    },
+                    {
+                      "value": "Trail System"
+                    },
+                    {
+                      "value": "Zoos, Arboreta, Botanical Gardens"
+                    }
+                  ],
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true,
+                    "recognizeNumbers": true
+                  }
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "8THro7"
+                  },
+                  "activity": "${SendActivity_8THro7()}"
+                },
+                {
+                  "$kind": "Microsoft.SwitchCondition",
+                  "$designer": {
+                    "id": "J0WKKw"
+                  },
+                  "condition": "user.poi_category_choice",
+                  "cases": [
+                    {
+                      "value": "Adventure Sports Venue",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "kdrRBX"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7305"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Airport",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "gpc235"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7383"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Amusement Park",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "k5rJ7V"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9902"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Bank",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "uF7kr1"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7328"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Cafe/Pub",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "OpTnX6"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9376"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Casino",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "IYCXz5"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7341"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Cinema",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "sdkJDA"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7342"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "City Center",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "ow8Y7F"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9377"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Clubs & Associations",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "Nk8DQK"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9937"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "College/University",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "GbiRez"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7377"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Courthouse",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "bNEWZe"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9363"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Cultural Center",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "uZnOEO"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7319"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Department Store",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "uQrNJI"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7327"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Emergency Medical Service",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "gBGwtx"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9956"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Entertainment",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "Cg0OW7"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9900"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Gas Station",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "cSxuBU"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7311"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Geographic Feature",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "MqLSgg"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=8099"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Golf Course",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "fTzFF5"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9911"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Healthcare Service",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "1X9Xnd"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9663"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Hospital",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "nUeADf"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7321"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Leisure Center",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "rfdXcG"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9378"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Marina",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "wfXv6c"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7347"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Market",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "alPgkP"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7332"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Museum",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "v1tgP0"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7317"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Nightlife",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "njqzgL"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9379"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Pharmacy",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "6L1fLO"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7326"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Rental Car Facility",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "mqIH5K"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7312"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Restaurant",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "bRjnlg"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7315"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Scenic Panoramic View",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "lmF1YM"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7337"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Shopping Center",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "VmiJYz"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7373"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Sports Center",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "BNIz07"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7320"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Stadium",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "D5aRVI"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7374"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Theater",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "qZDHgt"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7318"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Tourist Attraction",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "1cNKjR"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7376"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Tourist Information Service",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "w7rhpR"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7316"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Trail System",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "XZeDBZ"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=7302"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "Zoos, Arboreta, Botanical Gardens",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "QYJSNd"
+                          },
+                          "property": "dialog.poi_category_choice",
+                          "value": "=9927"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.HttpRequest",
+                  "$designer": {
+                    "id": "uEahBY"
+                  },
+                  "method": "GET",
+                  "url": "https://atlas.microsoft.com/search/nearby/json?api-version=1.0&lat=27.914480&lon=-82.505379&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&limit=10&radius=8047&categorySet=${dialog.poi_category_choice}",
+                  "resultProperty": "dialog.api_response",
+                  "responseType": "json"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "4AB2fb"
+                  },
+                  "condition": "dialog.api_response.statusCode == 200",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "yAyqQT"
+                      },
+                      "property": "dialog.Directions",
+                      "value": "=dialog.api_response.content"
+                    },
+                    {
+                      "$kind": "Microsoft.Foreach",
+                      "$designer": {
+                        "id": "9x3Orc"
+                      },
+                      "index": "dialog.foreach.index",
+                      "value": "dialog.foreach.value",
+                      "itemsProperty": "dialog.Directions[\"results\"]",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "zbh41R"
+                          },
+                          "property": "dialog.poi_name",
+                          "value": "=dialog.foreach.value[\"poi\"][\"name\"]"
+                        },
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "A2vaZM"
+                          },
+                          "property": "dialog.poi_phone",
+                          "value": "=dialog.foreach.value[\"poi\"][\"phone\"]"
+                        },
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "QcKZj1"
+                          },
+                          "property": "dialog.poi_address",
+                          "value": "=dialog.foreach.value[\"address\"][\"freeformAddress\"]"
+                        },
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "qmUkgm"
+                          },
+                          "property": "dialog.poi_category",
+                          "value": "=dialog.foreach.value[\"poi\"][\"categories\"][0]"
+                        },
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "TbkPtB"
+                          },
+                          "activity": "${SendActivity_TbkPtB()}"
+                        }
+                      ]
+                    },
+                    {
+                      "$kind": "Microsoft.TextInput",
+                      "$designer": {
+                        "id": "1rALgn"
+                      },
+                      "disabled": false,
+                      "maxTurnCount": 3,
+                      "alwaysPrompt": true,
+                      "allowInterruptions": true,
+                      "prompt": "${TextInput_Prompt_1rALgn()}",
+                      "unrecognizedPrompt": "",
+                      "invalidPrompt": "",
+                      "defaultValueResponse": "",
+                      "property": "user.poi_destination"
+                    },
+                    {
+                      "$kind": "Microsoft.HttpRequest",
+                      "$designer": {
+                        "id": "QmaXNq"
+                      },
+                      "url": "https://atlas.microsoft.com/search/address/json?&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&api-version=1.0&language=en-US&query=${user.poi_destination}",
+                      "method": "GET",
+                      "resultProperty": "dialog.api_response1",
+                      "responseType": "json"
+                    },
+                    {
+                      "$kind": "Microsoft.IfCondition",
+                      "$designer": {
+                        "id": "OnvWT4"
+                      },
+                      "condition": "dialog.api_response1.statusCode == 200",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "mD1nDs"
+                          },
+                          "value": "=dialog.api_response1.content[\"results\"][0][\"position\"]",
+                          "property": "dialog.destination_address"
+                        },
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "DO2DOb"
+                          },
+                          "property": "dialog.destination_longitude",
+                          "value": "=dialog.destination_address[\"lon\"]"
+                        },
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "KAkArf"
+                          },
+                          "property": "dialog.destination_latitude",
+                          "value": "=dialog.destination_address[\"lat\"]"
+                        }
+                      ],
+                      "elseActions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "w9B1DL"
+                          },
+                          "activity": "${SendActivity_w9B1DL()}"
+                        }
+                      ]
+                    },
+                    {
+                      "$kind": "Microsoft.HttpRequest",
+                      "$designer": {
+                        "id": "cND3kl"
+                      },
+                      "url": "https://atlas.microsoft.com/route/directions/json?api-version=1.0&query=${dialog.latitude},${dialog.longitude}:${dialog.destination_latitude},${dialog.destination_longitude}&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&routeRepresentation=polyline&travelMode=car&instructionsType=text",
+                      "method": "GET",
+                      "resultProperty": "dialog.api_response2",
+                      "responseType": "json"
+                    },
+                    {
+                      "$kind": "Microsoft.IfCondition",
+                      "$designer": {
+                        "id": "ZPQsQQ"
+                      },
+                      "condition": "dialog.api_response.statusCode == 200",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "ZnkpnB"
+                          },
+                          "property": "dialog.Directions",
+                          "value": "=dialog.api_response2.content"
+                        },
+                        {
+                          "$kind": "Microsoft.Foreach",
+                          "$designer": {
+                            "id": "mCt5TP"
+                          },
+                          "index": "dialog.foreach.index",
+                          "value": "dialog.foreach.value",
+                          "itemsProperty": "dialog.Directions.routes[0][\"guidance\"][\"instructions\"]",
+                          "actions": [
+                            {
+                              "$kind": "Microsoft.SendActivity",
+                              "$designer": {
+                                "id": "8tMjdI"
+                              },
+                              "activity": "${SendActivity_8tMjdI()}"
+                            }
+                          ]
+                        }
+                      ],
+                      "elseActions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "0mGRJq"
+                          },
+                          "activity": "${SendActivity_0mGRJq()}"
+                        }
+                      ]
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "1xWfRL"
+                      },
+                      "activity": "${SendActivity_1xWfRL()}"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "XpwnFE"
+          },
+          "activity": "${SendActivity_XpwnFE()}"
         }
       ]
     }

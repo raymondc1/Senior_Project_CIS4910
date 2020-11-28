@@ -3,7 +3,6 @@
 # SendActivity_grGPHN()
 - $ShowProfile(event.Name, event.beginTime, event.endTime)
 
-
 # SendActivity_HfHkYH()
 - Hmm, something went wrong. Error code ${dialog.api_response.statusCode}
 
@@ -18,24 +17,26 @@
         ${dialog.foreach.value.bodyPreview}
         ```
 
-# DateTimeInput_Prompt_Z7pzlj()
-- When are you planning to check in? (mm/dd/yy)
-# DateTimeInput_Prompt_tmPpdw()
-- And when are you planning on checking out? (mm/dd/yy)
-# DateTimeInput_UnrecognizedPrompt_Z7pzlj()
-- Please enter a valid date. (mm/dd/yy)
-# DateTimeInput_InvalidPrompt_Z7pzlj()
-- Please enter a valid date. (mm/dd/yy)
-# DateTimeInput_UnrecognizedPrompt_tmPpdw()
-- Please enter a valid date. (mm/dd/yy)
-# DateTimeInput_InvalidPrompt_tmPpdw()
-- Please enter a valid date. (mm/dd/yy)   
-# SendActivity_WvOp4h()
-- Getting you the events between ${user.date1[0].value} and ${user.date2[0].value}:
-# SendActivity_SSXGbp()
-- Token is ${dialog.oauth}
 # SendActivity_wdzta0()
 [Activity
     Text = Is there anything else that I can assist you with? You can always type your question directly and I will try my best to answer it.
     SuggestedActions = Amenities | Directions | Events | About Us | Report Issues | Exit
 ]
+
+# DateTimeInput_Prompt_o6e3M1()
+- When are you planning to check in? (mm/dd/yy)
+
+# DateTimeInput_UnrecognizedPrompt_o6e3M1()
+- Please enter a valid date. (mm/dd/yy)
+
+# DateTimeInput_InvalidPrompt_o6e3M1()
+- Please enter a valid date. (mm/dd/yy)
+
+# DateTimeInput_Prompt_FeGC6R()
+- And when are you planning on checking out? (mm/dd/yy)
+
+# DateTimeInput_UnrecognizedPrompt_FeGC6R()
+- Please enter a valid date. (mm/dd/yy)
+
+# DateTimeInput_InvalidPrompt_FeGC6R()
+- Please enter a valid date. (mm/dd/yy)   

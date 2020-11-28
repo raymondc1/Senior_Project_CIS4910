@@ -17,73 +17,48 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.IfCondition",
+          "$kind": "Microsoft.DateTimeInput",
           "$designer": {
-            "id": "LX8NRV"
+            "id": "o6e3M1"
           },
-          "condition": "user.date2 == NULL",
-          "actions": [
-            {
-              "$kind": "Microsoft.OAuthInput",
-              "$designer": {
-                "id": "tYFr7H"
-              },
-              "timeout": 900000,
-              "maxTurnCount": 3,
-              "allowInterruptions": true,
-              "connectionName": "CalendarRead",
-              "text": "Please sign in",
-              "title": "Login",
-              "property": "dialog.oauth",
-              "alwaysPrompt": true
-            },
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "SSXGbp"
-              },
-              "activity": "${SendActivity_SSXGbp()}"
-            },
-            {
-              "$kind": "Microsoft.DateTimeInput",
-              "$designer": {
-                "id": "Z7pzlj"
-              },
-              "disabled": false,
-              "maxTurnCount": 3,
-              "alwaysPrompt": true,
-              "allowInterruptions": true,
-              "prompt": "${DateTimeInput_Prompt_Z7pzlj()}",
-              "unrecognizedPrompt": "${DateTimeInput_UnrecognizedPrompt_Z7pzlj()}",
-              "invalidPrompt": "${DateTimeInput_InvalidPrompt_Z7pzlj()}",
-              "defaultValueResponse": "",
-              "property": "user.date1"
-            },
-            {
-              "$kind": "Microsoft.DateTimeInput",
-              "$designer": {
-                "id": "tmPpdw"
-              },
-              "disabled": false,
-              "maxTurnCount": 3,
-              "alwaysPrompt": true,
-              "allowInterruptions": true,
-              "prompt": "${DateTimeInput_Prompt_tmPpdw()}",
-              "unrecognizedPrompt": "${DateTimeInput_UnrecognizedPrompt_tmPpdw()}",
-              "invalidPrompt": "${DateTimeInput_InvalidPrompt_tmPpdw()}",
-              "defaultValueResponse": "",
-              "property": "user.date2"
-            }
-          ],
-          "elseActions": [
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "WvOp4h"
-              },
-              "activity": "${SendActivity_WvOp4h()}"
-            }
-          ]
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": true,
+          "prompt": "${DateTimeInput_Prompt_o6e3M1()}",
+          "unrecognizedPrompt": "${DateTimeInput_UnrecognizedPrompt_o6e3M1()}",
+          "invalidPrompt": "${DateTimeInput_InvalidPrompt_o6e3M1()}",
+          "defaultValueResponse": "",
+          "property": "user.date1"
+        },
+        {
+          "$kind": "Microsoft.DateTimeInput",
+          "$designer": {
+            "id": "FeGC6R"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": true,
+          "prompt": "${DateTimeInput_Prompt_FeGC6R()}",
+          "unrecognizedPrompt": "${DateTimeInput_UnrecognizedPrompt_FeGC6R()}",
+          "invalidPrompt": "${DateTimeInput_InvalidPrompt_FeGC6R()}",
+          "defaultValueResponse": "",
+          "property": "user.date2"
+        },
+        {
+          "$kind": "Microsoft.OAuthInput",
+          "$designer": {
+            "id": "IWWUeW"
+          },
+          "timeout": 900000,
+          "maxTurnCount": 3,
+          "allowInterruptions": true,
+          "connectionName": "CalendarRead",
+          "title": "Login",
+          "property": "dialog.oauth",
+          "alwaysPrompt": true,
+          "text": "EMAIL: usfhotel@outlook.com PW: u$fbull$"
         },
         {
           "$kind": "Microsoft.HttpRequest",
@@ -93,11 +68,19 @@
           "method": "GET",
           "url": "https://graph.microsoft.com/v1.0/me/calendarview?startdatetime=${user.date1[0].value}Z&enddatetime=${user.date2[0].value}",
           "headers": {
-            "Authorization": "dialog.oauth.token",
+            "Authorization": "=dialog.oauth.token",
             "Host": "graph.microsoft.com"
           },
           "resultProperty": "dialog.api_response",
           "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.SignOutUser",
+          "$designer": {
+            "id": "e16esV"
+          },
+          "userId": "=user.id",
+          "connectionName": "CalendarRead"
         },
         {
           "$kind": "Microsoft.IfCondition",

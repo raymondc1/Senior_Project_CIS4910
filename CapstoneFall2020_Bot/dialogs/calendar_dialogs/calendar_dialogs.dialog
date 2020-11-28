@@ -38,8 +38,17 @@
               "timeout": 900000,
               "maxTurnCount": 3,
               "allowInterruptions": true,
-              "connectionName": "USF Capstone 2020",
-              "property": "dialog.token"
+              "connectionName": "CalendarRead",
+              "text": "Please sign in",
+              "title": "Login",
+              "property": "dialog.oauth"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "SSXGbp"
+              },
+              "activity": "${SendActivity_SSXGbp()}"
             },
             {
               "$kind": "Microsoft.DateTimeInput",
@@ -90,7 +99,7 @@
           "method": "GET",
           "url": "https://graph.microsoft.com/v1.0/me/calendarview?startdatetime=${user.date1[0].value}Z&enddatetime=${user.date2[0].value}",
           "headers": {
-            "Authorization": "='Bearer' + dialog.token",
+            "Authorization": "dialog.oauth.token",
             "Host": "graph.microsoft.com"
           },
           "resultProperty": "dialog.api_response",

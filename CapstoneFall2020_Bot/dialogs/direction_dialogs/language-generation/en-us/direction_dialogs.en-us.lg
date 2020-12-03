@@ -56,15 +56,6 @@
 # SendActivity_RIgXhl()
 - Sorry something went wrong
 
-# TextInput_Prompt_kcJk0t()
-- Please Enter Your Current Location Format: Address, City, State
-
-# SendActivity_5NpsYt()
-- This is your current location: ${user.Address}
-
-# SendActivity_96JpmQ()
-- Sorry something went wrong
-
 # SendActivity_XpwnFE()
 -${Sub_Menu_Items()}
 
@@ -97,3 +88,9 @@ Address: ${dialog.poi_address}```
 
 # SendActivity_8THro7()
 - ${user.poi_category_choice}
+
+# TextInput_Prompt_iT9wLr()
+- Please Enter Your Current Location Format: Address, City, State
+
+# SendActivity_IXrEAc()
+- Sorry something has gone wrong. 

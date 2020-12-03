@@ -204,86 +204,12 @@
               "value": "Points of Interest",
               "actions": [
                 {
-                  "$kind": "Microsoft.TextInput",
-                  "$designer": {
-                    "id": "kcJk0t"
-                  },
-                  "disabled": false,
-                  "maxTurnCount": 3,
-                  "alwaysPrompt": true,
-                  "allowInterruptions": true,
-                  "prompt": "${TextInput_Prompt_kcJk0t()}",
-                  "unrecognizedPrompt": "",
-                  "invalidPrompt": "",
-                  "defaultValueResponse": "",
-                  "property": "user.Address"
-                },
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "5NpsYt"
-                  },
-                  "activity": "${SendActivity_5NpsYt()}"
-                },
-                {
                   "$kind": "Microsoft.SetProperty",
                   "$designer": {
                     "id": "aiIXbd"
                   },
                   "property": "dialog.hotel_address",
                   "value": "=\"3314 S Dale Mabry Hwy, Tampa, FL 33629\""
-                },
-                {
-                  "$kind": "Microsoft.HttpRequest",
-                  "$designer": {
-                    "id": "LarYxk"
-                  },
-                  "url": "https://atlas.microsoft.com/search/address/json?&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&api-version=1.0&language=en-US&query=${user.Address}",
-                  "method": "GET",
-                  "resultProperty": "dialog.api_response",
-                  "responseType": "json"
-                },
-                {
-                  "$kind": "Microsoft.IfCondition",
-                  "$designer": {
-                    "id": "WeYv81"
-                  },
-                  "condition": "dialog.api_response.statusCode == 200",
-                  "actions": [
-                    {
-                      "$kind": "Microsoft.SetProperty",
-                      "$designer": {
-                        "id": "TqgfaU"
-                      },
-                      "property": "dialog.Address",
-                      "value": "=dialog.api_response.content[\"results\"][0][\"position\"]"
-                    },
-                    {
-                      "$kind": "Microsoft.SetProperty",
-                      "$designer": {
-                        "id": "ERPK40"
-                      },
-                      "property": "dialog.longitude",
-                      "value": "=dialog.Address[\"lon\"]"
-                    },
-                    {
-                      "$kind": "Microsoft.SetProperty",
-                      "$designer": {
-                        "id": "qUYsn4"
-                      },
-                      "property": "dialog.latitude",
-                      "value": "=dialog.Address[\"lat\"]"
-                    }
-                  ],
-                  "elseActions": [
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "96JpmQ"
-                      },
-                      "activity": "${SendActivity_96JpmQ()}"
-                    }
-                  ]
                 },
                 {
                   "$kind": "Microsoft.ChoiceInput",
@@ -1015,6 +941,73 @@
                       "invalidPrompt": "",
                       "defaultValueResponse": "",
                       "property": "user.poi_destination"
+                    },
+                    {
+                      "$kind": "Microsoft.TextInput",
+                      "$designer": {
+                        "id": "iT9wLr"
+                      },
+                      "disabled": false,
+                      "maxTurnCount": 3,
+                      "alwaysPrompt": true,
+                      "allowInterruptions": true,
+                      "prompt": "${TextInput_Prompt_iT9wLr()}",
+                      "unrecognizedPrompt": "",
+                      "invalidPrompt": "",
+                      "defaultValueResponse": "",
+                      "property": "user.Address"
+                    },
+                    {
+                      "$kind": "Microsoft.HttpRequest",
+                      "$designer": {
+                        "id": "m2N2J7"
+                      },
+                      "method": "GET",
+                      "url": "https://atlas.microsoft.com/search/address/json?&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&api-version=1.0&language=en-US&query=${user.Address}",
+                      "resultProperty": "dialog.api_response",
+                      "responseType": "json"
+                    },
+                    {
+                      "$kind": "Microsoft.IfCondition",
+                      "$designer": {
+                        "id": "MIWHSv"
+                      },
+                      "condition": "dialog.api_response.statusCode == 200",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "HlAde4"
+                          },
+                          "value": "=dialog.api_response.content[\"results\"][0][\"position\"]",
+                          "property": "dialog.Address"
+                        },
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "1oRUOt"
+                          },
+                          "value": "=dialog.Address[\"lon\"]",
+                          "property": "dialog.longitude"
+                        },
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "cK0LwM"
+                          },
+                          "value": "=dialog.Address[\"lat\"]",
+                          "property": "dialog.latitude"
+                        }
+                      ],
+                      "elseActions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "IXrEAc"
+                          },
+                          "activity": "${SendActivity_IXrEAc()}"
+                        }
+                      ]
                     },
                     {
                       "$kind": "Microsoft.HttpRequest",

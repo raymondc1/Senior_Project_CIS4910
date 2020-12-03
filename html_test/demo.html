@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body style="overflow:hidden">
+
+        <div id="usf" style="height:100vh; width:100%; z-index:10">
+            <iframe src="http://hotelsouthtampa.com/" style="height:100vh; width:100%"></iframe>
+        </div>
+
+        <div id="webchat" role="main" style="position: fixed ; z-index: 1000; background: white; bottom: 0px; width: 100%; height: 100%;">
+            <script crossorigin="anonymous" src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+            <script>
+                
+                (async function() {
+                    const secret = 'kKRhthUE4oY.2ORpyyD4f-WtOTcArmwYZosE4yG-wjFZU3dmgB1_Cxo';
+                    const res = await fetch('https://directline.botframework.com/v3/directline/tokens/generate', {
+                        body: JSON.stringify({ user: { id: 'dl_user_id', name: 'username' } }),
+                        headers: {
+                        Authorization: `Bearer ${secret}`,
+                        'Content-type': 'application/json'
+                        },
+                        method: 'POST'
+                    });
+                    const { token } = await res.json();
+    
+                    window.WebChat.renderWebChat(
+                        {
+                        directLine: window.WebChat.createDirectLine({ token })
+                        },
+                        document.getElementById('webchat')
+                    );
+    
+                    document.querySelector('#webchat > *').focus();
+                    })().catch(err => console.error(err));
+            </script>
+        </div>
+    </body>
+</html>

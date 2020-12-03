@@ -57,3 +57,11 @@
   ]
 }
 ```
+
+# SendActivity_J96AZL()
+[Activity
+    SuggestedActions = Amenities | Directions | Events | About Us | Report Issues | Exit
+]
+
+# QnAMakerDialog_NoAnswer_Twf3te()
+- Sorry, I did not understand '${turn.activity.text}'. Please try asking something else or call +1 (813) 832-4656 to get someone to assist you. You can also try typing 'help' to found out what I can do.

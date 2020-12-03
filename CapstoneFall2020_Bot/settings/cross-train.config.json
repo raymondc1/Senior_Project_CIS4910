@@ -2,9 +2,6 @@
   "capstonefall2020_bot.en-us": {
     "rootDialog": true,
     "triggers": {
-      "": [
-        "Unknown_QnA.en-us"
-      ],
       "Amenities": [
         "amenities_dialogs.en-us"
       ],

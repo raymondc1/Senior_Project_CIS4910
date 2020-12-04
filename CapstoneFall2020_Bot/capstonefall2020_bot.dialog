@@ -84,7 +84,7 @@
           "activity": "${SendActivity_J96AZL()}"
         }
       ],
-      "priority": 15
+      "priority": 0
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -123,7 +123,7 @@
           "dialog": "direction_dialogs"
         }
       ],
-      "condition": "#Direction.Score > 0.7",
+      "condition": "#Direction.Score > 0.8",
       "priority": 0
     },
     {

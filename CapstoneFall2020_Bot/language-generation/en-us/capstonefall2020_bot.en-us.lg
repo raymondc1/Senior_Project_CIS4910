@@ -12,6 +12,7 @@
     SuggestedActions = Amenities | Directions | Events | About Us | Report Issues | Exit
 ]
 
+
 # WelcomeAdaptiveCardJson
 - ```
 {
@@ -46,7 +47,7 @@
             },
             {
               "type": "TextBlock",
-              "text": "How may I assist you today? You can type 'help' to found out what I can do. Please click on one of the card below to use one of our robust features. If you would like to ask a quesiton while in a feature type cancel and click enter then ask your question.",
+              "text": "How may I assist you today? You can type 'help' to found out what I can do. Please click on one of the card below to use one of our robust features. If you would like to ask a quesiton while in a feature, type 'cancel' and click enter to ask your question.",
               "wrap": true
             }
           ]

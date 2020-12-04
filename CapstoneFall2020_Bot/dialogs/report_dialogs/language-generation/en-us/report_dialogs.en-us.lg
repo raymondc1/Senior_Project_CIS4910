@@ -45,6 +45,7 @@
     SuggestedActions = Amenities | Directions | Events | About Us | Report Issues | Exit
 ]
 
+
 # AdaptiveCard
 [Activity
     Attachments = ${json(adaptivecardjson())}

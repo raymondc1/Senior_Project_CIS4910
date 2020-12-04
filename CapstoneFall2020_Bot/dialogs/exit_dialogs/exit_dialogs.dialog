@@ -25,7 +25,7 @@
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": true,
-          "allowInterruptions": false,
+          "allowInterruptions": true,
           "prompt": "${ChoiceInput_Prompt_3EFqyG()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",

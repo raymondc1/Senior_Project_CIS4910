@@ -858,7 +858,7 @@
                     "id": "uEahBY"
                   },
                   "method": "GET",
-                  "url": "https://atlas.microsoft.com/search/nearby/json?api-version=1.0&lat=27.914480&lon=-82.505379&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&limit=10&radius=8047&categorySet=${dialog.poi_category_choice}",
+                  "url": "https://atlas.microsoft.com/search/nearby/json?api-version=1.0&lat=27.914480&lon=-82.505379&subscription-key=6Uuc0SBG8hWtxzh3Smxc6XGEmPi5IH8jUOJ4nq0k5Cs&limit=50&radius=8047&categorySet=${dialog.poi_category_choice}",
                   "resultProperty": "dialog.api_response",
                   "responseType": "json"
                 },
